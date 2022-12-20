@@ -1,0 +1,12 @@
+# Commands used 
+- mkdir folder name
+- cd
+- touch filename.sh
+- vi filename.sh
+-  i
+- echo
+- read -p
+- echo -e
+- esc
+- shift + z + z
+- sh filename.sh
