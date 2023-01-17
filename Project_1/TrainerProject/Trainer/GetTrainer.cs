@@ -32,6 +32,7 @@ namespace Trainer
                     Console.WriteLine("Please press enter to continue");
                     Console.ReadLine();
                     return "Login";
-            }  }
+            }
+        }
     }
 }

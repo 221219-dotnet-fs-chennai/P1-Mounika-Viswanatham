@@ -1,8 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "p+1fnbXa/cA1fG6khLIsofOywUgqKodphZQSkycm0yZ0eXhO7JKvoDv6Mxn9jmX8g0mX6HciixMTiZtr2ZuftA==",
+  "dgSpecHash": "kaRm7clA6xF4CT6nN6NX5J0sIr+eJjplEDghKlWN3OomMw3ExLyZVVJd7oWoMS+K0OKLaxckR13QafWBi3HN4Q==",
   "success": true,
-  "projectFilePath": "C:\\P1-Mounika-Viswanatham\\Project_1\\Project1\\Trainer\\Trainer.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Trainer\\Trainer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\system.data.sqlclient\\4.8.5\\system.data.sqlclient.4.8.5.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }
