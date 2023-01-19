@@ -5,6 +5,8 @@ namespace Trainer
     { 
         
         private static Trainerdata newTrainer = new Trainerdata();
+        static string constr = @"Server=MOUNIKA;Database=Trainerdbase;Trusted_Connection=True;";
+        SqlRepo repo = new SqlRepo(constr);
     
         public void Display()
         {
@@ -16,12 +18,12 @@ namespace Trainer
                 Console.WriteLine("[3] Age :  " + newTrainer.Age);
                 Console.WriteLine("[4] Gender  :   " + newTrainer.Gender);
                 Console.WriteLine("[5] Phone Number :  " + newTrainer.PhoneNumber);
-                Console.WriteLine("[6] Location :  " + newTrainer.Location);
-                Console.WriteLine("[7] WebsiteLink :  " + newTrainer.WebsiteLink);
-                Console.WriteLine("[8] Institution Name :  " + newTrainer.InstitutionName);
-                Console.WriteLine("[9] Degree :  " + newTrainer.Degree);
-                Console.WriteLine("[10] Specialization:  " + newTrainer.Specialization);
-                Console.WriteLine("[11] CGPA :  " + newTrainer.CGPA);
+                Console.WriteLine("[6] Password :  " + newTrainer.Password);
+                Console.WriteLine("[7] Location :  " + newTrainer.Location);
+                //Console.WriteLine("[8] WebsiteLink :  " + newTrainer.WebsiteLink);
+                Console.WriteLine("[9] Institution Name :  " + newTrainer.InstitutionName);
+                Console.WriteLine("[10] Degree :  " + newTrainer.Degree);
+                Console.WriteLine("[11] Specialization:  " + newTrainer.Specialization);
                 Console.WriteLine("[12] PassingYear : " + newTrainer.PassingYear);
                 Console.WriteLine("[13] Skill1 : " + newTrainer.Skill1);
                 Console.WriteLine("[14] Skill2 : " + newTrainer.Skill2);
@@ -29,6 +31,7 @@ namespace Trainer
                 Console.WriteLine("[16] CompanyName :  " + newTrainer.CompanyName);
                 Console.WriteLine("[17] Experience : " + newTrainer.Experience);
                 Console.WriteLine("[18] Position : " + newTrainer.Position);
+                Console.WriteLine("[19] To Save");
 
 
         }
@@ -62,29 +65,29 @@ namespace Trainer
                     newTrainer.PhoneNumber = Console.ReadLine();
                     return "Signup";
                 case "6":
+                    Console.WriteLine("Create Your Password");
+                    newTrainer.Password = Console.ReadLine();
+                    return "Signup";
+                case "7":
                     Console.WriteLine("Enter Location :  ");
                     newTrainer.Location = Console.ReadLine();
                     return "Signup";
-                case "7":
+                /*case "8":
                     Console.WriteLine("Enter WebsiteLink :  ");
                     newTrainer.WebsiteLink = Console.ReadLine();
-                    return "Signup";
-                case "8":
+                    return "Signup";*/
+                case "9":
                     Console.WriteLine("Enter Institution Name :  ");
                     newTrainer.InstitutionName = Console.ReadLine();
                     return "Signup";
-                case "9":
+                case "10":
                     Console.WriteLine("Enter Degree :  ");
                     newTrainer.Degree = Console.ReadLine();
                     return "Signup";
-                case "10":
+                case "11":
                     Console.WriteLine("Enter Specialization :  ");
                     newTrainer.Specialization = Console.ReadLine();
                     return "Signup";
-                case "11":
-                    Console.WriteLine("Enter CGPA :  ");
-                    newTrainer.CGPA = Console.ReadLine();
-                    return "SignUp";
                 case "12":
                     Console.WriteLine("Enter PassingYear :  ");
                     newTrainer.PassingYear = Console.ReadLine();
@@ -113,6 +116,10 @@ namespace Trainer
                     Console.WriteLine("Enter YOur Position in Company :  ");
                     newTrainer.Position = Console.ReadLine();
                     return "Signup";
+                case "19":
+                    repo.Add(newTrainer);
+                    return "Menu";
+
                 default:
                     Console.WriteLine("please input a valid respone");
                     Console.WriteLine("please press enter to continue");

@@ -10,5 +10,6 @@ namespace Trainer
     {
         void Display();
         string UserChoice();
+
     }
 }

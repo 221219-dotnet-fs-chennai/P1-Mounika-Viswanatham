@@ -21,13 +21,18 @@ namespace Data
 
         public Trainerdata Add(Trainerdata trainerdata)
         {
-
+            int userId = 109;
 
             using SqlConnection con = new SqlConnection(connectionString);
 
-            string query = @"insert into trainerdata (Name,EmailID,Location,Gender,Age,PhoneNumber)values(@Name,@EmailID,@Location,@Gender,@Age,@PhoneNumber)";
             con.Open();
+
+            string query = @"insert into  TrainerDetails(user_id,Name,EmailID,Location,Gender,Age,PhoneNumber,Password)values(@userID,@Name,@EmailID,@Location,@Gender,@Age,@PhoneNumber,@Password)";
+
+           
             SqlCommand sqlCommand = new SqlCommand(query, con);
+
+            sqlCommand.Parameters.AddWithValue("@userID",userId);
 
             sqlCommand.Parameters.AddWithValue("@EmailId", trainerdata.EmailID);
 
@@ -41,13 +46,19 @@ namespace Data
 
             sqlCommand.Parameters.AddWithValue("@Age", trainerdata.Age);
 
+            sqlCommand.Parameters.AddWithValue("@Password", trainerdata.Password);
+
             int rows = sqlCommand.ExecuteNonQuery();
 
 
 
-            string query2 = @"insert into trainerdata(InstitutionName,Degree,Specialization,CGPA,PassingYear) values(@InstitutionName,@Degree,@Specialization,@CGPA,@PassingYear)";
+            string query2 = @"insert into Education_Details(user_id ,InstitutionName,Degree,Specialization,PassingYear) values(@userID,@InstitutionName,@Degree,@Specialization,@PassingYear)";
 
             SqlCommand sqlCommand2 = new SqlCommand(query2, con);
+
+            sqlCommand2.Parameters.AddWithValue("@userID", userId);
+
+            //sqlCommand.Parameters.AddWithValue("@userID", 102);
 
             sqlCommand2.Parameters.AddWithValue("@InstitutionName", trainerdata.InstitutionName);
 
@@ -55,17 +66,17 @@ namespace Data
 
             sqlCommand2.Parameters.AddWithValue("@Specialization", trainerdata.Specialization);
 
-            sqlCommand2.Parameters.AddWithValue("@CGPA", trainerdata.CGPA);
-
             sqlCommand2.Parameters.AddWithValue("PassingYear", trainerdata.PassingYear);
 
             sqlCommand2.ExecuteNonQuery();
 
 
 
-            string query3 = @"insert into trainerdata( Skill1, Skill2, Skill3)values( @Skill1, @Skill2, @Skill3)";
+            string query3 = @"insert into Skills_Details( user_id,Skill1, Skill2, Skill3)values(@userID, @Skill1, @Skill2, @Skill3)";
 
             SqlCommand sqlCommand1 = new SqlCommand(query3, con);
+
+            sqlCommand1.Parameters.AddWithValue("@userID", userId);
 
             sqlCommand1.Parameters.AddWithValue("@Skill1", trainerdata.Skill1);
 
@@ -76,9 +87,12 @@ namespace Data
             sqlCommand1.ExecuteNonQuery();
 
 
-            string query4 = @"insert into trainerdata(trainerID,CompanyName,Experience,Position)values(@trainerID,@CompanyName,@Experience,@Position)";
+
+            string query4 = @"insert into Company_Detail(user_id,CompanyName,Experience,Position)values(@userID,@CompanyName,@Experience,@Position)";
 
             SqlCommand sqlCommand3 = new SqlCommand(query4, con);
+
+            sqlCommand3.Parameters.AddWithValue("@userID", userId);
 
             sqlCommand3.Parameters.AddWithValue("@CompanyName", trainerdata.CompanyName);
 
@@ -88,8 +102,8 @@ namespace Data
 
             sqlCommand3.ExecuteNonQuery();
 
-            Console.WriteLine("Signup Completed Successfully!");
 
+            Console.WriteLine("Signup Completed Successfully!");
 
             Console.WriteLine(rows + "row(s) added");
 
@@ -122,7 +136,6 @@ namespace Data
                         InstitutionName = reader.GetString(6),
                         Degree = reader.GetString(7),
                         Specialization = reader.GetString(8),
-                        CGPA = reader.GetString(9),
                         PassingYear = reader.GetString(10),
                         CompanyName = reader.GetString(11),
                         Experience = reader.GetString(12),
@@ -165,7 +178,6 @@ namespace Data
                         InstitutionName = (string)row["InstitutionName"],
                         Degree = (string)row["Degree"],
                         Specialization = (string)row["Specialization"],
-                        CGPA = (string)row["CGPA"],
                         PassingYear = (string)row["PAssingYear"],
                         Skill1 = (string)row["Skill1"],
                         Skill2 = (String)row["SKill2"],

@@ -475,11 +475,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj",
+      "projectUniqueName": "C:\\Users\\LENOVO\\p1-mounika-viswanatham\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj",
       "projectName": "Data",
-      "projectPath": "C:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj",
+      "projectPath": "C:\\Users\\LENOVO\\p1-mounika-viswanatham\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj",
       "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "C:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\obj\\",
+      "outputPath": "C:\\Users\\LENOVO\\p1-mounika-viswanatham\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
