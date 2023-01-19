@@ -13,6 +13,8 @@ namespace Data
         List<Trainerdata> GetTrainerdatas();
 
         List<Trainerdata> GetTrainerDisconnected();
+
+        bool Login(string email);
         
     }
 }

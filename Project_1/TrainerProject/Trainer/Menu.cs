@@ -12,8 +12,8 @@ namespace Trainer
         {
             Console.WriteLine("Welcome Trainer  ");
             Console.WriteLine("[0] Exit");
-            Console.WriteLine("[1] Signup");
-            Console.WriteLine("[2] Login");
+            Console.WriteLine("[1] Are You a New Trainer : Signup");
+            Console.WriteLine("[2] Existing Trainer : Login");
         }
 
         public string UserChoice()

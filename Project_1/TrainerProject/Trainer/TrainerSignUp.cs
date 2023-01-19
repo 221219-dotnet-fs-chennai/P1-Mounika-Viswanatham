@@ -4,7 +4,7 @@ namespace Trainer
     internal class TrainerSignUp : IMenu
     { 
         
-        private static Trainerdata newTrainer = new Trainerdata();
+         internal static Trainerdata newTrainer = new Trainerdata();
         static string constr = @"Server=MOUNIKA;Database=Trainerdbase;Trusted_Connection=True;";
         SqlRepo repo = new SqlRepo(constr);
     
@@ -118,7 +118,7 @@ namespace Trainer
                     return "Signup";
                 case "19":
                     repo.Add(newTrainer);
-                    return "Menu";
+                    return "Profile";
 
                 default:
                     Console.WriteLine("please input a valid respone");

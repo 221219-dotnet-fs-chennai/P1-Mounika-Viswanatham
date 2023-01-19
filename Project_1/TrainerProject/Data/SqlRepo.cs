@@ -21,7 +21,7 @@ namespace Data
 
         public Trainerdata Add(Trainerdata trainerdata)
         {
-            int userId = 109;
+            int userId = 123;
 
             using SqlConnection con = new SqlConnection(connectionString);
 
@@ -119,7 +119,7 @@ namespace Data
             {
                 using SqlConnection con = new SqlConnection(connectionString);
                 con.Open();
-                string query = "select Name,PhoneNumber,EmailID,Age,Gender,Location from trainerdata";
+                string query = "select Name,PhoneNumber,EmailID,Age,Gender,Location from TrainerDetails";
                 using SqlCommand command = new SqlCommand(query, con);
                 using SqlDataReader reader = command.ExecuteReader();
 
@@ -192,6 +192,60 @@ namespace Data
                 return trainerdata;
 
         }
+
+
+        public bool Login(string email)
+        {
+            string query9 = $"select EmailID from TrainerDetails where EmailID='{email}'";
+
+            using SqlConnection con = new SqlConnection(connectionString);
+
+            con.Open();
+
+            SqlCommand command9 = new SqlCommand(query9, con);
+
+            SqlDataReader reader= command9.ExecuteReader();
+
+            if(reader.Read())
+            {
+                reader.Close();
+                Console.WriteLine("Enter Password");
+
+                string? password = Console.ReadLine();
+
+                string query10 = $"select Password from TrainerDetails where Password='{password}'";
+
+                SqlCommand command11 = new SqlCommand(query10, con);
+                using SqlDataReader reader3= command11.ExecuteReader();
+                if(reader3.Read())
+                {
+                    Console.WriteLine("successfull login");
+
+                    
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("wrong Password");
+
+                    reader3.Close();
+                    return false;
+                }
+
+                
+            }
+            else
+            {
+                Console.WriteLine("wrong EmailID");
+                reader.Close();
+                return false;
+            }
+
+
+
+        }
+
+
 
 
 

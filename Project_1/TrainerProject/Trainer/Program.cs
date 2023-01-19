@@ -1,9 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Trainer;
+using Data;
 namespace Trainer
 {
-   class Program
+   class Program : TrainerSignUp
     {
+        
         static void Main(string[] args)
         {
             bool repeat = true;
@@ -15,7 +17,7 @@ namespace Trainer
                 switch(ans)
                 {
                     case "Login":
-                        menu = new GetTrainer();
+                        menu = new Login();
                         break;
                     case "Signup":
                         menu = new TrainerSignUp();
@@ -25,6 +27,9 @@ namespace Trainer
                         break;
                     case "Exit":
                         repeat = false;
+                        break;
+                    case "Profile":
+                        menu = new Profile(newTrainer);
                         break;
                     default:
                         Console.WriteLine("Page Doesnt Exist !");
