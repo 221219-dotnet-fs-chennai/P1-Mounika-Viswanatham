@@ -10,10 +10,10 @@ namespace Data
     {
         Trainerdata Add(Trainerdata trainerdata);
 
-        //List<Trainerdata> GetTrainerdatas();
+       /* List<Trainerdata> GetTrainerdatas();
 
-        //List<Trainerdata> GetTrainerDisconnected();
-
+        List<Trainerdata> GetTrainerDisconnected();
+*/
         Trainerdata GetATrainer(string EmailID);
         bool Login(string email);
         

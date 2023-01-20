@@ -14,19 +14,21 @@ namespace Trainer
         IRepo repo = new SqlRepo(conStr);
         public void Display()
         {
-            Console.WriteLine("Login Page");
+            Console.WriteLine("---------------Login Page----------------\n");
             Console.WriteLine("[0] Menu");
-            Console.WriteLine("[1] proceed to login");
+            Console.WriteLine("[1] Are You Sure To Login\n");
+           
         }
         public string UserChoice()
         {
-            Console.WriteLine("Enter your Choice");
+            Console.WriteLine("Enter your Choice\n");
             string? str = Console.ReadLine();
             switch (str)
             {
                 case "0":
                     return "GetTrainer";
                 case "1":
+                    Log.Logger.Information("Enter Email");
                     Console.WriteLine("Enter Your Email");
                     string EmailID = Console.ReadLine();
                     bool result = repo.Login(EmailID);
@@ -41,7 +43,8 @@ namespace Trainer
                         return "Login";
                     }
                 default:
-                    Console.WriteLine("Wrong choice");
+                    Log.Logger.Information("Wrong Choice");
+                    Console.WriteLine("-------Wrong choice--------");
                     return "Login";
 
             }

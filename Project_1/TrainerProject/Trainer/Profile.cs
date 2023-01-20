@@ -20,7 +20,7 @@ namespace Trainer
         public void Display()
         {
             //throw new NotImplementedException();
-            Console.WriteLine("Welcome" + newTrainer.Name);
+            Console.WriteLine("-------------Welcome " + newTrainer.Name + "-----------------\n");
             Console.WriteLine("[0] Go back");
             Console.WriteLine("[1] Show Details");
             

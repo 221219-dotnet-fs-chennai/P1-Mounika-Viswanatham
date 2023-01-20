@@ -22,6 +22,7 @@ namespace Trainer
             switch(userInput)
             {
                 case "2":
+                    
                     return "Login";
                 case "1":
                     return "Signup";

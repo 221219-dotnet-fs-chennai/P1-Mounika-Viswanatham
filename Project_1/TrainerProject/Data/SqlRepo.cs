@@ -104,15 +104,15 @@ namespace Data
             sqlCommand3.ExecuteNonQuery();
 
 
-            Console.WriteLine("Signup Completed Successfully!");
+            Console.WriteLine("*****Signup Completed Successfully!***** \n");
 
-            Console.WriteLine(rows + "row(s) added");
+            Console.WriteLine(rows + "row(s) added \n");
 
             return trainerdata;
 
         }
 
-       /* public List<Trainerdata> GetTrainerdatas()
+        /*public List<Trainerdata> GetTrainerdatas()
         {
             List<Trainerdata> trainerdata = new List<Trainerdata>();
 
@@ -157,7 +157,7 @@ namespace Data
             }
             return trainerdata;
         }*/
-        /*public List<Trainerdata> GetTrainerDisconnected()
+     /*   public List<Trainerdata> GetTrainerDisconnected()
         {
             List<Trainerdata> trainerdata = new List<Trainerdata>();
             SqlConnection con = new SqlConnection(connectionString);
@@ -193,8 +193,8 @@ namespace Data
             return trainerdata;
 
         }
-
 */
+
         public bool Login(string email)
         {
             string query9 = $"select EmailID from TrainerDetails where EmailID='{email}'";
@@ -221,14 +221,14 @@ namespace Data
                 if (reader3.Read())
                 {
 
-                    Console.WriteLine("successfull login");
+                    Console.WriteLine("\n*****successfull login*****\n");
 
                     return true;
                 }
                 else
                 {
 
-                    Console.WriteLine("wrong Password");
+                    Console.WriteLine("--------------wrong Password-------------");
                     reader3.Close();
                     return false;
                 }
@@ -237,7 +237,7 @@ namespace Data
             }
             else
             {
-                Console.WriteLine("wrong EmailID");
+                Console.WriteLine("---------------wrong EmailID--------------");
                 reader.Close();
                 return false;
             }
@@ -256,7 +256,7 @@ namespace Data
             String[] arr = Email.Split("@");
             string userID = arr[0];
 
-            string query1 = $@"select Name,PhoneNumber,Location,Gender from TrainerDetails where user_id='{userID}'";
+            string query1 = $@"select Name,PhoneNumber,Location,Gender ,Age ,Password from TrainerDetails where user_id='{userID}'";
 
 
             using SqlConnection con = new SqlConnection(connectionString);
@@ -271,6 +271,9 @@ namespace Data
                 tdata.PhoneNumber = reader1.GetString(1);
                 tdata.Location = reader1.GetString(2);
                 tdata.Gender = reader1.GetString(3);
+                int a=reader1.GetInt32(4);
+                tdata.Age = a.ToString();
+                tdata.Password = reader1.GetString(5);
                 tdata.EmailID = Email;
 
 

@@ -103,3 +103,5 @@ G:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Trainer\obj\Debug\net6.0\refi
 G:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Trainer\obj\Debug\net6.0\Trainer.pdb
 G:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Trainer\obj\Debug\net6.0\Trainer.genruntimeconfig.cache
 G:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Trainer\obj\Debug\net6.0\ref\Trainer.dll
+G:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Trainer\bin\Debug\net6.0\Serilog.dll
+G:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Trainer\bin\Debug\net6.0\Serilog.Sinks.File.dll
