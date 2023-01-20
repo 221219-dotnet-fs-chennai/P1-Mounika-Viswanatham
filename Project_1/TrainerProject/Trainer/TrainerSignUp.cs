@@ -2,15 +2,22 @@
 namespace Trainer
 {
     internal class TrainerSignUp : IMenu
-    { 
-        
-         internal static Trainerdata newTrainer = new Trainerdata();
+    {
+
+        internal static Trainerdata newTrainer = new Trainerdata();
         static string constr = @"Server=MOUNIKA;Database=Trainerdbase;Trusted_Connection=True;";
         SqlRepo repo = new SqlRepo(constr);
-    
+
+        public TrainerSignUp(Trainerdata td)
+            {
+            newTrainer = td;
+            }
+        public TrainerSignUp()
+        {
+
+        }
         public void Display()
         {
-            
                 Console.WriteLine("\n Enter Information ");
                 Console.WriteLine("[0] Menu  ");
                 Console.WriteLine("[1] EmailId :  " + newTrainer.EmailID);
@@ -21,7 +28,7 @@ namespace Trainer
                 Console.WriteLine("[6] Password :  " + newTrainer.Password);
                 Console.WriteLine("[7] Location :  " + newTrainer.Location);
                 //Console.WriteLine("[8] WebsiteLink :  " + newTrainer.WebsiteLink);
-                Console.WriteLine("[9] Institution Name :  " + newTrainer.InstitutionName);
+                Console.WriteLine("[9] Institution Name :  " + newTrainer.institutionName);
                 Console.WriteLine("[10] Degree :  " + newTrainer.Degree);
                 Console.WriteLine("[11] Specialization:  " + newTrainer.Specialization);
                 Console.WriteLine("[12] PassingYear : " + newTrainer.PassingYear);
@@ -78,7 +85,7 @@ namespace Trainer
                     return "Signup";*/
                 case "9":
                     Console.WriteLine("Enter Institution Name :  ");
-                    newTrainer.InstitutionName = Console.ReadLine();
+                    newTrainer.institutionName = Console.ReadLine();
                     return "Signup";
                 case "10":
                     Console.WriteLine("Enter Degree :  ");

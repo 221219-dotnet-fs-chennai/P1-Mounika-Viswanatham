@@ -14,6 +14,7 @@ namespace Data
 
         List<Trainerdata> GetTrainerDisconnected();
 
+        Trainerdata GetATrainer(string EmailID);
         bool Login(string email);
         
     }

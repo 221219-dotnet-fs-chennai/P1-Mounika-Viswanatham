@@ -32,7 +32,7 @@ namespace Trainer
                     bool result = repo.Login(EmailID);
                     if(result)
                     {
-                        TrainerSignUp tSignup= new TrainerSignUp(repo.GetATrainer);
+                        TrainerSignUp tSignup= new TrainerSignUp(repo.GetATrainer(EmailID));
                         
                         return "Profile";
                     }

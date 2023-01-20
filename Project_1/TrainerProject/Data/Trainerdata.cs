@@ -15,7 +15,7 @@ namespace Data
         public string? Password { get; set; }
         public string? Age { get; set; }
         public string? Location { get; set; }
-        public string? InstitutionName { get; set; }
+        public string? institutionName { get; set; }
         public string? Degree { get; set; }
         public string? Specialization { get; set; }
        

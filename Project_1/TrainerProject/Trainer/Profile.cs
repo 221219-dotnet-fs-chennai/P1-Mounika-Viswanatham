@@ -14,7 +14,7 @@ namespace Trainer
         Trainerdata newTrainer = new Trainerdata();
       public  Profile(Trainerdata tdata)
         {
-            this.newTrainer = tdata;
+            newTrainer = tdata;
         }
 
         public void Display()
@@ -60,7 +60,7 @@ namespace Trainer
             Console.WriteLine(" Phone Number :  " + newTrainer.PhoneNumber);
             Console.WriteLine(" Password :  " + newTrainer.Password);
             Console.WriteLine(" Location :  " + newTrainer.Location);
-            Console.WriteLine(" Institution Name :  " + newTrainer.InstitutionName);
+            Console.WriteLine(" Institution Name :  " + newTrainer.institutionName);
             Console.WriteLine(" Degree :  " + newTrainer.Degree);
             Console.WriteLine(" Specialization:  " + newTrainer.Specialization);
             Console.WriteLine(" PassingYear : " + newTrainer.PassingYear);
