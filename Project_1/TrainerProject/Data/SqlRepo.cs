@@ -112,7 +112,7 @@ namespace Data
 
         }
 
-        public List<Trainerdata> GetTrainerdatas()
+       /* public List<Trainerdata> GetTrainerdatas()
         {
             List<Trainerdata> trainerdata = new List<Trainerdata>();
 
@@ -156,8 +156,8 @@ namespace Data
                 throw;
             }
             return trainerdata;
-        }
-        public List<Trainerdata> GetTrainerDisconnected()
+        }*/
+        /*public List<Trainerdata> GetTrainerDisconnected()
         {
             List<Trainerdata> trainerdata = new List<Trainerdata>();
             SqlConnection con = new SqlConnection(connectionString);
@@ -194,7 +194,7 @@ namespace Data
 
         }
 
-
+*/
         public bool Login(string email)
         {
             string query9 = $"select EmailID from TrainerDetails where EmailID='{email}'";
@@ -220,15 +220,15 @@ namespace Data
                 using SqlDataReader reader3 = command11.ExecuteReader();
                 if (reader3.Read())
                 {
-                    Console.WriteLine("successfull login");
 
+                    Console.WriteLine("successfull login");
 
                     return true;
                 }
                 else
                 {
-                    Console.WriteLine("wrong Password");
 
+                    Console.WriteLine("wrong Password");
                     reader3.Close();
                     return false;
                 }

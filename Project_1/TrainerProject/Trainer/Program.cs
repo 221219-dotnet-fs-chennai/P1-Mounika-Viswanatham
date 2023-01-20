@@ -23,6 +23,7 @@ namespace Trainer
                         menu = new TrainerSignUp();
                         break;
                     case "Menu":
+                        newTrainer = new Trainerdata();
                         menu = new Menu();
                         break;
                     case "Exit":
