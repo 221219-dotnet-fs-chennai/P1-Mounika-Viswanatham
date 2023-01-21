@@ -112,6 +112,8 @@
       "System.Security.Principal.Windows/4.7.0": {},
       "Data/1.0.0": {
         "dependencies": {
+          "Serilog": "2.12.0",
+          "Serilog.Sinks.File": "5.0.0",
           "System.Data.SqlClient": "4.8.5"
         },
         "runtime": {

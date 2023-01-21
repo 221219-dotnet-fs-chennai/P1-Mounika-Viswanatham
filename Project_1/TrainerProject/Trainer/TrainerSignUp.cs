@@ -7,7 +7,7 @@ namespace Trainer
     {
 
         internal static Trainerdata newTrainer = new Trainerdata();
-        static string constr = @"Server=MOUNIKA;Database=Trainerdbase;Trusted_Connection=True;";
+        static string constr = File.ReadAllText("../../../Data.connectionString.txt");
         SqlRepo repo = new SqlRepo(constr);
 
         public TrainerSignUp(Trainerdata td)
@@ -77,7 +77,16 @@ namespace Trainer
                 case "2":
                     Log.Logger.Information("Name");
                     Console.WriteLine("Enter Name :    ");
-                    newTrainer.Name = Console.ReadLine();
+                    string pattern5 = "^[A-Za-z\\s]+$";
+                    string name = Console.ReadLine();
+                    if(Regex.IsMatch(name, pattern5))
+                    {
+                        newTrainer.Name = name;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Name Should contain only letters and space");
+                    }
                     return "Signup";
                 case "3":
                     Log.Logger.Information("Age");

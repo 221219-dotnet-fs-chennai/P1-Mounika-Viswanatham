@@ -5,6 +5,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Data;
 
 namespace Trainer
 {
@@ -41,12 +42,22 @@ namespace Trainer
             {
                 case "0":
                     return "Profile";
+
                 case "1":
                     Log.Logger.Information("Update Name");
                     Console.WriteLine("Enter the new Name");
+                    string pattern5= "^[A-Za-z\\s]+$";
                     string name = Console.ReadLine();
-                    newTrainer.Name = name;
+                    if (Regex.IsMatch(name, pattern5))
+                    {
+                        newTrainer.Name = name;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Name Should only contain letters and  space");
+                    }
                     break;
+
                 case "2":
                     Log.Logger.Information("Update EmailID");
                     Console.WriteLine("Enter the new EmailID");
@@ -62,6 +73,7 @@ namespace Trainer
                     }
                    
                     break;
+
                 case "3":
                     Log.Logger.Information("Update PhoneNumber");
                     Console.WriteLine("Enter the new PhoneNumber");
@@ -76,6 +88,7 @@ namespace Trainer
                         Console.WriteLine("---PhoneNumber Should Contain 10 Digits");
                     }
                     break;
+
                 case "4":
                     Log.Logger.Information("Update Password");
                     Console.WriteLine("Enter the new Password");
@@ -91,6 +104,7 @@ namespace Trainer
                         Console.WriteLine("PassWord should contain atleast one capital letter and one small letter ,one special characters ,one number , equal to or more than 8  letters");
                     }
                     break;
+
                 case "5":
                     Log.Logger.Information("Update Age");
                     Console.WriteLine("Enter the new Age");
@@ -105,24 +119,37 @@ namespace Trainer
                         Console.WriteLine("Age should be greater than 20");
                     }
                     break;
+
                 case "6":
                     Log.Logger.Information("Update Institution Name");
                     Console.WriteLine("Enter the new InstitutionName");
                     string institutioname = Console.ReadLine();
-                    newTrainer.institutionName= institutioname;
+                    string pattern6 = "^[A-Za-z\\s]+$";
+                    if(Regex.IsMatch(institutioname,pattern6))
+                    {
+                        newTrainer.institutionName = institutioname;
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("name should contain only letters and spaces");
+                    }
                     break;
+
                 case "7":
                     Log.Logger.Information("Update Degree");
                     Console.WriteLine("Enter the new Degree");
                     string degree = Console.ReadLine();
                     newTrainer.Degree= degree;
                     break;
+
                 case "8":
                     Log.Logger.Information("Update Specialization");
                     Console.WriteLine("Enter the new Specialization");
                     string specialization = Console.ReadLine();
                     newTrainer.Specialization= specialization;
                     break;
+
                 case "9":
                     Log.Logger.Information("Update PassingYear");
                     Console.WriteLine("Enter the new PassingYear");
@@ -138,30 +165,35 @@ namespace Trainer
                         Console.WriteLine("Enter year in digits(4)");
                     }
                     break;
+
                 case "10":
                     Log.Logger.Information("Update Skill2");
                     Console.WriteLine("Enter the new Skill1");
                     string skill1 = Console.ReadLine();
                     newTrainer.Skill1= skill1;
                     break;
+
                 case "11":
                     Log.Logger.Information("Update Skill2");
                     Console.WriteLine("Enter the new Skill2");
                     string skill2 = Console.ReadLine();
                     newTrainer.Skill2= skill2;
                     break;
+
                 case "12":
                     Log.Logger.Information("Update  Skill3");
                     Console.WriteLine("Enter the new Skill3");
                     string skill3 = Console.ReadLine();
                     newTrainer.Skill3= skill3;
                     break;
+
                 case "13":
                     Log.Logger.Information("Update Comapny name");
                     Console.WriteLine("Enter the new CompanyName");
                     string companyname = Console.ReadLine();
                     newTrainer.CompanyName= companyname;
                     break;
+
                 case "14":
                     Log.Logger.Information("update experience");
                     Console.WriteLine("Enter the new Experience");
@@ -176,6 +208,7 @@ namespace Trainer
                         Console.WriteLine("Enter Experience below 51");
                     }
                     break;
+
                 /*case "15":
                     break;*/
                 default:

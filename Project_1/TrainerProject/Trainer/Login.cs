@@ -9,8 +9,7 @@ namespace Trainer
 {
     public class Login : IMenu
     {
-        static string conStr = $"Server = MOUNIKA; Database=Trainerdbase;Trusted_Connection=True;";
-
+        static string conStr = File.ReadAllText("../../../Data.connectionString.txt");
         IRepo repo = new SqlRepo(conStr);
         public void Display()
         {
