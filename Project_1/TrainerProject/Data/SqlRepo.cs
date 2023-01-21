@@ -349,10 +349,25 @@ namespace Data
             con.Open();
             SqlCommand command10 = new SqlCommand(query19, con);
             command10.ExecuteNonQuery();
-            Console.WriteLine("new Value Updated Successfully");
+            Console.WriteLine(newData + "  Updated Successfully in " + tableName);
             Console.ReadLine();
 
         }
+        /*public void TrainerDelete(string columnName, string tableName, string userId)
+        {
+            string query21=$@"delete "
+        }*/
+
+       public  void TrainerDelete(string columnName, string tableName, string userId)
+        {
+            string query20 = $@"update {tableName} set {columnName} ='' where user_id='{userId}'";
+            using SqlConnection con = new SqlConnection(connectionString);
+            con.Open();
+            SqlCommand command12 = new SqlCommand(query20, con);
+            command12.ExecuteNonQuery();
+            Console.WriteLine(columnName + "   Deleted Successfully in    " + tableName);
+        }
+
     }
 
 

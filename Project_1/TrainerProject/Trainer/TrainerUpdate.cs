@@ -84,7 +84,7 @@ namespace Trainer
                     {
                         Console.WriteLine("---Wrong Email Format---");
                     }
-                    repo.TrainerUpdate(email, "EmailID","TrainerDEtails",userId);
+                    repo.TrainerUpdate(email, "EmailID","TrainerDetails",userId);
                    
                     break;
 
