@@ -22,8 +22,6 @@ create table Education_Details(
  CONSTRAINT [FK-education] FOREIGN Key(user_id) REFERENCES TrainerDetails(user_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-
-select *  from TrainerDetails
 create table Skills_Details(
     user_id VARCHAR(200) PRIMARY Key,
     Skill1 VARCHAR(10),
@@ -40,6 +38,9 @@ CREATE TABLE Company_Detail(
     Position VARCHAR(25),
     Constraint [Fk_CompanyDetails] FOREIGN KEY(user_id) REFERENCES TrainerDetails(user_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+alter table Company_Detail Drop COLUMN Position;
 
-select * from TrainerDetails
+select *  from TrainerDetails where user_id='kishore';
+select * from Skills_Details
+select * from Company_Detail
 
