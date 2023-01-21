@@ -21,7 +21,7 @@ namespace Data
 
         public Trainerdata Add(Trainerdata trainerdata)
         {
-            string[]arr = trainerdata.EmailID.Split("@");
+            string[] arr = trainerdata.EmailID.Split("@");
             string userId = arr[0];
 
             using SqlConnection con = new SqlConnection(connectionString);
@@ -89,17 +89,17 @@ namespace Data
 
 
 
-            string query4 = @"insert into Company_Detail(user_id,CompanyName,Experience)values(@userID,@CompanyName,@Experiences)";
+            string query4 = @"insert into Company_Detail(user_id,CompanyName,Experience)values(@userID,@companyName,@Experiences)";
 
             SqlCommand sqlCommand3 = new SqlCommand(query4, con);
 
             sqlCommand3.Parameters.AddWithValue("@userID", userId);
 
-            sqlCommand3.Parameters.AddWithValue("@CompanyName", trainerdata.CompanyName);
+            sqlCommand3.Parameters.AddWithValue("@companyName", trainerdata.CompanyName);
 
-            sqlCommand3.Parameters.AddWithValue("@Experience", trainerdata.Experience);
+            sqlCommand3.Parameters.AddWithValue("@Experiences", trainerdata.Experience);
 
-           // sqlCommand3.Parameters.AddWithValue("@Position", trainerdata.Position);
+            // sqlCommand3.Parameters.AddWithValue("@Position", trainerdata.Position);
 
             sqlCommand3.ExecuteNonQuery();
 
@@ -157,43 +157,43 @@ namespace Data
             }
             return trainerdata;
         }*/
-     /*   public List<Trainerdata> GetTrainerDisconnected()
-        {
-            List<Trainerdata> trainerdata = new List<Trainerdata>();
-            SqlConnection con = new SqlConnection(connectionString);
-            string query5 = "select Name,EmailID,PhoneNumber,Gender,Age,Location,institutionName,Degree,Specialization,CGPA,PassingYear,CompanyName,Experience,Position,Skill1,Skill2,Skill3";
-            using SqlDataAdapter adapter = new SqlDataAdapter(query5, con);
-            DataSet ds = new DataSet();
-            adapter.Fill(ds);
-            DataTable dtTrainer = ds.Tables[0];
-            foreach (DataRow row in dtTrainer.Rows)
-            {
-                trainerdata.Add(new Trainerdata()
-                {
-                    Name = (string)row["Name"],
-                    EmailID = (string)row["EmailID"],
-                    PhoneNumber = (string)row["PhoneNumber"],
-                    Location = (string)row["Location"],
-                    Gender = (string)row["Gender"],
-                    Age = (string)row["Age"],
-                    institutionName = (string)row["institutionName"],
-                    Degree = (string)row["Degree"],
-                    Specialization = (string)row["Specialization"],
-                    PassingYear = (string)row["PAssingYear"],
-                    Skill1 = (string)row["Skill1"],
-                    Skill2 = (String)row["SKill2"],
-                    Skill3 = (string)row["SKill3"],
-                    CompanyName = (string)row["CompanyName"],
-                    Experience = (string)row["Experience"],
-                    Position = (string)row["Position"]
+        /*   public List<Trainerdata> GetTrainerDisconnected()
+           {
+               List<Trainerdata> trainerdata = new List<Trainerdata>();
+               SqlConnection con = new SqlConnection(connectionString);
+               string query5 = "select Name,EmailID,PhoneNumber,Gender,Age,Location,institutionName,Degree,Specialization,CGPA,PassingYear,CompanyName,Experience,Position,Skill1,Skill2,Skill3";
+               using SqlDataAdapter adapter = new SqlDataAdapter(query5, con);
+               DataSet ds = new DataSet();
+               adapter.Fill(ds);
+               DataTable dtTrainer = ds.Tables[0];
+               foreach (DataRow row in dtTrainer.Rows)
+               {
+                   trainerdata.Add(new Trainerdata()
+                   {
+                       Name = (string)row["Name"],
+                       EmailID = (string)row["EmailID"],
+                       PhoneNumber = (string)row["PhoneNumber"],
+                       Location = (string)row["Location"],
+                       Gender = (string)row["Gender"],
+                       Age = (string)row["Age"],
+                       institutionName = (string)row["institutionName"],
+                       Degree = (string)row["Degree"],
+                       Specialization = (string)row["Specialization"],
+                       PassingYear = (string)row["PAssingYear"],
+                       Skill1 = (string)row["Skill1"],
+                       Skill2 = (String)row["SKill2"],
+                       Skill3 = (string)row["SKill3"],
+                       CompanyName = (string)row["CompanyName"],
+                       Experience = (string)row["Experience"],
+                       Position = (string)row["Position"]
 
-                });
-            }
+                   });
+               }
 
-            return trainerdata;
+               return trainerdata;
 
-        }
-*/
+           }
+   */
 
         public bool Login(string email)
         {
@@ -223,7 +223,7 @@ namespace Data
 
                 if (reader3.Read())
                 {
-                    
+
                     Console.WriteLine("\n*****successfull login*****\n");
 
                     return true;
@@ -280,7 +280,7 @@ namespace Data
                 tdata.PhoneNumber = reader1.GetString(1);
                 tdata.Location = reader1.GetString(2);
                 tdata.Gender = reader1.GetString(3);
-                int a=reader1.GetInt32(4);
+                int a = reader1.GetInt32(4);
                 tdata.Age = a.ToString();
                 tdata.Password = reader1.GetString(5);
                 tdata.EmailID = Email;
@@ -321,10 +321,11 @@ namespace Data
             }
             reader3.Close();
 
-            string query4 = $@"select CompanyName,Experienece from Company_Detail where user_id ='{userID}'";
-            SqlCommand command4 = new SqlCommand(query3, con);
+            string query4 = $@"select CompanyName,Experience from Company_Detail where user_id ='{userID}'";
 
-            SqlDataReader reader4 = command3.ExecuteReader();
+            SqlCommand command4 = new SqlCommand(query4, con);
+
+            SqlDataReader reader4 = command4.ExecuteReader();
 
             while (reader4.Read())
             {
@@ -337,8 +338,21 @@ namespace Data
             return tdata;
 
 
+
         }
 
+        public void TrainerUpdate(string? newData, string? columnName, string tableName, string userId)
+        {
+
+            string query19 = $@"update {tableName} set {columnName} = '{newData}' where user_id='{userId}'";
+            using SqlConnection con=new SqlConnection(connectionString);
+            con.Open();
+            SqlCommand command10 = new SqlCommand(query19, con);
+            command10.ExecuteNonQuery();
+            Console.WriteLine("new Value Updated Successfully");
+            Console.ReadLine();
+
+        }
     }
 
 

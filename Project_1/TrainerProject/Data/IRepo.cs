@@ -17,7 +17,7 @@ namespace Data
         Trainerdata GetATrainer(string EmailID);
         bool Login(string email);
 
-       //void TrainerUpdate(string? newData, string columnName, string tableName, string userId);
+       void TrainerUpdate(string? newData, string? columnName, string tableName, string userId);
 
     }
 }

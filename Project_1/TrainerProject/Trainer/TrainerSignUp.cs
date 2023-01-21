@@ -8,6 +8,7 @@ namespace Trainer
 
         internal static Trainerdata newTrainer = new Trainerdata();
         static string constr = File.ReadAllText("../../../connectionString.txt");
+
         SqlRepo repo = new SqlRepo(constr);
 
         public TrainerSignUp(Trainerdata td)
@@ -92,7 +93,7 @@ namespace Trainer
                     Log.Logger.Information("Age");
                     Console.WriteLine("Enter Age :  ");
                     string age= Console.ReadLine();
-                    string pattern4 = "^(2[1 - 9] | 3[0 - 9] | 4[0 - 9])$";
+                    string pattern4 = "^(\\d{2})$";
                     if (Regex.IsMatch(age, pattern4))
                     {
                         newTrainer.Age = age;

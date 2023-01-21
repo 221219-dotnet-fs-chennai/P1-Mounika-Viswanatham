@@ -11,36 +11,48 @@ namespace Trainer
 {
     internal class TrainerUpdate :  TrainerSignUp , IMenu
     {
+        static string constr = File.ReadAllText("../../../connectionString.txt");
+
+        IRepo repo = new SqlRepo(constr);
+        
+       // public TrainerUpdate()
         public void Display()
         {
             //throw new NotImplementedException();
 
-            Console.WriteLine("[0] Go Back");
-            Console.WriteLine("[1] Name");
-            Console.WriteLine("[2] EmailId");
-            Console.WriteLine("[3] PhoneNumber");
-            Console.WriteLine("[4] Password");
-            Console.WriteLine("[5] Age");
-            Console.WriteLine("[6] Institution Name");
-            Console.WriteLine("[7] Degree");
-            Console.WriteLine("[8] Specialization");
-            Console.WriteLine("[9] Passing Year");
-            Console.WriteLine("[10] Skill1");
-            Console.WriteLine("[11] Skill2");
-            Console.WriteLine("[12] Skill3");
-            Console.WriteLine("[13] CompanyName");
-            Console.WriteLine("[14] Experience");
+            Console.WriteLine("[0] Go Back  ");
+            Console.WriteLine("[1] Name   :" + newTrainer.Name);
+            Console.WriteLine("[2] EmailId  :" + newTrainer.EmailID);
+            Console.WriteLine("[3] PhoneNumber  :" + newTrainer.PhoneNumber);
+            Console.WriteLine("[4] Password  : " + newTrainer.Password);
+            Console.WriteLine("[5] Age : "+  newTrainer.Age);
+            Console.WriteLine("[6] Institution Name : "+newTrainer.institutionName);
+            Console.WriteLine("[7] Degree : " + newTrainer.Degree);
+            Console.WriteLine("[8] Specialization : " + newTrainer.Specialization);
+            Console.WriteLine("[9] Passing Year : "+newTrainer.PassingYear);
+            Console.WriteLine("[10] Skill1 : "+newTrainer.Skill1);
+            Console.WriteLine("[11] Skill2 : " +newTrainer.Skill2);
+            Console.WriteLine("[12] Skill3 : "+newTrainer.Skill3);
+            Console.WriteLine("[13] CompanyName  : "+newTrainer.CompanyName);
+            Console.WriteLine("[14] Experience  : "+newTrainer.Experience);
+            Console.WriteLine("[15] Location : " + newTrainer.Location);
            // Console.WriteLine("[15] save Updated Details");
 
         }
+        //update Skill_Details Set Skill1='{Sjhghj}' where use
 
         public string UserChoice()
         {
             //throw new NotImplementedException();
+            string[] arr = newTrainer.EmailID.Split("@");
+            string userId = arr[0];
+            Console.WriteLine("Enter the choice you want to update");
+
             string str = Console.ReadLine();
             switch(str)
             {
                 case "0":
+
                     return "Profile";
 
                 case "1":
@@ -56,6 +68,7 @@ namespace Trainer
                     {
                         Console.WriteLine("Name Should only contain letters and  space");
                     }
+                    repo.TrainerUpdate(name, "Name", "TrainerDetails", userId);
                     break;
 
                 case "2":
@@ -71,6 +84,7 @@ namespace Trainer
                     {
                         Console.WriteLine("---Wrong Email Format---");
                     }
+                    repo.TrainerUpdate(email, "EmailID","TrainerDEtails",userId);
                    
                     break;
 
@@ -87,6 +101,7 @@ namespace Trainer
                     {
                         Console.WriteLine("---PhoneNumber Should Contain 10 Digits");
                     }
+                    repo.TrainerUpdate(phonenumber, "PhoneNumber", "TrainerDetails", userId);
                     break;
 
                 case "4":
@@ -103,6 +118,7 @@ namespace Trainer
                         Console.WriteLine("Wrong PassWord Format ");
                         Console.WriteLine("PassWord should contain atleast one capital letter and one small letter ,one special characters ,one number , equal to or more than 8  letters");
                     }
+                    repo.TrainerUpdate(password, "Password", "TrainerDetails", userId);
                     break;
 
                 case "5":
@@ -118,6 +134,7 @@ namespace Trainer
                     {
                         Console.WriteLine("Age should be greater than 20");
                     }
+                    repo.TrainerUpdate(age, "Age", "TrainerDetails", userId);
                     break;
 
                 case "6":
@@ -134,6 +151,7 @@ namespace Trainer
                     {
                         Console.WriteLine("name should contain only letters and spaces");
                     }
+                    repo.TrainerUpdate(institutioname, "institutionName", "Education_Details", userId);
                     break;
 
                 case "7":
@@ -141,6 +159,7 @@ namespace Trainer
                     Console.WriteLine("Enter the new Degree");
                     string degree = Console.ReadLine();
                     newTrainer.Degree= degree;
+                    repo.TrainerUpdate(degree, "Degree", "Education_Details", userId);
                     break;
 
                 case "8":
@@ -148,6 +167,7 @@ namespace Trainer
                     Console.WriteLine("Enter the new Specialization");
                     string specialization = Console.ReadLine();
                     newTrainer.Specialization= specialization;
+                    repo.TrainerUpdate(specialization, "Specialization", "Education_Details", userId);
                     break;
 
                 case "9":
@@ -164,20 +184,24 @@ namespace Trainer
                     {
                         Console.WriteLine("Enter year in digits(4)");
                     }
+                    repo.TrainerUpdate(passingyear, "PassingYear", "Education_Details", userId);
                     break;
 
                 case "10":
-                    Log.Logger.Information("Update Skill2");
+                    Log.Logger.Information("Update Skill1");
                     Console.WriteLine("Enter the new Skill1");
                     string skill1 = Console.ReadLine();
                     newTrainer.Skill1= skill1;
+                    repo.TrainerUpdate(skill1,"Skill1","Skill_Details",userId);
                     break;
 
+                    
                 case "11":
                     Log.Logger.Information("Update Skill2");
                     Console.WriteLine("Enter the new Skill2");
                     string skill2 = Console.ReadLine();
                     newTrainer.Skill2= skill2;
+                    repo.TrainerUpdate(skill2, "Skill2", "Skill_Details", userId);
                     break;
 
                 case "12":
@@ -185,6 +209,7 @@ namespace Trainer
                     Console.WriteLine("Enter the new Skill3");
                     string skill3 = Console.ReadLine();
                     newTrainer.Skill3= skill3;
+                    repo.TrainerUpdate(skill3, "Skill3", "Skill_Details", userId);
                     break;
 
                 case "13":
@@ -192,6 +217,7 @@ namespace Trainer
                     Console.WriteLine("Enter the new CompanyName");
                     string companyname = Console.ReadLine();
                     newTrainer.CompanyName= companyname;
+                    repo.TrainerUpdate(companyname, "CompanyName", "Compaby_Detail", userId);
                     break;
 
                 case "14":
@@ -202,11 +228,20 @@ namespace Trainer
                     if (Regex.IsMatch(experience, patern))
                     {
                         newTrainer.Experience = experience;
+
                     }
                     else
                     {
                         Console.WriteLine("Enter Experience below 51");
                     }
+                    repo.TrainerUpdate(experience, "Experience", "Company_Detail", userId);
+                    break;
+                case "15":
+                    Log.Logger.Information("Update Location");
+                    Console.WriteLine("Enter the new Location");
+                    string location = Console.ReadLine();
+                    newTrainer.Location = location;
+                    repo.TrainerUpdate(location, "Location", "TrainerDetails", userId);
                     break;
 
                 /*case "15":
@@ -219,7 +254,7 @@ namespace Trainer
 
 
             }
-            return "";
+            return "Profile";
         }
     }
 }

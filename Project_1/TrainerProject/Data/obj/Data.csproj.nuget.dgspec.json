@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj": {}
+    "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj": {}
   },
   "projects": {
-    "G:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj": {
+    "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj",
+        "projectUniqueName": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "G:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj",
+        "projectPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj",
         "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "G:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\obj\\",
+        "outputPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -42,6 +42,10 @@ namespace Trainer
                         Log.Logger.Information("Profile Page");
                         menu = new Profile(newTrainer);
                         break;
+                    case "TrainerUpdate":
+                        Log.Logger.Information("Update details");
+                        menu = new TrainerUpdate();
+                        break;
                     default:
                         Console.WriteLine("---------Page Doesnt Exist !----------");
                         Console.WriteLine("---------Enter to Continue------------");
