@@ -16,7 +16,7 @@ namespace Trainer
         {
             Console.WriteLine("---------------Login Page----------------\n");
             Console.WriteLine("[0] Menu");
-            Console.WriteLine("[1] Are You Sure To Login\n");
+            Console.WriteLine("[1] Proceed  To Login\n");
            
         }
         public string UserChoice()

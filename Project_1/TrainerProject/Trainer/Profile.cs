@@ -19,18 +19,19 @@ namespace Trainer
 
         public void Display()
         {
-            //throw new NotImplementedException();
             Console.WriteLine("-------------Welcome " + newTrainer.Name + "-----------------\n");
-            Console.WriteLine("[0] Go back");
+            Console.WriteLine("[0] LogOut");
             Console.WriteLine("[1] Show Details");
-            
+            Console.WriteLine("[2] Get All Trainers Data");
+            Console.WriteLine("[3] Update Details");
+            Console.WriteLine("[4] Delete Details");
+             
 
         }
 
         public string UserChoice()
         {
-            //throw new NotImplementedException();
-
+            
             string userchoice = Console.ReadLine();
             switch(userchoice)
             {
@@ -43,7 +44,16 @@ namespace Trainer
                     showDetails();
                     return "Profile";
 
+                case "3":
+                   
+                    return "TrainerUpdate";
+
+                case "4":
+
+                    return "TrainerDelete";
+
                 default:
+
                     return "Profile";
             }
 
@@ -69,7 +79,7 @@ namespace Trainer
             Console.WriteLine(" Skill3 : " + newTrainer.Skill3);
             Console.WriteLine(" CompanyName :  " + newTrainer.CompanyName);
             Console.WriteLine(" Experience : " + newTrainer.Experience);
-            Console.WriteLine(" Position : " + newTrainer.Position);
+           // Console.WriteLine(" Position : " + newTrainer.Position);
         }
     }
 }

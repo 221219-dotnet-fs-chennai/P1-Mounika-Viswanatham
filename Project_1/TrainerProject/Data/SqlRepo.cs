@@ -89,7 +89,7 @@ namespace Data
 
 
 
-            string query4 = @"insert into Company_Detail(user_id,CompanyName,Experience,Position)values(@userID,@CompanyName,@Experience,@Position)";
+            string query4 = @"insert into Company_Detail(user_id,CompanyName,Experience)values(@userID,@CompanyName,@Experiences)";
 
             SqlCommand sqlCommand3 = new SqlCommand(query4, con);
 
@@ -99,7 +99,7 @@ namespace Data
 
             sqlCommand3.Parameters.AddWithValue("@Experience", trainerdata.Experience);
 
-            sqlCommand3.Parameters.AddWithValue("@Position", trainerdata.Position);
+           // sqlCommand3.Parameters.AddWithValue("@Position", trainerdata.Position);
 
             sqlCommand3.ExecuteNonQuery();
 
@@ -210,6 +210,7 @@ namespace Data
             if (reader.Read())
             {
                 reader.Close();
+
                 Console.WriteLine("Enter Password");
 
                 string? password = Console.ReadLine();
@@ -217,7 +218,9 @@ namespace Data
                 string query10 = $"select Password from TrainerDetails where Password='{password}'";
 
                 SqlCommand command11 = new SqlCommand(query10, con);
+
                 using SqlDataReader reader3 = command11.ExecuteReader();
+
                 if (reader3.Read())
                 {
 
@@ -253,16 +256,22 @@ namespace Data
         {
 
             Trainerdata tdata = new Trainerdata();
+
             String[] arr = Email.Split("@");
+
             string userID = arr[0];
 
             string query1 = $@"select Name,PhoneNumber,Location,Gender ,Age ,Password from TrainerDetails where user_id='{userID}'";
 
 
             using SqlConnection con = new SqlConnection(connectionString);
+
             con.Open();
+
             SqlCommand command1 = new SqlCommand(query1, con);
+
             SqlDataReader reader1 = command1.ExecuteReader();
+
             while (reader1.Read())
             {
 
@@ -283,7 +292,9 @@ namespace Data
             string query2 = $@"select Skill1,Skill2,Skill3 from Skills_Details where user_id='{userID}'";
 
             SqlCommand command2 = new SqlCommand(query2, con);
+
             SqlDataReader reader2 = command2.ExecuteReader();
+
             while (reader2.Read())
             {
                 tdata.Skill1 = reader2.GetString(0);
@@ -297,7 +308,9 @@ namespace Data
             string query3 = $@"select institutionName,Degree,Specialization,PassingYear from Education_Details where user_id='{userID}'";
 
             SqlCommand command3 = new SqlCommand(query3, con);
+
             SqlDataReader reader3 = command3.ExecuteReader();
+
             while (reader3.Read())
             {
 
@@ -308,21 +321,25 @@ namespace Data
             }
             reader3.Close();
 
-            string query4 = $@"select CompanyName,Experienec Position from Company_Detail where user_id ='{userID}'";
+            string query4 = $@"select CompanyName,Experienece from Company_Detail where user_id ='{userID}'";
             SqlCommand command4 = new SqlCommand(query3, con);
+
             SqlDataReader reader4 = command3.ExecuteReader();
+
             while (reader4.Read())
             {
                 tdata.CompanyName = reader4.GetString(0);
                 tdata.Experience = reader4.GetString(1);
-                tdata.Position = reader4.GetString(2);
+                //tdata.Position = reader4.GetString(2);
 
             }
             reader4.Close();
             return tdata;
+
+
         }
 
-
     }
+
 
 }

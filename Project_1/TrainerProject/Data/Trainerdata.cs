@@ -22,8 +22,9 @@ namespace Data
         public string? Skill1 { get; set; }
         public string? Skill2 { get; set; }
         public string? Skill3 { get; set; }
-        public string? Position { get; set; }
+        //public string? Position { get; set; }
         public string? Experience { get; set; }
+
         //public string? WebsiteLink { get; set; }
         public string? PassingYear { get; set; }
 

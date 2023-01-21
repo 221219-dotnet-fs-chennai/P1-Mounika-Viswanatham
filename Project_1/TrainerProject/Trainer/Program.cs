@@ -26,6 +26,7 @@ namespace Trainer
                         break;
                     case "Signup":
                         Log.Logger.Information("SignUp Page");
+        
                         menu = new TrainerSignUp();
                         break;
                     case "Menu":
