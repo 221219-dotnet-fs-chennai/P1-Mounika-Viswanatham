@@ -9,7 +9,7 @@ namespace Trainer
 {
     public class Login : IMenu
     {
-        static string conStr = File.ReadAllText("../../../Data.connectionString.txt");
+        static string conStr = File.ReadAllText("../../../connectionString.txt");
         IRepo repo = new SqlRepo(conStr);
         public void Display()
         {

@@ -1,1 +1,0 @@
-﻿Server=MOUNIKA;Database=Trainerdbase;Trusted_Connection=True;

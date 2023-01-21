@@ -7,7 +7,7 @@ namespace Trainer
     {
 
         internal static Trainerdata newTrainer = new Trainerdata();
-        static string constr = File.ReadAllText("../../../Data.connectionString.txt");
+        static string constr = File.ReadAllText("../../../connectionString.txt");
         SqlRepo repo = new SqlRepo(constr);
 
         public TrainerSignUp(Trainerdata td)
