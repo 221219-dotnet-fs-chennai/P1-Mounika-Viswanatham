@@ -47,6 +47,7 @@ namespace Trainer
                     Console.WriteLine(" Phone Number :  " + newTrainer.PhoneNumber);
                     Console.WriteLine(" Password :  " + newTrainer.Password);
                     Console.WriteLine(" Location :  " + newTrainer.Location);
+                    Console.WriteLine();
                     return "showTrainerData";
                 case "2":
                     Console.WriteLine("----------EDUCATION DETAILS------------\n");
@@ -54,17 +55,20 @@ namespace Trainer
                     Console.WriteLine(" Degree :  " + newTrainer.Degree);
                     Console.WriteLine(" Specialization:  " + newTrainer.Specialization);
                     Console.WriteLine(" PassingYear : " + newTrainer.PassingYear);
+                    Console.WriteLine();
                     return "showTrainerData";
                 case "3":
                     Console.WriteLine("-------------SKILL DETAILS---------\n");
                     Console.WriteLine(" Skill1 : " + newTrainer.Skill1);
                     Console.WriteLine(" Skill2 : " + newTrainer.Skill2);
                     Console.WriteLine(" Skill3 : " + newTrainer.Skill3);
+                    Console.WriteLine();
                     return "showTrainerData";
                 case "4":
                     Console.WriteLine("-------------COMPANY DETAILS----------\n");
                     Console.WriteLine(" CompanyName :  " + newTrainer.CompanyName);
                     Console.WriteLine(" Experience : " + newTrainer.Experience);
+                    Console.WriteLine();
                     return "showTrainerData";
 
                 default:

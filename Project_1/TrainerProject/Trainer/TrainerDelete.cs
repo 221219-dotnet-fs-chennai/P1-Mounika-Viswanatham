@@ -17,9 +17,9 @@ namespace Trainer
         public void Display()
         {
             Console.WriteLine("[0] Go Back  ");
-            Console.WriteLine("[1] Name             :" + newTrainer.Name);
+            Console.WriteLine("[1] Name             : " + newTrainer.Name);
            // Console.WriteLine("[2] EmailId  :" + newTrainer.EmailID);
-            Console.WriteLine("[2] PhoneNumber      :" + newTrainer.PhoneNumber);
+            Console.WriteLine("[2] PhoneNumber      : " + newTrainer.PhoneNumber);
          //   Console.WriteLine("[4] Password  : " + newTrainer.Password);
             Console.WriteLine("[3] Age              : " + newTrainer.Age);
             Console.WriteLine("[4] Institution Name : " + newTrainer.institutionName);

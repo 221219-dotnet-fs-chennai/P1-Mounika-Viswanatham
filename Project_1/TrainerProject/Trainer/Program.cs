@@ -50,6 +50,10 @@ namespace Trainer
                         Log.Logger.Information("Deleted Successfully");
                         menu = new TrainerDelete();
                         break;
+                    case "showTrainerData":
+                        Log.Logger.Information("Showing details");
+                        menu = new showTrainerData(newTrainer);
+                        break;
                     default:
                         Console.WriteLine("---------Page Doesnt Exist !----------");
                         Console.WriteLine("---------Enter to Continue------------");
