@@ -283,6 +283,7 @@ namespace Trainer
 
             /* Console.WriteLine("[0]");
              Console*/
+            Console.WriteLine("---------------------------------");
             Console.WriteLine("[0] go Back");
             Console.WriteLine("[1] Continue to Update Details");
 
@@ -299,7 +300,7 @@ namespace Trainer
 
                 case "1":
                     Log.Logger.Information("Update Name");
-
+                    Console.WriteLine("-------------------------------------");
                     Console.WriteLine("[0] Go Back");
                     Console.WriteLine("[1] Name             : " + newTrainer.Name);
                     Console.WriteLine("[2] EmailId          : " + newTrainer.EmailID);
@@ -330,6 +331,7 @@ namespace Trainer
 
                     if (n == "1")
                     {
+                        Log.Logger.Information("new Name");
                         Console.WriteLine("Enter the new Name");
                         string? pattern5 = "^[A-Za-z\\s]+$";
                         string? name = Console.ReadLine();

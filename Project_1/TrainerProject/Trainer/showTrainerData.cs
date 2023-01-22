@@ -21,11 +21,13 @@ namespace Trainer
         public void Display()
         {
             //throw new NotImplementedException();
+            Console.WriteLine("------------------------------------");
             Console.WriteLine("[0] to go back");
             Console.WriteLine("[1] Show Personls Details ");
             Console.WriteLine("[2] Show Educational Details");
             Console.WriteLine("[3] show Skills");
             Console.WriteLine("[4] show Company Details");
+            Console.WriteLine();
             Console.WriteLine("Please Enter Your choice:");
         }
 

@@ -20,7 +20,7 @@ namespace Trainer
         }
         public string UserChoice()
         {
-            Console.WriteLine("Enter your Choice\n");
+            Console.WriteLine("Enter your Choice");
             string? str = Console.ReadLine();
             switch (str)
             {
@@ -28,7 +28,7 @@ namespace Trainer
                     return "GetTrainer";
                 case "1":
                     Log.Logger.Information("Enter Email");
-                    Console.WriteLine("Enter Your Email\n");
+                    Console.WriteLine("Enter Your Email");
                     string EmailID = Console.ReadLine();
                     bool result = repo.Login(EmailID);
                     if(result)

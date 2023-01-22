@@ -211,7 +211,7 @@ namespace Data
             {
                 reader.Close();
 
-                Console.WriteLine("Enter Password\n");
+                Console.WriteLine("Enter Password");
 
                 string? password = Console.ReadLine();
 
@@ -360,7 +360,7 @@ namespace Data
 
        public  void TrainerDelete(string columnName, string tableName, string userId)
         {
-            string query20 = $@"update {tableName} set {columnName} ='' where user_id='{userId}'";
+            string query20 = $@"update {tableName} set {columnName} =' ' where user_id='{userId}'";
             using SqlConnection con = new SqlConnection(connectionString);
             con.Open();
             SqlCommand command12 = new SqlCommand(query20, con);

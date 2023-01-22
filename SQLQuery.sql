@@ -40,9 +40,9 @@ CREATE TABLE Company_Detail(
 );
 alter table Company_Detail Drop COLUMN Position;
 
-select *  from TrainerDetails 
+select *  from TrainerDetails WHERE Location = 'TamilNadu';
 select * from Skills_Details 
 select * from Company_Detail
-select * from Education_Details 
+select * from Education_Details where user_id='mounika';
 
 update Company_Detail Set CompanyName='Mounikaas' where user_id='mahesh'

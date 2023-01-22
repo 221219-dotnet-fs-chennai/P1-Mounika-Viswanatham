@@ -50,7 +50,9 @@ namespace Trainer
                 case "1":
 
                     Log.Logger.Information("Delete Name");
-                    
+
+                    Console.WriteLine("Deleting NAME");
+
                     repo.TrainerDelete("Name", "TrainerDetails", userId);
                     break;
 
@@ -77,6 +79,8 @@ namespace Trainer
                     {
                         Console.WriteLine("---PhoneNumber Should Contain 10 Digits");
                     }*/
+                    Console.WriteLine("Deleting PHONENUMBER");
+
                     repo.TrainerDelete("PhoneNumber", "TrainerDetails", userId);
 
                     break;
@@ -103,7 +107,9 @@ namespace Trainer
                 case "3":
 
                     Log.Logger.Information("Delete Age");
-                  
+
+                    Console.WriteLine("Deleting AGE");
+
                     repo.TrainerDelete ("Age", "TrainerDetails", userId);
 
                     break;
@@ -111,6 +117,8 @@ namespace Trainer
                 case "4":
 
                     Log.Logger.Information("Delete Institution Name");
+
+                    Console.WriteLine("Deleting INSTITUTE Name");
                    
                     repo.TrainerDelete( "institutionName", "Education_Details", userId);
 
@@ -119,6 +127,8 @@ namespace Trainer
                 case "5":
 
                     Log.Logger.Information("Delete Degree");
+
+                    Console.WriteLine("Deleting DEGREE");
                   
                     repo.TrainerDelete( "Degree", "Education_Details", userId);
 
@@ -127,6 +137,8 @@ namespace Trainer
                 case "6":
 
                     Log.Logger.Information("Delete Specialization");
+
+                    Console.WriteLine("Deleting SPECIALIZATION");
                   
                     repo.TrainerDelete( "Specialization", "Education_Details", userId);
 
@@ -135,6 +147,8 @@ namespace Trainer
                 case "7":
 
                     Log.Logger.Information("Delete PassingYear");
+
+                    Console.WriteLine("Deleting PASSINGYEAR");
                    
                     repo.TrainerDelete( "PassingYear", "Education_Details", userId);
 
@@ -152,6 +166,8 @@ namespace Trainer
                 case "9":
 
                     Log.Logger.Information("Delete Skill2");
+
+                    Console.WriteLine("Deleting Skill2");
                   
                     repo.TrainerDelete( "Skill2", "Skill_Details", userId);
 
@@ -159,6 +175,8 @@ namespace Trainer
 
                 case "10":
                     Log.Logger.Information("Delete  Skill3");
+
+                    Console.WriteLine("Deleting SKILL3");
                     
                     repo.TrainerDelete( "Skill3", "Skill_Details", userId);
                     break;
@@ -166,6 +184,8 @@ namespace Trainer
                 case "11":
 
                     Log.Logger.Information("Delete Comapny name");
+
+                    Console.WriteLine("Deleting COMPANY Name");
                   
                     repo.TrainerDelete( "CompanyName", "Compaby_Detail", userId);
 
@@ -174,6 +194,8 @@ namespace Trainer
                 case "12":
 
                     Log.Logger.Information("Delete experience");
+
+                    Console.WriteLine("Deleting EXPERIENCE");
                     
                     repo.TrainerDelete( "Experience", "Company_Detail", userId);
 
@@ -181,6 +203,8 @@ namespace Trainer
                 case "13":
 
                     Log.Logger.Information("Delete Location");
+
+                    Console.WriteLine("Deleting LOCATION");
                    
                     repo.TrainerDelete( "Location", "TrainerDetails", userId);
 
