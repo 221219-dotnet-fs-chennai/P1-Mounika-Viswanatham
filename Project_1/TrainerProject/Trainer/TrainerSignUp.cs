@@ -23,23 +23,23 @@ namespace Trainer
         {
             Console.WriteLine("\n ------------------ENTER INFORMATION-------------------\n");
             Console.WriteLine("[0] Menu  ");
-            Console.WriteLine("[1] EmailId :  " + newTrainer.EmailID);
-            Console.WriteLine("[2] Name :   " + newTrainer.Name);
-            Console.WriteLine("[3] Age :  " + newTrainer.Age);
-            Console.WriteLine("[4] Gender  :   " + newTrainer.Gender);
-            Console.WriteLine("[5] Phone Number :  " + newTrainer.PhoneNumber);
-            Console.WriteLine("[6] Password :  " + newTrainer.Password);
-            Console.WriteLine("[7] Location :  " + newTrainer.Location);
+            Console.WriteLine("[1] EmailId          :  " + newTrainer.EmailID);
+            Console.WriteLine("[2] Name             :   " + newTrainer.Name);
+            Console.WriteLine("[3] Age              :  " + newTrainer.Age);
+            Console.WriteLine("[4] Gender           :   " + newTrainer.Gender);
+            Console.WriteLine("[5] Phone Number     :  " + newTrainer.PhoneNumber);
+            Console.WriteLine("[6] Password         :  " + newTrainer.Password);
+            Console.WriteLine("[7] Location         :  " + newTrainer.Location);
             //Console.WriteLine("[8] WebsiteLink :  " + newTrainer.WebsiteLink);
             Console.WriteLine("[8] Institution Name :  " + newTrainer.institutionName);
-            Console.WriteLine("[9] Degree :  " + newTrainer.Degree);
-            Console.WriteLine("[10] Specialization:  " + newTrainer.Specialization);
-            Console.WriteLine("[11] PassingYear : " + newTrainer.PassingYear);
-            Console.WriteLine("[12] Skill1 : " + newTrainer.Skill1);
-            Console.WriteLine("[13] Skill2 : " + newTrainer.Skill2);
-            Console.WriteLine("[14] Skill3 : " + newTrainer.Skill3);
-            Console.WriteLine("[15] CompanyName :  " + newTrainer.CompanyName);
-            Console.WriteLine("[16] Experience : " + newTrainer.Experience);
+            Console.WriteLine("[9] Degree           :  " + newTrainer.Degree);
+            Console.WriteLine("[10] Specialization  :  " + newTrainer.Specialization);
+            Console.WriteLine("[11] PassingYear     : " + newTrainer.PassingYear);
+            Console.WriteLine("[12] Skill1          : " + newTrainer.Skill1);
+            Console.WriteLine("[13] Skill2          : " + newTrainer.Skill2);
+            Console.WriteLine("[14] Skill3          : " + newTrainer.Skill3);
+            Console.WriteLine("[15] CompanyName     :  " + newTrainer.CompanyName);
+            Console.WriteLine("[16] Experience      : " + newTrainer.Experience);
             //Console.WriteLine("[17] Position : " + newTrainer.Position);
             Console.WriteLine("[17] To Save");
           

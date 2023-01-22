@@ -211,7 +211,7 @@ namespace Data
             {
                 reader.Close();
 
-                Console.WriteLine("Enter Password");
+                Console.WriteLine("Enter Password\n");
 
                 string? password = Console.ReadLine();
 

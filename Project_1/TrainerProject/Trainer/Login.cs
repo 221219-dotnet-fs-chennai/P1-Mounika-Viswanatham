@@ -28,7 +28,7 @@ namespace Trainer
                     return "GetTrainer";
                 case "1":
                     Log.Logger.Information("Enter Email");
-                    Console.WriteLine("Enter Your Email");
+                    Console.WriteLine("Enter Your Email\n");
                     string EmailID = Console.ReadLine();
                     bool result = repo.Login(EmailID);
                     if(result)
