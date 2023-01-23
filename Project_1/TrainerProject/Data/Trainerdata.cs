@@ -22,6 +22,7 @@ namespace Data
         public string? Skill1 { get; set; }
         public string? Skill2 { get; set; }
         public string? Skill3 { get; set; }
+
         //public string? Position { get; set; }
         public string? Experience { get; set; }
 
@@ -30,7 +31,11 @@ namespace Data
 
         public string? CompanyName { get; set; }
 
+        public string AllTrainerData()
+        {
+            return $@"{Name},{EmailID},{Gender},{PhoneNumber},{Location}";
 
-
+        }
+        
     }
 }

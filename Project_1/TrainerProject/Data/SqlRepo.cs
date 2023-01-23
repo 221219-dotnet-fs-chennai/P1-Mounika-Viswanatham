@@ -112,56 +112,12 @@ namespace Data
 
         }
 
-        /*public List<Trainerdata> GetTrainerdatas()
-        {
-            List<Trainerdata> trainerdata = new List<Trainerdata>();
-
-            try
-            {
-                using SqlConnection con = new SqlConnection(connectionString);
-                con.Open();
-                string query = "select Name,PhoneNumber,EmailID,Age,Gender,Location from TrainerDetails";
-                using SqlCommand command = new SqlCommand(query, con);
-                using SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    trainerdata.Add(new Trainerdata()
-                    {
-                        Name = reader.GetString(0),
-                        PhoneNumber = reader.GetString(1),
-                        EmailID = reader.GetString(2),
-                        Location = reader.GetString(3),
-                        Gender = reader.GetString(4),
-                        Age = reader.GetString(5),
-                        institutionName = reader.GetString(6),
-                        Degree = reader.GetString(7),
-                        Specialization = reader.GetString(8),
-                        PassingYear = reader.GetString(10),
-                        CompanyName = reader.GetString(11),
-                        Experience = reader.GetString(12),
-                        Position = reader.GetString(13),
-                        Skill1 = reader.GetString(14),
-                        Skill2 = reader.GetString(15),
-                        Skill3 = reader.GetString(16),
-
-                    }); ;
-
-                }
-
-
-            }
-            catch (SqlException)
-            {
-                throw;
-            }
-            return trainerdata;
-        }*/
-        /*   public List<Trainerdata> GetTrainerDisconnected()
+        
+           public List<Trainerdata> GetTrainerDisconnected()
            {
                List<Trainerdata> trainerdata = new List<Trainerdata>();
                SqlConnection con = new SqlConnection(connectionString);
-               string query5 = "select Name,EmailID,PhoneNumber,Gender,Age,Location,institutionName,Degree,Specialization,CGPA,PassingYear,CompanyName,Experience,Position,Skill1,Skill2,Skill3";
+               string query5 = @"select Name,EmailID,PhoneNumber,Gender,Location from TrainerDetails";
                using SqlDataAdapter adapter = new SqlDataAdapter(query5, con);
                DataSet ds = new DataSet();
                adapter.Fill(ds);
@@ -170,22 +126,22 @@ namespace Data
                {
                    trainerdata.Add(new Trainerdata()
                    {
-                       Name = (string)row["Name"],
-                       EmailID = (string)row["EmailID"],
-                       PhoneNumber = (string)row["PhoneNumber"],
-                       Location = (string)row["Location"],
-                       Gender = (string)row["Gender"],
-                       Age = (string)row["Age"],
-                       institutionName = (string)row["institutionName"],
-                       Degree = (string)row["Degree"],
-                       Specialization = (string)row["Specialization"],
-                       PassingYear = (string)row["PAssingYear"],
-                       Skill1 = (string)row["Skill1"],
-                       Skill2 = (String)row["SKill2"],
-                       Skill3 = (string)row["SKill3"],
-                       CompanyName = (string)row["CompanyName"],
-                       Experience = (string)row["Experience"],
-                       Position = (string)row["Position"]
+                       Name                 = (string)row["Name"],
+                       EmailID              = (string)row["EmailID"],
+                       PhoneNumber          = (string)row["PhoneNumber"],
+                       Location             = (string)row["Location"],
+                       Gender               = (string)row["Gender"],
+                      // Age                  =
+                       //institutionName      = (string)row["institutionName"],
+                       //Degree               = (string)row["Degree"],
+                       //Specialization       = (string)row["Specialization"],
+                       //PassingYear          = (string)row["PAssingYear"],
+                       //Skill1               = (string)row["Skill1"],
+                       //Skill2               = (String)row["SKill2"],
+                       //Skill3               = (string)row["SKill3"],
+                       //CompanyName          = (string)row["CompanyName"],
+                       //Experience           = (string)row["Experience"],
+                      // Position             = (string)row["Position"]
 
                    });
                }
@@ -193,7 +149,7 @@ namespace Data
                return trainerdata;
 
            }
-   */
+   
 
         public bool Login(string email)
         {
@@ -276,14 +232,14 @@ namespace Data
             {
 
 
-                tdata.Name = reader1.GetString(0);
-                tdata.PhoneNumber = reader1.GetString(1);
-                tdata.Location = reader1.GetString(2);
-                tdata.Gender = reader1.GetString(3);
-                int a = reader1.GetInt32(4);
-                tdata.Age = a.ToString();
-                tdata.Password = reader1.GetString(5);
-                tdata.EmailID = Email;
+                tdata.Name              = reader1.GetString(0);
+                tdata.PhoneNumber       = reader1.GetString(1);
+                tdata.Location          = reader1.GetString(2);
+                tdata.Gender            = reader1.GetString(3);
+                int a                   = reader1.GetInt32(4);
+                tdata.Age               = a.ToString();
+                tdata.Password          = reader1.GetString(5);
+                tdata.EmailID           = Email;
 
 
             }
@@ -314,10 +270,10 @@ namespace Data
             while (reader3.Read())
             {
 
-                tdata.institutionName = reader3.GetString(0);
-                tdata.Degree = reader3.GetString(1);
-                tdata.Specialization = reader3.GetString(2);
-                tdata.PassingYear = reader3.GetString(3);
+                tdata.institutionName       = reader3.GetString(0);
+                tdata.Degree                = reader3.GetString(1);
+                tdata.Specialization        = reader3.GetString(2);
+                tdata.PassingYear           = reader3.GetString(3);
             }
             reader3.Close();
 

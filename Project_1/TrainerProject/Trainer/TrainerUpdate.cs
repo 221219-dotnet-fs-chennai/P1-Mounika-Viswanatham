@@ -16,26 +16,27 @@ namespace Trainer
         IRepo repo = new SqlRepo(constr);
         
        // public TrainerUpdate()
+
         public void Display()
         {
             //throw new NotImplementedException();
 
             Console.WriteLine("[0] Go Back  ");
-            Console.WriteLine("[1] Name             :" + newTrainer.Name);
-            Console.WriteLine("[2] EmailId          :" + newTrainer.EmailID);
-            Console.WriteLine("[3] PhoneNumber      :" + newTrainer.PhoneNumber);
-            Console.WriteLine("[4] Password         : " + newTrainer.Password);
-            Console.WriteLine("[5] Age              : "+  newTrainer.Age);
-            Console.WriteLine("[6] Institution Name : "+newTrainer.institutionName);
-            Console.WriteLine("[7] Degree           : " + newTrainer.Degree);
-            Console.WriteLine("[8] Specialization   : " + newTrainer.Specialization);
-            Console.WriteLine("[9] Passing Year     : "+newTrainer.PassingYear);
-            Console.WriteLine("[10] Skill1          : "+newTrainer.Skill1);
-            Console.WriteLine("[11] Skill2          : " +newTrainer.Skill2);
-            Console.WriteLine("[12] Skill3          : "+newTrainer.Skill3);
-            Console.WriteLine("[13] CompanyName     : "+newTrainer.CompanyName);
-            Console.WriteLine("[14] Experience      : "+newTrainer.Experience);
-            Console.WriteLine("[15] Location        : " + newTrainer.Location);
+            Console.WriteLine("[1] Name             :   "   + newTrainer.Name);
+            Console.WriteLine("[2] EmailId          :   "   + newTrainer.EmailID);
+            Console.WriteLine("[3] PhoneNumber      :   "   + newTrainer.PhoneNumber);
+            Console.WriteLine("[4] Password         :   "   + newTrainer.Password);
+            Console.WriteLine("[5] Age              :   "   +  newTrainer.Age);
+            Console.WriteLine("[6] Institution Name :   "   +newTrainer.institutionName);
+            Console.WriteLine("[7] Degree           :   "   + newTrainer.Degree);
+            Console.WriteLine("[8] Specialization   :   "   + newTrainer.Specialization);
+            Console.WriteLine("[9] Passing Year     :   "   +newTrainer.PassingYear);
+            Console.WriteLine("[10] Skill1          :   "   +newTrainer.Skill1);
+            Console.WriteLine("[11] Skill2          :   "   +newTrainer.Skill2);
+            Console.WriteLine("[12] Skill3          :   "   +newTrainer.Skill3);
+            Console.WriteLine("[13] CompanyName     :   "   +newTrainer.CompanyName);
+            Console.WriteLine("[14] Experience      :   "   +newTrainer.Experience);
+            Console.WriteLine("[15] Location        :   "   + newTrainer.Location);
            // Console.WriteLine("[15] save Updated Details");
 
         }

@@ -117,7 +117,7 @@ namespace Trainer
             {
                 Console.WriteLine("   --------Showing COMPANY Details --------\n   ");
                 Console.WriteLine(" CompanyName     :  " + newTrainer.CompanyName);
-                Console.WriteLine(" Experience      : " + newTrainer.Experience);
+                Console.WriteLine(" Experience      :  " + newTrainer.Experience);
             }
            // Console.WriteLine(" Position : " + newTrainer.Position);
         }
@@ -138,6 +138,8 @@ namespace Trainer
 {
     class Profile : IMenu
     {
+        static string constr = File.ReadAllText("../../../connectionString.txt");
+        IRepo repo = new SqlRepo(constr);
 
         Trainerdata newTrainer = new Trainerdata();
         public Profile(Trainerdata tdata)
@@ -170,7 +172,16 @@ namespace Trainer
                 case "1":
 
                     return "showTrainerData";
+                case "2":
 
+                    var AllTrainersData = repo.GetTrainerDisconnected();
+                    foreach(var i in AllTrainersData)
+                    {
+                        //Console.WriteLine(i.ToString());
+                        Console.WriteLine(i.AllTrainerData() + "\n");
+                    }
+
+                    return "Profile";
                 case "3":
 
                     return "TrainerUpdate";

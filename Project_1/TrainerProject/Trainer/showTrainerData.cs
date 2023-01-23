@@ -42,21 +42,21 @@ namespace Trainer
                     return "Profile";
                 case "1":
                     Console.WriteLine("---------PERSONAL DETAILS--------\n");
-                    Console.WriteLine(" EmailId :  " + newTrainer.EmailID);
-                    Console.WriteLine(" Name :   " + newTrainer.Name);
-                    Console.WriteLine(" Age :  " + newTrainer.Age);
-                    Console.WriteLine(" Gender  :   " + newTrainer.Gender);
-                    Console.WriteLine(" Phone Number :  " + newTrainer.PhoneNumber);
-                    Console.WriteLine(" Password :  " + newTrainer.Password);
-                    Console.WriteLine(" Location :  " + newTrainer.Location);
+                    Console.WriteLine(" EmailId      :   " + newTrainer.EmailID);
+                    Console.WriteLine(" Name         :   " + newTrainer.Name);
+                    Console.WriteLine(" Age          :   " + newTrainer.Age);
+                    Console.WriteLine(" Gender       :   " + newTrainer.Gender);
+                    Console.WriteLine(" Phone Number :   " + newTrainer.PhoneNumber);
+                    Console.WriteLine(" Password     :   " + newTrainer.Password);
+                    Console.WriteLine(" Location     :   " + newTrainer.Location);
                     Console.WriteLine();
                     return "showTrainerData";
                 case "2":
                     Console.WriteLine("----------EDUCATION DETAILS------------\n");
-                    Console.WriteLine(" Institution Name :  " + newTrainer.institutionName);
-                    Console.WriteLine(" Degree :  " + newTrainer.Degree);
-                    Console.WriteLine(" Specialization:  " + newTrainer.Specialization);
-                    Console.WriteLine(" PassingYear : " + newTrainer.PassingYear);
+                    Console.WriteLine(" Institution Name    :  " + newTrainer.institutionName);
+                    Console.WriteLine(" Degree              :  " + newTrainer.Degree);
+                    Console.WriteLine(" Specialization      :  " + newTrainer.Specialization);
+                    Console.WriteLine(" PassingYear         :  " + newTrainer.PassingYear);
                     Console.WriteLine();
                     return "showTrainerData";
                 case "3":
@@ -69,7 +69,7 @@ namespace Trainer
                 case "4":
                     Console.WriteLine("-------------COMPANY DETAILS----------\n");
                     Console.WriteLine(" CompanyName :  " + newTrainer.CompanyName);
-                    Console.WriteLine(" Experience : " + newTrainer.Experience);
+                    Console.WriteLine(" Experience  :  " + newTrainer.Experience);
                     Console.WriteLine();
                     return "showTrainerData";
 
