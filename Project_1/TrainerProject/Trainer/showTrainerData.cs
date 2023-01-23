@@ -41,6 +41,7 @@ namespace Trainer
                 case "0":
                     return "Profile";
                 case "1":
+                    Log.Logger.Information("PersonalDetails");
                     Console.WriteLine("---------PERSONAL DETAILS--------\n");
                     Console.WriteLine(" EmailId      :   " + newTrainer.EmailID);
                     Console.WriteLine(" Name         :   " + newTrainer.Name);
@@ -52,6 +53,7 @@ namespace Trainer
                     Console.WriteLine();
                     return "showTrainerData";
                 case "2":
+                    Log.Logger.Information("EducationDetails");
                     Console.WriteLine("----------EDUCATION DETAILS------------\n");
                     Console.WriteLine(" Institution Name    :  " + newTrainer.institutionName);
                     Console.WriteLine(" Degree              :  " + newTrainer.Degree);
@@ -60,6 +62,7 @@ namespace Trainer
                     Console.WriteLine();
                     return "showTrainerData";
                 case "3":
+                    Log.Logger.Information("SkillDetails");
                     Console.WriteLine("-------------SKILL DETAILS---------\n");
                     Console.WriteLine(" Skill1 : " + newTrainer.Skill1);
                     Console.WriteLine(" Skill2 : " + newTrainer.Skill2);
@@ -67,6 +70,7 @@ namespace Trainer
                     Console.WriteLine();
                     return "showTrainerData";
                 case "4":
+                    Log.Logger.Information("CompanyDetails");
                     Console.WriteLine("-------------COMPANY DETAILS----------\n");
                     Console.WriteLine(" CompanyName :  " + newTrainer.CompanyName);
                     Console.WriteLine(" Experience  :  " + newTrainer.Experience);
@@ -74,6 +78,7 @@ namespace Trainer
                     return "showTrainerData";
 
                 default:
+                    Log.Logger.Information("WrongChoice");
                     Console.WriteLine("WRONG CHOICE");
                     Console.WriteLine("Enter to continue");
                     Console.ReadLine();
