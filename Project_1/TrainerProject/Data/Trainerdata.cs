@@ -29,5 +29,8 @@ namespace Data
         public string? PassingYear { get; set; }
 
         public string? CompanyName { get; set; }
+
+
+
     }
 }

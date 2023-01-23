@@ -52,7 +52,7 @@ namespace Trainer
                     Log.Logger.Information("Delete Name");
 
                     Console.WriteLine("Deleting NAME");
-
+                    newTrainer.Name = "";
                     repo.TrainerDelete("Name", "TrainerDetails", userId);
                     break;
 
@@ -80,6 +80,8 @@ namespace Trainer
                         Console.WriteLine("---PhoneNumber Should Contain 10 Digits");
                     }*/
                     Console.WriteLine("Deleting PHONENUMBER");
+
+                    newTrainer.PhoneNumber = " ";
 
                     repo.TrainerDelete("PhoneNumber", "TrainerDetails", userId);
 
@@ -110,6 +112,8 @@ namespace Trainer
 
                     Console.WriteLine("Deleting AGE");
 
+                    newTrainer.Age = " ";
+
                     repo.TrainerDelete ("Age", "TrainerDetails", userId);
 
                     break;
@@ -119,6 +123,8 @@ namespace Trainer
                     Log.Logger.Information("Delete Institution Name");
 
                     Console.WriteLine("Deleting INSTITUTE Name");
+
+                    newTrainer.institutionName = " ";
                    
                     repo.TrainerDelete( "institutionName", "Education_Details", userId);
 
@@ -129,6 +135,8 @@ namespace Trainer
                     Log.Logger.Information("Delete Degree");
 
                     Console.WriteLine("Deleting DEGREE");
+
+                    newTrainer.Degree = " ";
                   
                     repo.TrainerDelete( "Degree", "Education_Details", userId);
 
@@ -139,6 +147,8 @@ namespace Trainer
                     Log.Logger.Information("Delete Specialization");
 
                     Console.WriteLine("Deleting SPECIALIZATION");
+
+                    newTrainer.Specialization = " ";
                   
                     repo.TrainerDelete( "Specialization", "Education_Details", userId);
 
@@ -149,6 +159,8 @@ namespace Trainer
                     Log.Logger.Information("Delete PassingYear");
 
                     Console.WriteLine("Deleting PASSINGYEAR");
+
+                    newTrainer.PassingYear = " ";
                    
                     repo.TrainerDelete( "PassingYear", "Education_Details", userId);
 
@@ -157,6 +169,10 @@ namespace Trainer
                 case "8":
 
                     Log.Logger.Information("Delete Skill1");
+
+                    Console.WriteLine(" Deleting Skill1");
+
+                    newTrainer.Skill1= " ";
                    
                     repo.TrainerDelete( "Skill1", "Skill_Details", userId);
 
@@ -168,6 +184,8 @@ namespace Trainer
                     Log.Logger.Information("Delete Skill2");
 
                     Console.WriteLine("Deleting Skill2");
+
+                    newTrainer.Skill2= " ";
                   
                     repo.TrainerDelete( "Skill2", "Skill_Details", userId);
 
@@ -177,6 +195,8 @@ namespace Trainer
                     Log.Logger.Information("Delete  Skill3");
 
                     Console.WriteLine("Deleting SKILL3");
+
+                    newTrainer.Skill3= " ";
                     
                     repo.TrainerDelete( "Skill3", "Skill_Details", userId);
                     break;
@@ -186,6 +206,8 @@ namespace Trainer
                     Log.Logger.Information("Delete Comapny name");
 
                     Console.WriteLine("Deleting COMPANY Name");
+
+                    newTrainer.CompanyName= " ";
                   
                     repo.TrainerDelete( "CompanyName", "Compaby_Detail", userId);
 
@@ -196,6 +218,8 @@ namespace Trainer
                     Log.Logger.Information("Delete experience");
 
                     Console.WriteLine("Deleting EXPERIENCE");
+
+                    newTrainer.Experience= " ";
                     
                     repo.TrainerDelete( "Experience", "Company_Detail", userId);
 
@@ -205,6 +229,8 @@ namespace Trainer
                     Log.Logger.Information("Delete Location");
 
                     Console.WriteLine("Deleting LOCATION");
+
+                    newTrainer.Location= " ";
                    
                     repo.TrainerDelete( "Location", "TrainerDetails", userId);
 
