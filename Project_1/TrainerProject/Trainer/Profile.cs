@@ -40,30 +40,7 @@ namespace Trainer
                     return "Menu";
 
                 case "1":
-                    Console.WriteLine("[0] Go Back ");
-                    Console.WriteLine("[1] Show Personal Details");
-                    Console.WriteLine("[2] Show Eductaional Details");
-                    Console.WriteLine("[3] Show Skills Details");
-                    Console.WriteLine("[4] Show Compnay Details");
-
-                    string choice= Console.ReadLine();
-                  
-                    if (choice == "1")
-                    {
-                        showDetails(1);
-                    }
-                    if(choice == "2")
-                    {
-                        showDetails(2);
-                    }
-                    if(choice =="3")
-                    {
-                        showDetails(3);
-                    }
-                    if(choice == "4")
-                    {
-                            showDetails(4);
-                    }
+                    showDetails();
                     return "Profile";
                    
                 case "3":

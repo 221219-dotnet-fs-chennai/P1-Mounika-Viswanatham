@@ -58,3 +58,15 @@ E:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Data\obj\Debug\net6.0\Data.dl
 E:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Data\obj\Debug\net6.0\refint\Data.dll
 E:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Data\obj\Debug\net6.0\Data.pdb
 E:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Data\obj\Debug\net6.0\ref\Data.dll
+D:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Data\bin\Debug\net6.0\Data.deps.json
+D:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Data\bin\Debug\net6.0\Data.dll
+D:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Data\bin\Debug\net6.0\Data.pdb
+D:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Data\obj\Debug\net6.0\Data.csproj.AssemblyReference.cache
+D:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Data\obj\Debug\net6.0\Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Data\obj\Debug\net6.0\Data.AssemblyInfoInputs.cache
+D:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Data\obj\Debug\net6.0\Data.AssemblyInfo.cs
+D:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Data\obj\Debug\net6.0\Data.csproj.CoreCompileInputs.cache
+D:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Data\obj\Debug\net6.0\Data.dll
+D:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Data\obj\Debug\net6.0\refint\Data.dll
+D:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Data\obj\Debug\net6.0\Data.pdb
+D:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Data\obj\Debug\net6.0\ref\Data.dll
