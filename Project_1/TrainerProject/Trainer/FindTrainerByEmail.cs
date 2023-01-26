@@ -18,10 +18,10 @@ namespace Trainer
         public void Display()
         {
             //throw new NotImplementedException();
-            Console.WriteLine("Search Page");
+            Console.WriteLine("******************* SEARCH TRAINER *************************\n");
             Console.WriteLine("Enter the choice you want");
             Console.WriteLine("[0] go back  ");
-            Console.WriteLine("[1] Find Trainer");
+            Console.WriteLine("[1] Find Trainer\n");
         }
 
         public string UserChoice()
@@ -30,13 +30,14 @@ namespace Trainer
 
             Console.WriteLine("Enter your choice");
             string choice=Console.ReadLine();
+            Console.WriteLine("\n");
             switch(choice)
             {
                 case "0":
                     return "Menu";
                 case "1":
                    var s= repo.FindTrainerByEmail();
-                    Console.WriteLine("\n");
+                    
                     Console.WriteLine("---- Trainer Details----\n");
                     Console.WriteLine("Name         : "  + s.Name);
                     Console.WriteLine("EmailId      : "  + s.EmailID);

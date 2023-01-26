@@ -33,7 +33,7 @@ namespace Model
 
         public string AllTrainerData()
         {
-            return $@"{Name},{EmailID},{Gender},{PhoneNumber},{Location},{Age}";
+            return $@"{Name},{EmailID},{Gender},{PhoneNumber},{Location}";
 
         }
 

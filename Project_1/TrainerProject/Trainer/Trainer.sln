@@ -11,9 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data_EF", "..\Data_EF\Data_EF.csproj", "{96BD396A-E96A-4CBE-9B5D-52E5D5068FF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bussiness", "..\Bussiness\Bussiness.csproj", "{6FE762C4-22C9-4A9D-943A-3CA010DE7A5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bussiness", "..\Bussiness\Bussiness.csproj", "{6FE762C4-22C9-4A9D-943A-3CA010DE7A5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "..\Model\Model.csproj", "{04585C47-3F3E-4D9E-9E79-8C1551030DAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "..\Model\Model.csproj", "{04585C47-3F3E-4D9E-9E79-8C1551030DAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentAPI", "..\FluentAPI\FluentAPI.csproj", "{873EED69-351F-4126-A0F8-20419BBA3394}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{04585C47-3F3E-4D9E-9E79-8C1551030DAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04585C47-3F3E-4D9E-9E79-8C1551030DAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04585C47-3F3E-4D9E-9E79-8C1551030DAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{873EED69-351F-4126-A0F8-20419BBA3394}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{873EED69-351F-4126-A0F8-20419BBA3394}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{873EED69-351F-4126-A0F8-20419BBA3394}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{873EED69-351F-4126-A0F8-20419BBA3394}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

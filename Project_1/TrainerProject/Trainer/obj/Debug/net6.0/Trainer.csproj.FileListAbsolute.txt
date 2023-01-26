@@ -275,3 +275,5 @@ E:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Trainer\bin\Debug\net6.0\Mode
 E:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Trainer\bin\Debug\net6.0\Model.pdb
 E:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Trainer\bin\Debug\net6.0\Bussiness.dll
 E:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Trainer\bin\Debug\net6.0\Bussiness.pdb
+E:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Trainer\bin\Debug\net6.0\FluentAPI.dll
+E:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Trainer\bin\Debug\net6.0\FluentAPI.pdb

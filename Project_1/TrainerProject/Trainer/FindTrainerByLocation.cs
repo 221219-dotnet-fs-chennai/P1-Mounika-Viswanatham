@@ -16,10 +16,10 @@ namespace Trainer
         public void Display()
         {
             //throw new NotImplementedException();
-            Console.WriteLine("Search Page");
+            Console.WriteLine("******************** Search Trainer **********************\n");
             Console.WriteLine("Enter the choice you want");
             Console.WriteLine("[0] go back  ");
-            Console.WriteLine("[1] Find Trainer By Location");
+            Console.WriteLine("[1] Find Trainer By Location\n");
         }
 
         public string UserChoice()
@@ -28,6 +28,7 @@ namespace Trainer
 
             Console.WriteLine("Enter your choice");
             string choice = Console.ReadLine();
+            Console.WriteLine("\n");
             switch (choice)
             {
                 case "0":

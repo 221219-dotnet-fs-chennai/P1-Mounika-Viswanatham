@@ -335,7 +335,7 @@ namespace Data
             String[] arr = email.Split("@");
 
             string userID = arr[0];
-            string query21 = $@"select Name,EmailID,PhoneNumber,Gender,Location,Age from TrainerDetails where user_id='{userID}'";
+            string query21 = $@"select Name,EmailID,PhoneNumber,Gender,Location from TrainerDetails where user_id='{userID}'";
             using SqlConnection con = new SqlConnection(connectionString);
             con.Open();
             SqlCommand command10 = new SqlCommand(query21, con);
@@ -350,8 +350,8 @@ namespace Data
                 data1.PhoneNumber = reader1.GetString(2);
                 data1.Location = reader1.GetString(4);
                 data1.Gender = reader1.GetString(3);
-                int a = reader1.GetInt32(4);
-                data1.Age = a.ToString();
+                //int a = reader1.GetInt32(4);
+                //data1.Age = a.ToString();
                 //data1.Password = reader1.GetString(5);
                 data1.EmailID = reader1.GetString(1); ;
 
@@ -385,6 +385,7 @@ namespace Data
               List<Trainerdata> trainerdata = new List<Trainerdata>();
               Console.WriteLine("Enter your Location");
               string loc = Console.ReadLine();
+              Console.WriteLine("\n");
             
             SqlConnection con = new SqlConnection(connectionString);
             string query5 = $@"select Name,EmailID,PhoneNumber,Gender,Location from TrainerDetails where Location='{loc}'";
