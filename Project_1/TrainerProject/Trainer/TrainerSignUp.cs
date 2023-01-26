@@ -1,5 +1,6 @@
 ﻿using Data;
 using System.Text.RegularExpressions;
+using Model;
 
 namespace Trainer
 {
@@ -211,11 +212,6 @@ namespace Trainer
                     }
                     
                     return "Signup";
-                /*case "17":
-                    Log.Logger.Information("Position");
-                    Console.WriteLine("Enter Your Position in Company :  ");
-                    newTrainer.Position = Console.ReadLine();
-                    return "Signup";*/
                 case "17":
                     try
                     {

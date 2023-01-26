@@ -175,6 +175,16 @@
             "rid": "win"
           }
         }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
       }
     }
   },
@@ -548,10 +558,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Model/1.0.0": {
+      "type": "project",
+      "path": "../Model/Model.csproj",
+      "msbuildProject": "../Model/Model.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Model >= 1.0.0",
       "Serilog >= 2.12.0",
       "Serilog.Sinks.File >= 5.0.0",
       "System.Data.SqlClient >= 4.8.5"
@@ -563,11 +579,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj",
+      "projectUniqueName": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj",
       "projectName": "Data",
-      "projectPath": "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj",
+      "projectPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj",
       "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\obj\\",
+      "outputPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -583,7 +599,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Model\\Model.csproj": {
+              "projectPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Model\\Model.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

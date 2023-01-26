@@ -14,6 +14,9 @@ namespace Trainer
             Console.WriteLine("[0] Exit");
             Console.WriteLine("[1] Are You a New Trainer : Signup");
             Console.WriteLine("[2] Existing Trainer : Login");
+            Console.WriteLine("[3] To Find Trainer By Email");
+            Console.WriteLine("[4] To Find Trainer By Location");
+            
         }
 
         public string UserChoice()
@@ -21,9 +24,13 @@ namespace Trainer
             string? userInput = Console.ReadLine();
             switch(userInput)
             {
+               
+                case "4":
+                    return "FindTrainerByLocation";
+                case "3":
+                    return "FindTrainerByEmail";
                 case "2":
-                    
-                    return "Login";
+                     return "Login";
                 case "1":
                     return "Signup";
                 case "0":

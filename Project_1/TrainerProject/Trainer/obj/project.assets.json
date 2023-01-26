@@ -1236,10 +1236,25 @@
           }
         }
       },
+      "Bussiness/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Data": "1.0.0",
+          "Model": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Bussiness.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Bussiness.dll": {}
+        }
+      },
       "Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Model": "1.0.0",
           "Serilog": "2.12.0",
           "Serilog.Sinks.File": "5.0.0",
           "System.Data.SqlClient": "4.8.5"
@@ -1262,6 +1277,16 @@
         },
         "runtime": {
           "bin/placeholder/Data_EF.dll": {}
+        }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
         }
       }
     }
@@ -3790,6 +3815,11 @@
         "version.txt"
       ]
     },
+    "Bussiness/1.0.0": {
+      "type": "project",
+      "path": "../Bussiness/Bussiness.csproj",
+      "msbuildProject": "../Bussiness/Bussiness.csproj"
+    },
     "Data/1.0.0": {
       "type": "project",
       "path": "../Data/Data.csproj",
@@ -3799,10 +3829,16 @@
       "type": "project",
       "path": "../Data_EF/Data_EF.csproj",
       "msbuildProject": "../Data_EF/Data_EF.csproj"
+    },
+    "Model/1.0.0": {
+      "type": "project",
+      "path": "../Model/Model.csproj",
+      "msbuildProject": "../Model/Model.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Bussiness >= 1.0.0",
       "Data >= 1.0.0",
       "Data_EF >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.2",
@@ -3816,11 +3852,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Trainer\\Trainer.csproj",
+      "projectUniqueName": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Trainer\\Trainer.csproj",
       "projectName": "Trainer",
-      "projectPath": "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Trainer\\Trainer.csproj",
+      "projectPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Trainer\\Trainer.csproj",
       "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Trainer\\obj\\",
+      "outputPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Trainer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3837,11 +3873,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj": {
-              "projectPath": "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj"
+            "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Bussiness\\Bussiness.csproj": {
+              "projectPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Bussiness\\Bussiness.csproj"
             },
-            "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data_EF\\Data_EF.csproj": {
-              "projectPath": "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data_EF\\Data_EF.csproj"
+            "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj": {
+              "projectPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj"
+            },
+            "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data_EF\\Data_EF.csproj": {
+              "projectPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data_EF\\Data_EF.csproj"
             }
           }
         }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Trainer\\Trainer.csproj": {}
+    "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Trainer\\Trainer.csproj": {}
   },
   "projects": {
-    "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj": {
+    "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Bussiness\\Bussiness.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj",
-        "projectName": "Data",
-        "projectPath": "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj",
+        "projectUniqueName": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Bussiness\\Bussiness.csproj",
+        "projectName": "Bussiness",
+        "projectPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Bussiness\\Bussiness.csproj",
         "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\obj\\",
+        "outputPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Bussiness\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,7 +27,73 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj": {
+                "projectPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj"
+              },
+              "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Model\\Model.csproj": {
+                "projectPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Model\\Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj",
+        "projectName": "Data",
+        "projectPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj",
+        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+        "outputPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Model\\Model.csproj": {
+                "projectPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Model\\Model.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -73,14 +139,14 @@
         }
       }
     },
-    "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data_EF\\Data_EF.csproj": {
+    "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data_EF\\Data_EF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data_EF\\Data_EF.csproj",
+        "projectUniqueName": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data_EF\\Data_EF.csproj",
         "projectName": "Data_EF",
-        "projectPath": "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data_EF\\Data_EF.csproj",
+        "projectPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data_EF\\Data_EF.csproj",
         "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data_EF\\obj\\",
+        "outputPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data_EF\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -146,14 +212,69 @@
         }
       }
     },
-    "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Trainer\\Trainer.csproj": {
+    "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Trainer\\Trainer.csproj",
-        "projectName": "Trainer",
-        "projectPath": "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Trainer\\Trainer.csproj",
+        "projectUniqueName": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Model\\Model.csproj",
+        "projectName": "Model",
+        "projectPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Model\\Model.csproj",
         "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Trainer\\obj\\",
+        "outputPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Trainer\\Trainer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Trainer\\Trainer.csproj",
+        "projectName": "Trainer",
+        "projectPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Trainer\\Trainer.csproj",
+        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+        "outputPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Trainer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -170,11 +291,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj": {
-                "projectPath": "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj"
+              "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Bussiness\\Bussiness.csproj": {
+                "projectPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Bussiness\\Bussiness.csproj"
               },
-              "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data_EF\\Data_EF.csproj": {
-                "projectPath": "D:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data_EF\\Data_EF.csproj"
+              "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj": {
+                "projectPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj"
+              },
+              "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data_EF\\Data_EF.csproj": {
+                "projectPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data_EF\\Data_EF.csproj"
               }
             }
           }

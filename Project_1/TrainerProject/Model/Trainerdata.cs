@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data
+namespace Model
 {
     public  class Trainerdata
     {
@@ -33,9 +33,10 @@ namespace Data
 
         public string AllTrainerData()
         {
-            return $@"{Name},{EmailID},{Gender},{PhoneNumber},{Location}";
+            return $@"{Name},{EmailID},{Gender},{PhoneNumber},{Location},{Age}";
 
         }
+
         
     }
 }

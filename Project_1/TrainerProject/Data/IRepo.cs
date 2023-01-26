@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Model;
 
 namespace Data
 {
@@ -22,7 +23,12 @@ namespace Data
 
        void TrainerDelete(string? columnName,string? tableName,string? userId);
 
+        Trainerdata FindTrainerByEmail();
 
+        //Trainerdata FindTrainerByLocation(string Location);
 
+       List<Trainerdata> FindTrainerByLocation();
+
+       
     }
 }

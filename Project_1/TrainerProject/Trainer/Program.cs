@@ -1,6 +1,7 @@
 ﻿global using Serilog;
 using Trainer;
 using Data;
+using Model;
 namespace Trainer
 {
    class Program : TrainerSignUp
@@ -54,6 +55,15 @@ namespace Trainer
                         Log.Logger.Information("Showing details");
                         menu = new showTrainerData(newTrainer);
                         break;
+                    case "FindTrainerByEmail":
+                        Log.Logger.Information("finding Trainer by email");
+                        menu = new FindTrainerByEmail();
+                        break;
+                    case "FindTrainerByLocation":
+                        Log.Logger.Information("finding Trainer by Location");
+                        menu= new FindTrainerByLocation();
+                        break;
+                   
                     default:
                         Console.WriteLine("---------Page Doesnt Exist !----------");
                         Console.WriteLine("---------Enter to Continue------------");

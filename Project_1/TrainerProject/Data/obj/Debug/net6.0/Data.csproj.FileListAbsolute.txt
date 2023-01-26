@@ -70,3 +70,6 @@ D:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Data\obj\Debug\net6.0\Data.dl
 D:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Data\obj\Debug\net6.0\refint\Data.dll
 D:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Data\obj\Debug\net6.0\Data.pdb
 D:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Data\obj\Debug\net6.0\ref\Data.dll
+E:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Data\bin\Debug\net6.0\Model.dll
+E:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Data\bin\Debug\net6.0\Model.pdb
+E:\P1-Mounika-Viswanatham\Project_1\TrainerProject\Data\obj\Debug\net6.0\Data.csproj.CopyComplete

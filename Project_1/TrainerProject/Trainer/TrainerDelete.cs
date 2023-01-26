@@ -18,9 +18,7 @@ namespace Trainer
         {
             Console.WriteLine("[0] Go Back  ");
             Console.WriteLine("[1] Name             : " + newTrainer.Name);
-           // Console.WriteLine("[2] EmailId  :" + newTrainer.EmailID);
             Console.WriteLine("[2] PhoneNumber      : " + newTrainer.PhoneNumber);
-         //   Console.WriteLine("[4] Password  : " + newTrainer.Password);
             Console.WriteLine("[3] Age              : " + newTrainer.Age);
             Console.WriteLine("[4] Institution Name : " + newTrainer.institutionName);
             Console.WriteLine("[5] Degree           : " + newTrainer.Degree);
@@ -56,29 +54,12 @@ namespace Trainer
                     repo.TrainerDelete("Name", "TrainerDetails", userId);
                     break;
 
-                /*case "2":
-
-                    Log.Logger.Information("Delete EmailID");
-
-                    repo.TrainerDelete("EmailID", "TrainerDetails", userId);
-                    //repo.TrainerUpdate(email, "EmailID", "TrainerDEtails", userId);
-
-                    break;*/
+                
 
                 case "2":
 
                     Log.Logger.Information("Delete PhoneNumber");
-                    /*Console.WriteLine("Enter the new PhoneNumber");
-                    string phonenumber = Console.ReadLine();
-                    string Pattern1 = "^\\d{10}$";
-                    if (Regex.IsMatch(phonenumber, Pattern1))
-                    {
-                        newTrainer.PhoneNumber = phonenumber;
-                    }
-                    else
-                    {
-                        Console.WriteLine("---PhoneNumber Should Contain 10 Digits");
-                    }*/
+                   
                     Console.WriteLine("Deleting PHONENUMBER");
 
                     newTrainer.PhoneNumber = " ";
@@ -87,24 +68,7 @@ namespace Trainer
 
                     break;
 
-                /*case "4":
-
-                    Log.Logger.Information("Delete Password");
-                    *//*Console.WriteLine("Enter the new Password");
-                    string password = Console.ReadLine();
-                    string pattern3 = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*]).{8,}$";
-                    if (Regex.IsMatch(password, pattern3))
-                    {
-                        newTrainer.Password = password;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Wrong PassWord Format ");
-                        Console.WriteLine("PassWord should contain atleast one capital letter and one small letter ,one special characters ,one number , equal to or more than 8  letters");
-                    }*//*
-                    repo.TrainerDelete("Password", "TrainerDetails", userId);
-
-                    break;*/
+               
 
                 case "3":
 
