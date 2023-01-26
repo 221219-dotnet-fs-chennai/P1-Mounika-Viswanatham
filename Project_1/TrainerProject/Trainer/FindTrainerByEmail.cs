@@ -13,7 +13,7 @@ namespace Trainer
         static string conStr = File.ReadAllText("../../../connectionString.txt");
        // IRepo repo = new SqlRepo(conStr);
 
-        IBusiness repo=new Class1(conStr);
+        IBusiness repo=new Logic(conStr);
 
         public void Display()
         {

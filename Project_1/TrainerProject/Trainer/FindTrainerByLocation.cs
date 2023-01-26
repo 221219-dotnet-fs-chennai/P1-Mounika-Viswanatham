@@ -11,7 +11,7 @@ namespace Trainer
     internal class FindTrainerByLocation : IMenu
     {
         static string conStr = File.ReadAllText("../../../connectionString.txt");
-        IBusiness repo = new Class1(conStr);
+        IBusiness repo = new Logic(conStr);
 
         public void Display()
         {

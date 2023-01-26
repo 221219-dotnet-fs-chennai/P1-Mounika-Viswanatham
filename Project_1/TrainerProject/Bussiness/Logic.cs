@@ -3,10 +3,10 @@ using Data;
 
 namespace Bussiness
 {
-    public class Class1 : IBusiness
+    public class Logic : IBusiness
     {
         IRepo repo;
-        public Class1(string conStr)
+        public Logic(string conStr)
         {
             repo = new SqlRepo(conStr);
 
