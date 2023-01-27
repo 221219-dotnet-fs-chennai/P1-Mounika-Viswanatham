@@ -33,8 +33,8 @@ namespace Model
 
         public string AllTrainerData()
         {
-            return $@"{Name},{EmailID},{Gender},{PhoneNumber},{Location}";
-
+            return $@" Name        - {Name} {"\n"} EmailId     - {EmailID} {"\n"} PhoneNumber - {PhoneNumber} {"\n"} Gender      - {Gender} {"\n"} Location    - {Location}";
+            //return $@"{Name},{EmailID},{PhoneNumber},{Gender},{Location}";
         }
 
         
