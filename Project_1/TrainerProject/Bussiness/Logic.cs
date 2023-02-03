@@ -1,32 +1,44 @@
 ﻿using Model;
-using Data;
+using FluentAPI.Entities;
 
 namespace Bussiness
 {
     public class Logic : IBusiness
     {
-        IRepo repo;
-        public Logic(string conStr)
+        IRepo<FluentAPI.Entities.TrainerDetail> repo;
+        public Logic(IRepo<FluentAPI.Entities.TrainerDetail> r)
         {
-            repo = new SqlRepo(conStr);
-
+           // repo = new SqlRepo(conStr);
+           repo =  r;
         }
         public Trainerdata FindTrainerByEmail()
         {
-            //throw new NotImplementedException();
-           return  repo.FindTrainerByEmail();
+            throw new NotImplementedException();
+            //return Mapper.Map(repo.FindTrainerByEmail());
         }
 
         public IEnumerable<Trainerdata> FindTrainerByLocation()
         {
             //throw new NotImplementedException();
-            return repo.FindTrainerByLocation();
+
+            var rest = new TrainerDetail();
+            var data = repo.FindTrainerByLocation();
+            foreach(var item in data)
+            {
+                rest.Name= item.Name;
+
+            }
+
+            return Mapper.Map(data);
+            
         }
 
         public IEnumerable<Trainerdata> GetTrainerDisconnected()
         {
             // throw new NotImplementedException();
-            return repo.GetTrainerDisconnected();
+            return Mapper.Map(repo.GetTrainerDisconnected());
         }
+
+        
     }
 }

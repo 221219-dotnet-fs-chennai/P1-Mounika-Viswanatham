@@ -15,7 +15,9 @@ namespace Bussiness
 
         Trainerdata FindTrainerByEmail();
 
-        
+        //void TrainerUpdate(string? newData, string? columnName, string? tableName, string? userId);
+
+        //void TrainerDelete(string? columnName, string? tableName, string? userId);
         IEnumerable<Trainerdata> FindTrainerByLocation();
     }
 }

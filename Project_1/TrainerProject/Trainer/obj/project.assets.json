@@ -1241,6 +1241,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Data": "1.0.0",
+          "FluentAPI": "1.0.0",
           "Model": "1.0.0"
         },
         "compile": {
@@ -1266,24 +1267,12 @@
           "bin/placeholder/Data.dll": {}
         }
       },
-      "Data_EF/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.2"
-        },
-        "compile": {
-          "bin/placeholder/Data_EF.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Data_EF.dll": {}
-        }
-      },
       "FluentAPI/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.2"
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.2",
+          "Model": "1.0.0"
         },
         "compile": {
           "bin/placeholder/FluentAPI.dll": {}
@@ -3838,11 +3827,6 @@
       "path": "../Data/Data.csproj",
       "msbuildProject": "../Data/Data.csproj"
     },
-    "Data_EF/1.0.0": {
-      "type": "project",
-      "path": "../Data_EF/Data_EF.csproj",
-      "msbuildProject": "../Data_EF/Data_EF.csproj"
-    },
     "FluentAPI/1.0.0": {
       "type": "project",
       "path": "../FluentAPI/FluentAPI.csproj",
@@ -3858,7 +3842,6 @@
     "net6.0": [
       "Bussiness >= 1.0.0",
       "Data >= 1.0.0",
-      "Data_EF >= 1.0.0",
       "FluentAPI >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.2",
       "Serilog >= 2.12.0",
@@ -3897,9 +3880,6 @@
             },
             "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj": {
               "projectPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data\\Data.csproj"
-            },
-            "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data_EF\\Data_EF.csproj": {
-              "projectPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\Data_EF\\Data_EF.csproj"
             },
             "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\FluentAPI\\FluentAPI.csproj": {
               "projectPath": "E:\\P1-Mounika-Viswanatham\\Project_1\\TrainerProject\\FluentAPI\\FluentAPI.csproj"

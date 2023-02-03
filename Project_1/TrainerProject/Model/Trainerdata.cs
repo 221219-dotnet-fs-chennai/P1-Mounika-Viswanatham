@@ -33,7 +33,7 @@ namespace Model
 
         public string AllTrainerData()
         {
-            return $@" Name        - {Name} {"\n"} EmailId     - {EmailID} {"\n"} PhoneNumber - {PhoneNumber} {"\n"} Gender      - {Gender} {"\n"} Location    - {Location}";
+            return $@" Name        - {Name} {"\n"} EmailId     - {EmailID} {"\n"} PhoneNumber - {PhoneNumber} {"\n"} Gender      - {Gender} {"\n"} Location    - {Location} {"\n"} Degree    -{Degree}  {"\n"} Institution Name    - {institutionName} {"\n"} Specialization     -{Specialization}  {"\n"}  Passing Year    -{PassingYear} {"\n"} Skill1  -{Skill1}  {"\n"} Skill2   -{Skill2}  {"\n"}  Skill3   -{Skill3}  {"\n"} CompanyName     - {CompanyName} {"\n"} Experience  -{Experience} " ;
             //return $@"{Name},{EmailID},{PhoneNumber},{Gender},{Location}";
         }
 

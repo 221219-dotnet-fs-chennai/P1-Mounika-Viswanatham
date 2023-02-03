@@ -388,7 +388,7 @@ namespace Data
               Console.WriteLine("\n");
             
             SqlConnection con = new SqlConnection(connectionString);
-            string query5 = $@"select Name,EmailID,PhoneNumber,Gender,Location from TrainerDetails where Location='{loc}'";
+            string query5 = $@"select Name,EmailID,PhoneNumber,Gender,Location,Age from TrainerDetails where Location='{loc}'";
             using SqlDataAdapter adapter = new SqlDataAdapter(query5, con);
             DataSet ds = new DataSet();
             adapter.Fill(ds);
@@ -402,10 +402,12 @@ namespace Data
                     PhoneNumber     = (string)row["PhoneNumber"],
                     Location        = (string)row["Location"],
                     Gender          = (string)row["Gender"],
-                    //Age             = (string)row["Age"],
+                    Age             = Convert.ToString(row["Age"]),
                    
+
                 });
             }
+
 
             return trainerdata;
 

@@ -781,6 +781,7 @@
       "Bussiness/1.0.0": {
         "dependencies": {
           "Data": "1.0.0",
+          "FluentAPI": "1.0.0",
           "Model": "1.0.0"
         },
         "runtime": {
@@ -808,7 +809,8 @@
       },
       "FluentAPI/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.2"
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.2",
+          "Model": "1.0.0"
         },
         "runtime": {
           "FluentAPI.dll": {}

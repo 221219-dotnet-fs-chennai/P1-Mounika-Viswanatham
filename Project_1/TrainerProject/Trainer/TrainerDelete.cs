@@ -5,14 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-
+using Model;
+using FluentAPI;
 namespace Trainer
 {
     internal class TrainerDelete : TrainerSignUp, IMenu
     {
         static string constr = File.ReadAllText("../../../connectionString.txt");
 
-        IRepo repo = new SqlRepo(constr);
+       // IRepo<FluentAPI.Entities.TrainerDetail> repo;
+
+       
 
         public void Display()
         {
