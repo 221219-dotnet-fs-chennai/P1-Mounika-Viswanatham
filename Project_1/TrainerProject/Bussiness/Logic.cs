@@ -1,44 +1,42 @@
 ﻿using Model;
 using FluentAPI.Entities;
+using FluentAPI;
+using Microsoft.EntityFrameworkCore;
 
 namespace Bussiness
 {
     public class Logic : IBusiness
     {
         IRepo<FluentAPI.Entities.TrainerDetail> repo;
+        
         public Logic(IRepo<FluentAPI.Entities.TrainerDetail> r)
         {
-           // repo = new SqlRepo(conStr);
-           repo =  r;
+            // repo = new SqlRepo(conStr);
+            repo = r;
         }
-        public Trainerdata FindTrainerByEmail()
+        public IEnumerable<Trainerdata> FindTrainerByEmail(string EMailID)
         {
-            throw new NotImplementedException();
-            //return Mapper.Map(repo.FindTrainerByEmail());
+            var ser=repo.GetTrainerDisconnected().Where (r=>r.EmailId==EMailID);
+            return Mapper.TrainerMap(ser);
         }
 
-        public IEnumerable<Trainerdata> FindTrainerByLocation()
+        public IEnumerable<Trainerdata> FindTrainerByLocation(string Location)
         {
-            //throw new NotImplementedException();
-
-            var rest = new TrainerDetail();
-            var data = repo.FindTrainerByLocation();
-            foreach(var item in data)
-            {
-                rest.Name= item.Name;
-
-            }
-
-            return Mapper.Map(data);
             
+            var se = repo.GetTrainerDisconnected().Where(r => r.Location == Location);
+
+            return Mapper.TrainerMap(se);
+
         }
 
         public IEnumerable<Trainerdata> GetTrainerDisconnected()
         {
             // throw new NotImplementedException();
-            return Mapper.Map(repo.GetTrainerDisconnected());
+            return Mapper.TrainerMap(repo.GetTrainerDisconnected());
+            
         }
 
         
     }
 }
+

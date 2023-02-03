@@ -38,5 +38,57 @@ namespace Service.Controllers
             }
         }
 
+        [HttpGet("FindTrainerByEmailID")]
+        public ActionResult GetByEmailID(string EmailID)
+        {
+
+            try
+            {
+                var tra = _bus.FindTrainerByEmail(EmailID);
+                if (tra!=null)
+                {
+                    return Ok(tra);
+                }
+                else
+                {
+                    return BadRequest("No data  found");
+                }
+            }
+            catch (SqlException e)
+            {
+                return BadRequest($"Could not find {e.Message}");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+        [HttpGet("FindTrainerByLocation")]
+        public ActionResult GetByLocation(string Location)
+        {
+
+            try
+            {
+                var tra = _bus.FindTrainerByLocation(Location);
+                if (tra != null)
+                {
+                    return Ok(tra);
+                }
+                else
+                {
+                    return BadRequest("No data  found");
+                }
+            }
+            catch (SqlException e)
+            {
+                return BadRequest($"Could not find {e.Message}");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

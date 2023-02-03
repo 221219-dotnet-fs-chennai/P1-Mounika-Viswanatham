@@ -13,11 +13,13 @@ namespace Bussiness
         IEnumerable<Trainerdata> GetTrainerDisconnected();
 
 
-        Trainerdata FindTrainerByEmail();
+        IEnumerable<Trainerdata> FindTrainerByEmail(string EmailID);
+
+        IEnumerable<Trainerdata> FindTrainerByLocation(string Location);
 
         //void TrainerUpdate(string? newData, string? columnName, string? tableName, string? userId);
 
         //void TrainerDelete(string? columnName, string? tableName, string? userId);
-        IEnumerable<Trainerdata> FindTrainerByLocation();
+        //IEnumerable<Trainerdata> FindTrainerByLocation();
     }
 }

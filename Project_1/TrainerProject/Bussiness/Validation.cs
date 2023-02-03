@@ -9,7 +9,8 @@ namespace Bussiness
 {
     public class Validation
     {
-        private static TrainerdatabaseContext context=new TrainerdatabaseContext();
+         static TrainerdatabaseContext context=new TrainerdatabaseContext();
 
+       
     }
 }

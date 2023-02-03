@@ -33,26 +33,98 @@ public partial class TrainerdatabaseContext : DbContext
         {
             entity.HasKey(e => e.UserId).HasName("PK__Company___B9BE370F017AF318");
 
-            entity.HasOne(d => d.User).WithOne(p => p.CompanyDetail).HasConstraintName("Fk_CompanyDetails");
+            entity.ToTable("Company_Detail");
+
+            entity.Property(e => e.UserId)
+                .HasMaxLength(200)
+                .IsUnicode(false)
+                .HasColumnName("user_id");
+            entity.Property(e => e.CompanyName)
+                .HasMaxLength(25)
+                .IsUnicode(false);
+            entity.Property(e => e.Experience)
+                .HasMaxLength(25)
+                .IsUnicode(false);
+
+            entity.HasOne(d => d.User).WithOne(p => p.CompanyDetail)
+                .HasForeignKey<CompanyDetail>(d => d.UserId)
+                .HasConstraintName("Fk_CompanyDetails");
         });
 
         modelBuilder.Entity<EducationDetail>(entity =>
         {
             entity.HasKey(e => e.UserId).HasName("PK__Educatio__B9BE370F968181BE");
 
-            entity.HasOne(d => d.User).WithOne(p => p.EducationDetail).HasConstraintName("FK-education");
+            entity.ToTable("Education_Details");
+
+            entity.Property(e => e.UserId)
+                .HasMaxLength(200)
+                .IsUnicode(false)
+                .HasColumnName("user_id");
+            entity.Property(e => e.Degree)
+                .HasMaxLength(10)
+                .IsUnicode(false);
+            entity.Property(e => e.InstitutionName)
+                .HasMaxLength(20)
+                .IsUnicode(false)
+                .HasColumnName("institutionName");
+            entity.Property(e => e.PassingYear).IsUnicode(false);
+            entity.Property(e => e.Specialization)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+
+            entity.HasOne(d => d.User).WithOne(p => p.EducationDetail)
+                .HasForeignKey<EducationDetail>(d => d.UserId)
+                .HasConstraintName("FK-education");
         });
 
         modelBuilder.Entity<SkillsDetail>(entity =>
         {
             entity.HasKey(e => e.UserId).HasName("PK__Skills_D__B9BE370F8115A24E");
 
-            entity.HasOne(d => d.User).WithOne(p => p.SkillsDetail).HasConstraintName("FK-skill");
+            entity.ToTable("Skills_Details");
+
+            entity.Property(e => e.UserId)
+                .HasMaxLength(200)
+                .IsUnicode(false)
+                .HasColumnName("user_id");
+            entity.Property(e => e.Skill1)
+                .HasMaxLength(10)
+                .IsUnicode(false);
+            entity.Property(e => e.Skill2)
+                .HasMaxLength(10)
+                .IsUnicode(false);
+            entity.Property(e => e.Skill3)
+                .HasMaxLength(10)
+                .IsUnicode(false);
+
+            entity.HasOne(d => d.User).WithOne(p => p.SkillsDetail)
+                .HasForeignKey<SkillsDetail>(d => d.UserId)
+                .HasConstraintName("FK-skill");
         });
 
         modelBuilder.Entity<TrainerDetail>(entity =>
         {
             entity.HasKey(e => e.UserId).HasName("PK__TrainerD__B9BE370F40E8056B");
+
+            entity.Property(e => e.UserId)
+                .HasMaxLength(200)
+                .IsUnicode(false)
+                .HasColumnName("user_id");
+            entity.Property(e => e.EmailId)
+                .IsUnicode(false)
+                .HasColumnName("EmailID");
+            entity.Property(e => e.Gender).IsUnicode(false);
+            entity.Property(e => e.Location)
+                .HasMaxLength(30)
+                .IsUnicode(false);
+            entity.Property(e => e.Name).IsUnicode(false);
+            entity.Property(e => e.Password)
+                .HasMaxLength(200)
+                .IsUnicode(false);
+            entity.Property(e => e.PhoneNumber)
+                .HasMaxLength(10)
+                .IsUnicode(false);
         });
 
         OnModelCreatingPartial(modelBuilder);
