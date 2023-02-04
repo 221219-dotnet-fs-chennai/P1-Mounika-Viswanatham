@@ -67,5 +67,21 @@ namespace BusinessLogic
 
             return Mapper.TrainerMap(tara);
         }
+
+        public Trainerdata DeleteTrainer(string Name)
+        {
+            var tara = _repo.DeleteTr(Name);
+            if(tara!=null)
+            {
+                return Mapper.TrainerMap(tara);
+            }
+            else
+            {
+                return null;
+            }
+
+                     
+
+        }
     }
 }

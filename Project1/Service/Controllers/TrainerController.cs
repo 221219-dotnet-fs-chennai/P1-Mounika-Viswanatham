@@ -144,5 +144,33 @@ namespace Service.Controllers
             }
 
         }
+
+        [HttpDelete("DeleteTrainer")]
+        public ActionResult Delete(string Name)
+        {
+            try
+            {
+                if(!string.IsNullOrEmpty(Name))
+                {
+                    var r=_logic.DeleteTrainer(Name);
+                    if (r != null)
+                        return Ok(r);
+                    else
+                        return NotFound();
+                }
+                else
+                { 
+                    return BadRequest("Please add a value name to be deleted");
+                }
+            }
+            catch (SqlException er)
+            {
+                return BadRequest(er.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

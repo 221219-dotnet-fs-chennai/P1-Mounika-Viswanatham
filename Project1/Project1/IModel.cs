@@ -12,5 +12,7 @@ namespace Models
         T AddTrainer(T trainer);
 
         T UpdateTrainer(T Trainerdata);
+
+        T DeleteTr(string Name);
     }
 }

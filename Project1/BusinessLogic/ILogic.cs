@@ -19,5 +19,7 @@ namespace BusinessLogic
 
         Trainerdata UpdateTrainer(string Name,Trainerdata trainerdata);
 
+        Trainerdata DeleteTrainer(string Name);
+
     }
 }
