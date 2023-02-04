@@ -29,6 +29,8 @@ namespace Model
 
        List<T> FindTrainerByLocation();
 
+       // List<T> RemoveTrainerByName(string Name);
+
        
     }
 }

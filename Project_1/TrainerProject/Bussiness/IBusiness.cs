@@ -17,6 +17,10 @@ namespace Bussiness
 
         IEnumerable<Trainerdata> FindTrainerByLocation(string Location);
 
+        IEnumerable<Trainerdata> RemoveTrainerByName(string Name);
+
+        //IEnumerable<CompanyDetails> FindTrainerByExperience(string Experience);
+
         //void TrainerUpdate(string? newData, string? columnName, string? tableName, string? userId);
 
         //void TrainerDelete(string? columnName, string? tableName, string? userId);

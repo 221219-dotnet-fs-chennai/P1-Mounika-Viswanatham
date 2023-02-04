@@ -90,5 +90,34 @@ namespace Service.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+
+        /*[HttpDelete("DeleteTrainer")]
+        public ActionResult Delete(string name)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(name))
+                {
+                    var rest = _bus.RemoveTrainerByName(name);
+                    if (rest != null)
+                        return Ok(rest);
+                    else
+                        return NotFound();
+                }
+                else
+                    return BadRequest("Please add a valid restaurant name to be deleted");
+
+            }
+            catch (SqlException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+
+        }*/
     }
 }

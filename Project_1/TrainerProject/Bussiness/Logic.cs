@@ -29,6 +29,16 @@ namespace Bussiness
 
         }
 
+       
+        /*public CompanyDetails FindTrainerByExperience(string Experience)
+        {
+
+            var se = repo.GetTrainerDisconnected().Where(r => r.Experience == Experience);
+
+            return Mapper.TrainerMap(se);
+
+        }*/
+
         public IEnumerable<Trainerdata> GetTrainerDisconnected()
         {
             // throw new NotImplementedException();

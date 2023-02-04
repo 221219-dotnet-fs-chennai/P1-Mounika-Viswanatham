@@ -23,6 +23,8 @@ public partial class TrainerDetail
 
     public virtual CompanyDetail? CompanyDetail { get; set; }
 
+    
+
     public virtual EducationDetail? EducationDetail { get; set; }
 
     public virtual SkillsDetail? SkillsDetail { get; set; }

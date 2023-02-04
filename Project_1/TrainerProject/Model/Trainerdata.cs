@@ -17,8 +17,7 @@ namespace Model
         public string? Age { get; set; }
         public string? Location { get; set; }
        
-        
-        //public string? Position { get; set; }
+       
        
         public string AllTrainerData()
         {
