@@ -20,7 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FluentAPI\FluentAPI.csproj" />
-    <ProjectReference Include="..\Project1\Models.csproj" />
+    <ProjectReference Include="..\Models\Models.csproj" />
   </ItemGroup>
 
 </Project>
