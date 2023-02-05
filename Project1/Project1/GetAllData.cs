@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class GetAllTrainerdata
+    public class GetAllData
     {
         public string user_id { get; set; } 
         public string EmailID { get; set; }

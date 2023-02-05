@@ -84,6 +84,10 @@ namespace BusinessLogic
 
         }
 
-       
+        public IEnumerable<GetAllData> getAllTrainerdatas()
+        {
+            //throw new NotImplementedException();
+            return _repo.getAllTrainerdatas();
+        }
     }
 }

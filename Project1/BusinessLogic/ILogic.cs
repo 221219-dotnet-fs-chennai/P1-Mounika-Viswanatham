@@ -23,7 +23,7 @@ namespace BusinessLogic
         Trainerdata DeleteTrainer(string Name);
 
 
-        
+        IEnumerable<GetAllData> getAllTrainerdatas();
 
     }
 }

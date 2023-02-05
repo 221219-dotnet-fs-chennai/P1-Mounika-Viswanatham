@@ -56,6 +56,38 @@ namespace FluentAPI
         }
 
 
+        public IEnumerable<GetAllData> getAllTrainerdatas()
+        {
+            var td = _context.TrainerDetails;
+            var ed = _context.EducationDetails;
+            var sd = _context.SkillsDetails;
+            var cd = _context.CompanyDetails;
+
+            var getalltrainer = (from t in td
+                              join e in ed on t.UserId equals e.UserId
+                              join s in sd on e.UserId equals s.UserId
+                              join c in cd on s.UserId equals c.UserId
+                              select new GetAllData()
+                              {
+                                  EmailID = t.EmailId,
+                                  Name=t.Name,
+                                  Age = Convert.ToString(t.Age),
+                                  Gender = t.Gender,
+                                  PhoneNumber = t.PhoneNumber,
+                                  institutionName=e.InstitutionName,
+                                  Degree=e.Degree,
+                                  Specialization=e.Specialization,
+                                  PassingYear=e.PassingYear,
+                                  Skill1=s.Skill1,
+                                  Skill2=s.Skill2,
+                                  Skill3=s.Skill3,
+                                  CompanyName=c.CompanyName,
+                                  Experience=c.Experience,
+
+                              });
+            return getalltrainer.ToList();
+        }
+
         
     }
 }

@@ -42,6 +42,30 @@ namespace Service.Controllers
                 return BadRequest(e.Message);
             }
         }
+        [HttpGet("GetAllTrainerData")]
+        public ActionResult Getall() {
+
+            try
+            {
+                var t = _logic.getAllTrainerdatas();
+                if(t.Count()>0)
+                {
+                    return Ok(t);
+                }
+                else
+                {
+                    return BadRequest("No data found in database");
+                }
+            }
+            catch (SqlException e)
+            {
+                return BadRequest("Could not found");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
 
         [HttpPost("AddTrainer")]
         public ActionResult Add(Trainerdata e)

@@ -9,6 +9,7 @@ namespace Models
     public interface IModel<T>
     {
         List<T> AllTrainerData();
+
        // T AddTrainer(T trainer,Edetail e,cdetail c,Sdetail s);
 
         T AddTrainer(T trainer);
@@ -18,5 +19,6 @@ namespace Models
         T DeleteTr(string Name);
 
         //List<T> GetAllTrainerData();
+        IEnumerable<GetAllData> getAllTrainerdatas();
     }
 }
