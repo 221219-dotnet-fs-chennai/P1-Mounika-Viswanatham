@@ -17,11 +17,11 @@ namespace BusinessLogic
             {
 
                 user_id = s.UserId,
-                Name  = s.Name,
-                EmailID=s.EmailId,
-                PhoneNumber=s.PhoneNumber,
+                Name  = Validation.ValidName(s.Name),
+                EmailID=Validation.ValidEmailID(s.EmailId),
+                PhoneNumber=Validation.ValidPhoneNumber(s.PhoneNumber),
                 Gender=s.Gender,
-                Age=Convert.ToInt32(s.Age),
+                Age=Convert.ToInt32(Validation.ValidAge(Convert.ToString(s.Age))),
                 Location=s.Location,
 
 
@@ -40,7 +40,7 @@ namespace BusinessLogic
                 institutionName = s.InstitutionName,
                 Degree = s.Degree,
                 Specialization = s.Specialization,
-                PassingYear = s.PassingYear,
+                PassingYear = Validation.ValidPassingYear(s.PassingYear),
 
             };
         }
@@ -51,8 +51,7 @@ namespace BusinessLogic
             {
                 user_id= c.UserId,
                 CompanyName=c.CompanyName,
-                Experience=c.Experience,
-            };
+                Experience=Validation.ValidExperience(c.Experience),            };
         }
 
         public static Models.Sdetail SkillMap(FluentAPI.Entities.SkillsDetail s)
@@ -70,11 +69,11 @@ namespace BusinessLogic
             return new FluentAPI.Entities.TrainerDetail()
             {
                 UserId = e.user_id,
-                Name = e.Name,
-                EmailId = e.EmailID,
-                PhoneNumber = e.PhoneNumber,
+                Name = Validation.ValidName(e.Name),
+                EmailId = Validation.ValidEmailID(e.EmailID),
+                PhoneNumber = Validation.ValidPhoneNumber(e.PhoneNumber),
                 Gender = e.Gender,
-                Age = Convert.ToInt32(e.Age),
+                Age = Convert.ToInt32(Validation.ValidAge(Convert.ToString(e.Age))),
                 Location=e.Location,
             };
         }
@@ -84,7 +83,7 @@ namespace BusinessLogic
             {
                 UserId=c.user_id,
                 CompanyName=c.CompanyName,
-                Experience=c.Experience,
+                Experience=Validation.ValidExperience(c.Experience),
             };
         }
         public static FluentAPI.Entities.EducationDetail EducationMap(Models.Edetail s)
@@ -95,7 +94,7 @@ namespace BusinessLogic
                 InstitutionName = s.institutionName,
                 Degree = s.Degree,
                 Specialization = s.Specialization,
-                PassingYear = s.PassingYear,
+                PassingYear =Validation.ValidPassingYear(s.PassingYear),
 
             };
         }
@@ -109,6 +108,51 @@ namespace BusinessLogic
                 Skill3 = s.Skill3,
             };
         }
+
+       /* public static FluentAPI.GetAllTrainerdata AllMap(Models.GetAllTrainerdata g)
+        {
+            return new FluentAPI.GetAllTrainerdata()
+            {
+                user_id = g.user_id,
+                EmailID = g.EmailID,
+                Name = g.Name,
+                PhoneNumber = g.PhoneNumber,
+                Age = g.Age,
+                Gender = g.Gender,
+                institutionName = g.institutionName,
+                Degree = g.Degree,
+                Specialization = g.Specialization,
+                PassingYear = g.PassingYear,
+                CompanyName = g.CompanyName,
+                Experience = g.Experience,
+
+                Skill1 = g.Skill1,
+                Skill2 = g.Skill2,
+                Skill3 = g.Skill3,
+            };
+        }*/
+
+        /*public static Models.GetAllTrainerdata AllMap(FluentAPI.GetAllTrainerdata g)
+        {
+            return new Models.GetAllTrainerdata()
+            {
+                user_id = g.user_id,
+                EmailID = g.EmailID,
+                Name = g.Name,
+                PhoneNumber = g.PhoneNumber,
+                Age = g.Age,
+                Gender = g.Gender,
+                institutionName = g.institutionName,
+                Degree = g.Degree,
+                Specialization = g.Specialization,
+                PassingYear = g.PassingYear,
+                CompanyName = g.CompanyName,
+                Experience = g.Experience,
+                Skill1 = g.Skill1,
+                Skill2 = g.Skill2,
+                Skill3 = g.Skill3,
+            };
+        }*/
         public static IEnumerable<Models.Trainerdata> TrainerMap(IEnumerable<FluentAPI.Entities.TrainerDetail> s)
         {
             return s.Select(TrainerMap);

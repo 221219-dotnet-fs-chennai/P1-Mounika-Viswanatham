@@ -23,6 +23,7 @@ namespace FluentAPI
         public List<Entities.TrainerDetail> AllTrainerData()
         {
             //throw new NotImplementedException();
+           // var sera=_context.TrainerDetails.Where(T=>)
             return _context.TrainerDetails.ToList();
         }
         public IEnumerable<Entities.TrainerDetail>FindTrainerByEmailID()
@@ -53,5 +54,8 @@ namespace FluentAPI
 
             return sera;
         }
+
+
+        
     }
 }

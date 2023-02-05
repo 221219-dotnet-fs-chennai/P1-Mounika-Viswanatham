@@ -160,7 +160,7 @@ namespace Service.Controllers
                 }
                 else
                 { 
-                    return BadRequest("Please add a value name to be deleted");
+                    return BadRequest("Please add a correct value  to be deleted");
                 }
             }
             catch (SqlException er)

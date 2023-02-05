@@ -10,7 +10,7 @@ using Models;
 
 namespace BusinessLogic
 {
-    public  class Logic:ILogic    
+    public class Logic : ILogic
     {
         IModel<FluentAPI.Entities.TrainerDetail> _repo;
         public Logic(IModel<FluentAPI.Entities.TrainerDetail> repo)
@@ -45,13 +45,13 @@ namespace BusinessLogic
             return Mapper.TrainerMap(tara);
         }
 
-        public Trainerdata UpdateTrainer(string Name,Trainerdata trainerdata)
+        public Trainerdata UpdateTrainer(string Name, Trainerdata trainerdata)
         {
             var tara = (from r in _repo.AllTrainerData()
                         where r.Name == Name &&
                         r.UserId == trainerdata.user_id
                         select r).FirstOrDefault();
-            if(tara!=null)
+            if (tara != null)
             {
                 tara.Name = trainerdata.Name;
                 tara.Age = Convert.ToInt32(trainerdata.Age);
@@ -71,7 +71,7 @@ namespace BusinessLogic
         public Trainerdata DeleteTrainer(string Name)
         {
             var tara = _repo.DeleteTr(Name);
-            if(tara!=null)
+            if (tara != null)
             {
                 return Mapper.TrainerMap(tara);
             }
@@ -80,8 +80,10 @@ namespace BusinessLogic
                 return null;
             }
 
-                     
+
 
         }
+
+       
     }
 }

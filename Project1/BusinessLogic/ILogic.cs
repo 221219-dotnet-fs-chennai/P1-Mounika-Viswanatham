@@ -11,8 +11,9 @@ namespace BusinessLogic
     {
         IEnumerable<Trainerdata> AllTrainerData();
 
-        Trainerdata AddTrainer(Trainerdata trainerdata);
+       Trainerdata AddTrainer(Trainerdata trainerdata);
 
+        
         IEnumerable<Trainerdata> FindTrainerByEmailID(string EmailID);
 
         IEnumerable<Trainerdata> FindTrainerByLocation(string Location);
@@ -20,6 +21,9 @@ namespace BusinessLogic
         Trainerdata UpdateTrainer(string Name,Trainerdata trainerdata);
 
         Trainerdata DeleteTrainer(string Name);
+
+
+        
 
     }
 }
