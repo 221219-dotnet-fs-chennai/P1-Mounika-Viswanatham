@@ -16,32 +16,72 @@ namespace Service.Controllers
             _logic = log;
 
         }
-  /*      [HttpGet("AllTrainerData")]
-        public ActionResult Get()
+
+        [HttpGet("Login")]
+        public ActionResult Login(string EmailID, string Password)
         {
             try
             {
-                var t = _logic.AllTrainerData();
-                if (t.Count() > 0)
+                if (!string.IsNullOrEmpty(EmailID))
                 {
+                    var tara = _logic.Login(EmailID, Password);
+                    if (tara)
+                    {
+                        return Ok("Successfully logined");
+                        
 
-                    return Ok(t);
-
+                    }
+                    else
+                    {
+                        return BadRequest("Please check your email and password");
+                    }
                 }
                 else
                 {
-                    return BadRequest("No data");
+                    return BadRequest("Please check your EmailID");
                 }
+
+
             }
-            catch (SqlException e)
+
+            catch (SqlException er)
             {
-                return BadRequest("Could not found");
+                Log.Logger.Information("Could not exception");
+                return BadRequest(er.Message);
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                return BadRequest(e.Message);
+                Log.Logger.Information("Catch in Add Trainer");
+                return BadRequest(ex.Message);
             }
-        }*/
+
+        }
+        /*      [HttpGet("AllTrainerData")]
+              public ActionResult Get()
+              {
+                  try
+                  {
+                      var t = _logic.AllTrainerData();
+                      if (t.Count() > 0)
+                      {
+
+                          return Ok(t);
+
+                      }
+                      else
+                      {
+                          return BadRequest("No data");
+                      }
+                  }
+                  catch (SqlException e)
+                  {
+                      return BadRequest("Could not found");
+                  }
+                  catch (Exception e)
+                  {
+                      return BadRequest(e.Message);
+                  }
+              }*/
         [HttpGet("GetAllTrainerData")]
         public ActionResult Getall() {
 
@@ -50,19 +90,28 @@ namespace Service.Controllers
                 var t = _logic.getAllTrainerdatas();
                 if(t.Count()>0)
                 {
+                    Log.Logger.Information("GetALlcalled");
+
+
                     return Ok(t);
                 }
                 else
                 {
+                    Log.Logger.Information("GetAllCalled");
                     return BadRequest("No data found in database");
                 }
             }
             catch (SqlException e)
             {
+                Log.Logger.Information("Could not  found");
+                    
                 return BadRequest("Could not found");
             }
             catch (Exception e)
             {
+
+
+                Log.Logger.Information("Error");
                 return BadRequest(e.Message);
             }
         }
@@ -72,19 +121,25 @@ namespace Service.Controllers
         {
             try
             {
+                Log.Logger.Information("Added Trainer");
                 var tara = _logic.AddTrainer(e);
                 return CreatedAtAction("AddTrainer", tara);
             }
             catch (SqlException er)
             {
+                Log.Logger.Information("Could not exception");
                 return BadRequest(er.Message);
             }
             catch (Exception ex)
             {
+                Log.Logger.Information("Catch in Add Trainer");
                 return BadRequest(ex.Message);
             }
 
+
         }
+
+       
 
         [HttpGet("FindTrainerByEmailID")]
         public ActionResult FindTrainerByEmailID(string EmailID)

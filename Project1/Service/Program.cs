@@ -1,3 +1,4 @@
+global using Serilog;
 using BusinessLogic;
 using FluentAPI;
 using FluentAPI.Entities;
@@ -19,6 +20,9 @@ builder.Services.AddScoped<IModel<FluentAPI.Entities.TrainerDetail>, EFRepo>();
 builder.Services.AddScoped<ILogic, Logic>();
 
 
+Log.Logger = new LoggerConfiguration().WriteTo.File(@"..\logger\logs.txt", rollingInterval: RollingInterval.Day, rollOnFileSizeLimit: true).CreateLogger();
+
+Log.Logger.Information("Program starts");
 
 var app = builder.Build();
 

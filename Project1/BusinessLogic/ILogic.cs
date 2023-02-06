@@ -13,14 +13,18 @@ namespace BusinessLogic
 
        Trainerdata AddTrainer(Trainerdata trainerdata);
 
-        
+       // Sdetail AddSkillDetail(Sdetail s);
         IEnumerable<Trainerdata> FindTrainerByEmailID(string EmailID);
 
         IEnumerable<Trainerdata> FindTrainerByLocation(string Location);
 
         Trainerdata UpdateTrainer(string Name,Trainerdata trainerdata);
 
+       
+
         Trainerdata DeleteTrainer(string Name);
+
+        bool Login(string EmailID, string Password);
 
 
         IEnumerable<GetAllData> getAllTrainerdatas();

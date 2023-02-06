@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
+﻿global using Serilog;
+using Microsoft.EntityFrameworkCore.Metadata;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +8,14 @@ using System.Threading.Tasks;
 using FluentAPI;
 using FluentAPI.Entities;
 using Models;
+using System.Net;
 
 namespace BusinessLogic
 {
     public class Logic : ILogic
     {
         IModel<FluentAPI.Entities.TrainerDetail> _repo;
+        IModel<FluentAPI.Entities.SkillsDetail> _see;
         public Logic(IModel<FluentAPI.Entities.TrainerDetail> repo)
         {
             _repo = repo;
@@ -23,7 +26,10 @@ namespace BusinessLogic
             //throw new NotImplementedException();
             return Mapper.TrainerMap(_repo.AddTrainer(Mapper.TrainerMap(trainerdata)));
         }
-
+       /* public Sdetail AddSkillDetail(Sdetail s)
+        {
+            return Mapper.SkillMap(_see.AddSkillDetail(Mapper.SkillMap(s)));
+        }*/
         public IEnumerable<Trainerdata> AllTrainerData()
         {
             // throw new NotImplementedException();
@@ -33,6 +39,7 @@ namespace BusinessLogic
         public IEnumerable<Trainerdata> FindTrainerByEmailID(string EmailID)
         {
             // throw new NotImplementedException();
+            Log.Logger.Information("TrainerByEmailID");
             var tara = _repo.AllTrainerData().Where(i => i.EmailId == EmailID);
             return Mapper.TrainerMap(tara);
         }
@@ -88,6 +95,13 @@ namespace BusinessLogic
         {
             //throw new NotImplementedException();
             return _repo.getAllTrainerdatas();
+        }
+
+        public bool Login(string EmailID, string Password)
+        {
+            //throw new NotImplementedException();
+
+            return _repo.Login(EmailID, Password);
         }
     }
 }

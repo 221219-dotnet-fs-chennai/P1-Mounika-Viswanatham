@@ -20,6 +20,13 @@ namespace FluentAPI
             return trainer;
         }
 
+       /* public SkillsDetail AddSkillDetail(SkillsDetail skill)
+        {
+            _context.Add(skill);
+            _context.SaveChanges();
+            return skill;
+        }*/
+
         public List<Entities.TrainerDetail> AllTrainerData()
         {
             //throw new NotImplementedException();
@@ -55,7 +62,31 @@ namespace FluentAPI
             return sera;
         }
 
+        public bool Login(string EmailID, string Password)
+        {
+            var r = _context.TrainerDetails;
+            var tara = r.FirstOrDefault(i => i.EmailId == EmailID);
 
+            if (tara != null)
+            {
+                var abs = r.FirstOrDefault(i => i.Password == Password);
+                if (abs != null)
+                {
+                    Console.WriteLine("***Successfully Logined***");
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("***Wrong Password***");
+                    return false;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Check your EmailId and Password");
+                return false;
+            }
+        }
         public IEnumerable<GetAllData> getAllTrainerdatas()
         {
             var td = _context.TrainerDetails;
@@ -90,6 +121,9 @@ namespace FluentAPI
             return getalltrainer.ToList();
         }
 
-        
+        /*public SkillsDetail AddSkillDetail(SkillsDetail s)
+        {
+            throw new NotImplementedException();
+        }*/
     }
 }

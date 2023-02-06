@@ -20,5 +20,12 @@ namespace Models
 
         //List<T> GetAllTrainerData();
         IEnumerable<GetAllData> getAllTrainerdatas();
+
+        //Models.Sdetail AddSkillDetail(Sdetail s);
+
+
+        //T AddSkillDetail(T s);
+
+        bool Login(string EmailID,string  Password);
     }
 }
