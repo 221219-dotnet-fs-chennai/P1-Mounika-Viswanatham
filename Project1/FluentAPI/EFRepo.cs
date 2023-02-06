@@ -69,11 +69,13 @@ namespace FluentAPI
                               join c in cd on s.UserId equals c.UserId
                               select new GetAllData()
                               {
+                                  user_id=t.UserId,
                                   EmailID = t.EmailId,
                                   Name=t.Name,
                                   Age = Convert.ToString(t.Age),
                                   Gender = t.Gender,
                                   PhoneNumber = t.PhoneNumber,
+                                  Location=t.Location,
                                   institutionName=e.InstitutionName,
                                   Degree=e.Degree,
                                   Specialization=e.Specialization,

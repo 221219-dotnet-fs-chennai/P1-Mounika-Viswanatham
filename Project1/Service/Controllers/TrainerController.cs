@@ -16,7 +16,7 @@ namespace Service.Controllers
             _logic = log;
 
         }
-        [HttpGet("AllTrainerData")]
+  /*      [HttpGet("AllTrainerData")]
         public ActionResult Get()
         {
             try
@@ -41,7 +41,7 @@ namespace Service.Controllers
             {
                 return BadRequest(e.Message);
             }
-        }
+        }*/
         [HttpGet("GetAllTrainerData")]
         public ActionResult Getall() {
 
