@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using FluentAPI.Entities;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,14 @@ namespace BusinessLogic
 
        Trainerdata AddTrainer(Trainerdata trainerdata);
 
-       // Sdetail AddSkillDetail(Sdetail s);
+        Edetail AddTrainerEducation(Edetail e);
+
+        cdetail AddTrainerCompany(cdetail c);
+
+        Sdetail AddTrainerSkill(Sdetail s);
+
+
+      
         IEnumerable<Trainerdata> FindTrainerByEmailID(string EmailID);
 
         IEnumerable<Trainerdata> FindTrainerByLocation(string Location);

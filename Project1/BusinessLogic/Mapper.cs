@@ -51,7 +51,7 @@ namespace BusinessLogic
             {
                 user_id= c.UserId,
                 CompanyName=c.CompanyName,
-                Experience=Validation.ValidExperience(c.Experience),           
+                Experience=c.Experience,           
             };
         }
 
@@ -84,7 +84,7 @@ namespace BusinessLogic
             {
                 UserId=c.user_id,
                 CompanyName=c.CompanyName,
-                Experience=Validation.ValidExperience(c.Experience),
+                Experience=c.Experience,
             };
         }
         public static FluentAPI.Entities.EducationDetail EducationMap(Models.Edetail s)
@@ -99,9 +99,9 @@ namespace BusinessLogic
 
             };
         }
-        public static FluentAPI.Entities.SkillsDetail SkillMap(Models.Sdetail s)
+        public static  FluentAPI.Entities.SkillsDetail SkillMap(Models.Sdetail s)
         {
-            return new FluentAPI.Entities.SkillsDetail()
+            return new SkillsDetail()
             {
                 UserId = s.user_id,
                 Skill1 = s.Skill1,

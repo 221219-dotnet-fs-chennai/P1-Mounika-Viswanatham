@@ -77,10 +77,10 @@ namespace BusinessLogic
 
         public static  string ValidPassingYear(string year)
         {
-            string pat = "^[A-Za-z\\s]+$";
-            if (!Regex.IsMatch(pat,year))
+            string pat = "^\\d{4}$";
+            if (!Regex.IsMatch(year,pat))
             {
-                throw new Exception("Name should contain only letters and space");
+                throw new Exception("year should contain only digits");
             }
             else
             {
@@ -88,10 +88,10 @@ namespace BusinessLogic
             }
         }
 
-        public static string ValidExperience(String exp)
+        /*public static string ValidExperience(String exp)
         {
-            string patr= @"^(?:[1-9]|[1-4][0-9]|50)$\";
-            if(!Regex.IsMatch(patr,exp))
+            string patr= @"^\\d{2}$";
+            if(!Regex.IsMatch(exp,patr))
             {
                 throw new Exception("Enter experience below 51");
             }
@@ -99,6 +99,6 @@ namespace BusinessLogic
             {
                 return exp;
             }
-        }
+        }*/
     }
 }

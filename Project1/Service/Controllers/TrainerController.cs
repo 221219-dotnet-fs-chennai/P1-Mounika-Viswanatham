@@ -1,7 +1,9 @@
 ﻿using BusinessLogic;
+using FluentAPI.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Caching.Memory;
 using Models;
 
 namespace Service.Controllers
@@ -11,9 +13,12 @@ namespace Service.Controllers
     public class TrainerController : ControllerBase
     {
         ILogic _logic;
-        public TrainerController(ILogic log)
+        IMemoryCache  _mem;
+
+        public TrainerController(ILogic log,IMemoryCache o)
         {
             _logic = log;
+            _mem = o;
 
         }
 
@@ -117,13 +122,13 @@ namespace Service.Controllers
         }
 
         [HttpPost("AddTrainer")]
-        public ActionResult Add(Trainerdata e)
+        public IActionResult Add(Trainerdata e)
         {
             try
             {
                 Log.Logger.Information("Added Trainer");
                 var tara = _logic.AddTrainer(e);
-                return CreatedAtAction("AddTrainer", tara);
+                return Created("AddTrainer", tara);
             }
             catch (SqlException er)
             {
@@ -138,7 +143,7 @@ namespace Service.Controllers
 
 
         }
-
+       
        
 
         [HttpGet("FindTrainerByEmailID")]

@@ -15,10 +15,20 @@ namespace BusinessLogic
     public class Logic : ILogic
     {
         IModel<FluentAPI.Entities.TrainerDetail> _repo;
-        IModel<FluentAPI.Entities.SkillsDetail> _see;
-        public Logic(IModel<FluentAPI.Entities.TrainerDetail> repo)
+        IEduRepo<FluentAPI.Entities.EducationDetail> _eduRepo;
+        ICompany<FluentAPI.Entities.CompanyDetail> _com;
+        ISkill<FluentAPI.Entities.SkillsDetail> _skil;
+        //IModel<FluentAPI.Entities.SkillsDetail> _see;
+
+        
+
+        public Logic(IModel<FluentAPI.Entities.TrainerDetail> repo,IEduRepo<FluentAPI.Entities.EducationDetail> erepo,ICompany<FluentAPI.Entities.CompanyDetail> crepo,ISkill<FluentAPI.Entities.SkillsDetail> srepo)
         {
             _repo = repo;
+            _eduRepo = erepo;
+            _com= crepo;
+            _skil= srepo;
+            
         }
 
         public Trainerdata AddTrainer(Trainerdata trainerdata)
@@ -26,10 +36,21 @@ namespace BusinessLogic
             //throw new NotImplementedException();
             return Mapper.TrainerMap(_repo.AddTrainer(Mapper.TrainerMap(trainerdata)));
         }
-       /* public Sdetail AddSkillDetail(Sdetail s)
+
+        public Edetail AddTrainerEducation(Edetail e)
         {
-            return Mapper.SkillMap(_see.AddSkillDetail(Mapper.SkillMap(s)));
-        }*/
+            return Mapper.EducationMap(_eduRepo.AddTrainerEducation(Mapper.EducationMap(e)));
+        }
+
+        public cdetail AddTrainerCompany(cdetail c)
+        {
+            return Mapper.CompanyMap(_com.AddTrainerCompany(Mapper.CompanyMap(c)));
+        }
+
+         public Sdetail AddTrainerSkill(Sdetail s)
+        {
+            return Mapper.SkillMap(_skil.AddTrainerSkill(Mapper.SkillMap(s)));
+        }
         public IEnumerable<Trainerdata> AllTrainerData()
         {
             // throw new NotImplementedException();
@@ -103,5 +124,7 @@ namespace BusinessLogic
 
             return _repo.Login(EmailID, Password);
         }
+
+       
     }
 }

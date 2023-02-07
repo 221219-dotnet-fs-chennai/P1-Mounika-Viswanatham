@@ -41,23 +41,23 @@ alter table Company_Detail Drop COLUMN Position;
 
 insert into TrainerDetails VALUES('mounika','Mounika',23,'Female','mounikav.199@gmail.com','8367506198','Chennai','Mounika@123')
 insert into TrainerDetails VALUES('chintu','Rajasekhar',23,'Male','chintu@gmail.com','7896547896','USA','Chintu@123')
-insert  INTO TrainerDetails VALUES('uma','UmaDevi',35,'Female','uma@gmail.com','9704203481','Guntur','Umadevi@123')
+insert INTO TrainerDetails VALUES('uma','UmaDevi',35,'Female','uma@gmail.com','9704203481','Guntur','Umadevi@123')
 insert into TrainerDetails VALUES('kishore','Kishore',32,'Male','kishore@gmail.com','9441504661','Guntur','Kishore@123')
-insert  into TrainerDetails VALUES('mahi','Mahesh',22,'Male','mahesh@gmail.com','9100112056','Chennai','Mahi@123')
+insert into TrainerDetails VALUES('mahi','Mahesh',22,'Male','mahesh@gmail.com','9100112056','Chennai','Mahi@123')
 
 
 insert into Skills_Details VALUES('mounika','Java','Dotnet','Angular')
 insert into Skills_Details VALUES('chintu','Python','Java','Dotnet')
-INSERT  INTO Skills_Details VALUES('uma','C#','java','Python')
+INSERT INTO Skills_Details VALUES('uma','C#','java','Python')
 insert into Skills_Details VALUES('kishore','Angular','React','Java')
-insert  into Skills_Details VALUES('mahi','C++','Python','Java')
+insert into Skills_Details VALUES('mahi','C++','Python','Java')
 
 
 insert into Education_Details VALUES('mounika','VVIT','BTECH','IT','2022')
 insert into Education_Details VALUES('chintu','VVIT','BTECH','IT','2022')
 insert into Education_Details VALUES('uma','KVR','BTECH','ECE','2018')
 insert into Education_Details VALUES('kishore','VIT','BTECH','CSE','2018')
-insert into  Education_Details VALUES('mahi','RVRJC','BSC','Computers','2022')
+insert into Education_Details VALUES('mahi','RVRJC','BSC','Computers','2022')
 
 
 insert into Company_Detail VALUES('uma','Intellect',5)

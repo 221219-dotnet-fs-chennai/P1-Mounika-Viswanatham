@@ -3,13 +3,15 @@ using FluentAPI.Entities;
 
 namespace FluentAPI
 {
-    public class EFRepo:IModel<Entities.TrainerDetail>
+    public class EFRepo:  IModel<Entities.TrainerDetail>
     {
         private readonly TrainerdatabaseContext _context;
         public EFRepo(TrainerdatabaseContext context)
         {
             _context= context;
         }
+
+       
 
         public TrainerDetail AddTrainer(TrainerDetail trainer)
         {
@@ -20,12 +22,13 @@ namespace FluentAPI
             return trainer;
         }
 
-       /* public SkillsDetail AddSkillDetail(SkillsDetail skill)
-        {
-            _context.Add(skill);
-            _context.SaveChanges();
-            return skill;
-        }*/
+      //public EducationDetail AddTrainerEducation(EducationDetail education)
+      //  {
+      //      _context.Add(education);
+      //      _context.SaveChanges();
+      //          return education;
+      //  }
+            
 
         public List<Entities.TrainerDetail> AllTrainerData()
         {
@@ -121,9 +124,7 @@ namespace FluentAPI
             return getalltrainer.ToList();
         }
 
-        /*public SkillsDetail AddSkillDetail(SkillsDetail s)
-        {
-            throw new NotImplementedException();
-        }*/
+    
+        
     }
 }

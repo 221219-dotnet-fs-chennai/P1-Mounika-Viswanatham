@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+//using FluentAPI.Entities;
 namespace Models
 {
     public interface IModel<T>
@@ -13,6 +13,8 @@ namespace Models
        // T AddTrainer(T trainer,Edetail e,cdetail c,Sdetail s);
 
         T AddTrainer(T trainer);
+
+        //T AddTrainerEducation(T e);
 
         T UpdateTrainer(T Trainerdata);
 
@@ -27,5 +29,7 @@ namespace Models
         //T AddSkillDetail(T s);
 
         bool Login(string EmailID,string  Password);
+
+        
     }
 }
