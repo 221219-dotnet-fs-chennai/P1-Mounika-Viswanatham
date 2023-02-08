@@ -88,7 +88,7 @@ namespace BusinessLogic
             }
         }
 
-        public static string ValidExperience(String exp)
+        /*public static string ValidExperience(String exp)
         {
             string patr = @"^[1-3][0-9]";
             if (!Regex.IsMatch(exp, patr))
@@ -99,6 +99,6 @@ namespace BusinessLogic
             {
                 return exp;
             }
-        }
+        }*/
     }
 }

@@ -18,7 +18,11 @@ namespace FluentAPI
             _con = con;
         }
 
-       
+        public List<CompanyDetail> GetAllCompany()
+        {
+            //throw new NotImplementedException();
+            return _con.CompanyDetails.ToList();
+        }
 
         CompanyDetail ICompany<CompanyDetail>.AddTrainerCompany(CompanyDetail c)
             
@@ -26,6 +30,11 @@ namespace FluentAPI
             _con.Add(c);
             _con.SaveChanges();
             return c;
+        }
+
+        public IEnumerable<Entities.CompanyDetail> FindTrainerByExperience()
+        {
+            return _con.CompanyDetails.ToList();
         }
     }
 }

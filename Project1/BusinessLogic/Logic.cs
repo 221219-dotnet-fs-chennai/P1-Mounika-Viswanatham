@@ -72,6 +72,12 @@ namespace BusinessLogic
             var tara = _repo.AllTrainerData().Where(i => i.Location == Location);
             return Mapper.TrainerMap(tara);
         }
+
+        public IEnumerable<cdetail> FindTrainerByExperience(string Eexperience) {
+
+            var  tara=_com.GetAllCompany().Where(i=>i.Experience == Eexperience);
+            return Mapper.CompanyMap(tara);
+        }
         public IEnumerable<Sdetail> FindTrainerBySkill(string SkillName)
         {
             var tara = _skil.GetAllSkills().Where(i => i.Skill1 == SkillName || i.Skill2 == SkillName || i.Skill3 == SkillName);
@@ -169,7 +175,10 @@ namespace BusinessLogic
         {
             return Mapper.SkillMap(_skil.GetAllSkills());
         }
-
+        public IEnumerable<cdetail> GetAllCompany()
+        {
+            return Mapper.CompanyMap(_com.GetAllCompany());
+        }
         public bool Login(string EmailID, string Password)
         {
             //throw new NotImplementedException();

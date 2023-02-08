@@ -10,5 +10,7 @@ namespace Models
     {
         T AddTrainerCompany(T com);
 
+        List<T> GetAllCompany();
+
     }
 }

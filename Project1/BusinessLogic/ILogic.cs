@@ -26,6 +26,9 @@ namespace BusinessLogic
         IEnumerable<Trainerdata> FindTrainerByLocation(string Location);
 
         IEnumerable<Sdetail> FindTrainerBySkill(string SkillName);
+
+        IEnumerable<cdetail> FindTrainerByExperience(string experience);
+        
         Trainerdata UpdateTrainer(string Name,Trainerdata trainerdata);
 
         /*Edetail UpdateEducation(string user_id, Edetail e);
@@ -43,6 +46,8 @@ namespace BusinessLogic
         IEnumerable<GetAllData> getAllTrainerdatas();
 
        IEnumerable<Sdetail> GetAllSkills();
+
+        IEnumerable<cdetail> GetAllCompany();
 
         Sdetail UpdateSkill(string user_id,Sdetail s);
 
