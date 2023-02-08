@@ -12,5 +12,7 @@ namespace Models
 
         List<T> GetAllCompany();
 
+        T UpdateCompany(T com);
+
     }
 }

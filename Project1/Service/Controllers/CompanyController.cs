@@ -96,6 +96,30 @@ namespace Service.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpPut("UpdateCompanyDetails")]
+        public ActionResult UpdateCompany(string user_id, cdetail d)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(user_id))
+                {
+                    _logic.UpdateCompany(user_id, d);
+                    return Ok(d);
+                }
+                else
+                {
+                    return BadRequest($"Please check your input");
+                }
+            }
+            catch (SqlException er)
+            {
+                return BadRequest(er.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
 
+        }
     }
 }

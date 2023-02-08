@@ -106,25 +106,43 @@ namespace BusinessLogic
             return Mapper.TrainerMap(tara);
         }
 
-        /*  public Edetail UpdateEducation(string user_id,Edetail education)
-          {
-              var tara = (from r in _eduRepo.getAllTrainerdatas()
-                          where r.UserId == user_id &&
-                          r.UserId == education.user_id
-                          select r).FirstOrDefault();
-              if (tara != null)
-              {
-                  tara.PassingYear = education.PassingYear;
-                  tara.institutionName = education.institutionName;
-                  tara.Specialization = education.Specialization;
-                  tara.Degree=education.Degree;
+        /* public Edetail UpdateEducation(string user_id, Edetail education)
+         {
+             var tara = (from r in _eduRepo.()
+                         where r.UserId == user_id &&
+                         r.UserId == education.user_id
+                         select r).FirstOrDefault();
+             if (tara != null)
+             {
+                 tara.PassingYear = education.PassingYear;
+                 tara.institutionName = education.institutionName;
+                 tara.Specialization = education.Specialization;
+                 tara.Degree = education.Degree;
 
-                  tara=_eduRepo.UpdateEducation(tara);
+                 tara = _eduRepo.UpdateEducation(tara);
 
-              }
+             }
 
-              return Mapper.EducationMap(tara);
-          }*/
+             return Mapper.EducationMap(tara);
+         }*/
+
+         public cdetail UpdateCompany(string user_id,  cdetail s)
+        {
+            var tara = (from r in _com.GetAllCompany()
+                        where r.UserId == user_id &&
+                        r.UserId == s.user_id
+                        select r).FirstOrDefault();
+            if (tara != null)
+            {
+                tara.CompanyName= s.CompanyName;
+                tara.Experience=s.Experience;
+
+                tara = _com.UpdateCompany(tara);
+
+            }
+
+            return Mapper.CompanyMap(tara);
+        }
 
         public Sdetail UpdateSkill(string user_id, Sdetail s)
         {

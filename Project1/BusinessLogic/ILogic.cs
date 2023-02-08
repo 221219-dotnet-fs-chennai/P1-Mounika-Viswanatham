@@ -31,11 +31,9 @@ namespace BusinessLogic
         
         Trainerdata UpdateTrainer(string Name,Trainerdata trainerdata);
 
-        /*Edetail UpdateEducation(string user_id, Edetail e);
+        //Edetail UpdateEducation(string user_id, Edetail e);
 
-        Sdetail UpdateSkill(string user_id, Sdetail s);
-
-*/
+        cdetail UpdateCompany(string user_id, cdetail c);
        
 
         Trainerdata DeleteTrainer(string Name);

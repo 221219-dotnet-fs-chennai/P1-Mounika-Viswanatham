@@ -36,5 +36,13 @@ namespace FluentAPI
         {
             return _con.CompanyDetails.ToList();
         }
+
+        public CompanyDetail UpdateCompany(CompanyDetail trainerdata)
+        {
+
+            _con.CompanyDetails.Update(trainerdata);
+            _con.SaveChanges();
+            return trainerdata;
+        }
     }
 }
