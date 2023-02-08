@@ -12,5 +12,7 @@ namespace Models
        
         T UpdateEducation(T e);
 
+        List<T> GetAllEducation();
+
     }
 }

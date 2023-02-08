@@ -43,6 +43,8 @@ namespace FluentAPI
             _context.SaveChanges();
             return trainerdata;
         }
+
+       
         public Entities.TrainerDetail DeleteTr(string Name)
         {
             var sera = _context.TrainerDetails.Where(T => T.Name == Name).FirstOrDefault();

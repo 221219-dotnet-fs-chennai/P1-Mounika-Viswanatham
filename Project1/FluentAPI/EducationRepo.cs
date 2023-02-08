@@ -32,5 +32,10 @@ namespace FluentAPI
             _context.SaveChanges();
             return trainer;
         }
+
+        public List<EducationDetail> GetAllEducation()
+        {
+            return _context.EducationDetails.ToList();
+        }
     }
 }

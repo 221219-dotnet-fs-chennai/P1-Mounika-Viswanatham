@@ -34,7 +34,11 @@ namespace BusinessLogic
         //Edetail UpdateEducation(string user_id, Edetail e);
 
         cdetail UpdateCompany(string user_id, cdetail c);
-       
+
+        Edetail UpdateEducation(string user_id,Edetail e);
+
+        Sdetail UpdateSkill(string user_id, Sdetail s);
+
 
         Trainerdata DeleteTrainer(string Name);
 
@@ -47,7 +51,9 @@ namespace BusinessLogic
 
         IEnumerable<cdetail> GetAllCompany();
 
-        Sdetail UpdateSkill(string user_id,Sdetail s);
+        IEnumerable<Edetail> GetAllEducation();
+
+       
 
     }
 }

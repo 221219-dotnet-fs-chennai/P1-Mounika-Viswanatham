@@ -44,7 +44,7 @@ namespace Service.Controllers
 
         }
 
-       /* [HttpPut("UpdateEducation")]
+        [HttpPut("UpdateEducation")]
         public ActionResult UpdateEducation(string user_id, Edetail d)
         {
             try
@@ -68,7 +68,32 @@ namespace Service.Controllers
                 return BadRequest(ex.Message);
             }
 
-        }*/
+        }
+        [HttpGet("AllEducationData")]
+        public ActionResult Get()
+        {
+            try
+            {
+                var t = _logic.GetAllEducation();
+                if (t.Count() > 0)
+                {
 
+                    return Ok(t);
+
+                }
+                else
+                {
+                    return BadRequest("No data");
+                }
+            }
+            catch (SqlException e)
+            {
+                return BadRequest("Could not found");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }
 }
