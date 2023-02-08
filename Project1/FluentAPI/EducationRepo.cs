@@ -24,5 +24,13 @@ namespace FluentAPI
             _context.SaveChanges();
             return education;
         }
+
+        public EducationDetail UpdateEducation(EducationDetail trainer)
+        {
+
+            _context.EducationDetails.Update(trainer);
+            _context.SaveChanges();
+            return trainer;
+        }
     }
 }

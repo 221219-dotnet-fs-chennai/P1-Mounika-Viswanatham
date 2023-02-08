@@ -44,5 +44,31 @@ namespace Service.Controllers
 
         }
 
+       /* [HttpPut("UpdateEducation")]
+        public ActionResult UpdateEducation(string user_id, Edetail d)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(user_id))
+                {
+                    _logic.UpdateEducation(user_id, d);
+                    return Ok(d);
+                }
+                else
+                {
+                    return BadRequest($"Please check your input");
+                }
+            }
+            catch (SqlException er)
+            {
+                return BadRequest(er.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }*/
+
     }
 }

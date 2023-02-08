@@ -9,6 +9,8 @@ namespace Models
     public interface IEduRepo<T>
     {
         T AddTrainerEducation(T Education);
+       
+        T UpdateEducation(T e);
 
     }
 }

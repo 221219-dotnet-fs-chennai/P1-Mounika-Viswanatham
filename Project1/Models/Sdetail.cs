@@ -24,6 +24,11 @@ namespace Models
         {
             get; set;
         }
+
+        public string Skill()
+        {
+            return $@"{Skill1},{Skill2},{Skill3}";
+        }
        
     }
 }

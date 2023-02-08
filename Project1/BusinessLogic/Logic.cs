@@ -53,7 +53,7 @@ namespace BusinessLogic
         }
         public IEnumerable<Trainerdata> AllTrainerData()
         {
-            // throw new NotImplementedException();
+            
             return Mapper.TrainerMap(_repo.AllTrainerData());
         }
 
@@ -72,7 +72,11 @@ namespace BusinessLogic
             var tara = _repo.AllTrainerData().Where(i => i.Location == Location);
             return Mapper.TrainerMap(tara);
         }
-
+        public IEnumerable<Sdetail> FindTrainerBySkill(string SkillName)
+        {
+            var tara = _skil.GetAllSkills().Where(i => i.Skill1 == SkillName || i.Skill2 == SkillName || i.Skill3 == SkillName);
+                return Mapper.SkillMap(tara);
+        }
         public Trainerdata UpdateTrainer(string Name, Trainerdata trainerdata)
         {
             var tara = (from r in _repo.AllTrainerData()
@@ -96,6 +100,49 @@ namespace BusinessLogic
             return Mapper.TrainerMap(tara);
         }
 
+        /*  public Edetail UpdateEducation(string user_id,Edetail education)
+          {
+              var tara = (from r in _eduRepo.getAllTrainerdatas()
+                          where r.UserId == user_id &&
+                          r.UserId == education.user_id
+                          select r).FirstOrDefault();
+              if (tara != null)
+              {
+                  tara.PassingYear = education.PassingYear;
+                  tara.institutionName = education.institutionName;
+                  tara.Specialization = education.Specialization;
+                  tara.Degree=education.Degree;
+
+                  tara=_eduRepo.UpdateEducation(tara);
+
+              }
+
+              return Mapper.EducationMap(tara);
+          }*/
+
+        public Sdetail UpdateSkill(string user_id, Sdetail s)
+        {
+            //throw new NotImplementedException();
+
+            var tara = (from t in _skil.GetAllSkills()
+                        where t.UserId == user_id 
+                        //t.UserId == s.user_id
+                        select t
+                        ).FirstOrDefault();
+            if (tara != null)
+            {
+                tara.Skill1 = s.Skill1;
+                tara.Skill2 = s.Skill2;
+                tara.Skill3 = s.Skill3;
+
+                tara = _skil.UpdateSkill(tara);
+
+
+            }
+            return Mapper.SkillMap(tara);
+
+
+        }
         public Trainerdata DeleteTrainer(string Name)
         {
             var tara = _repo.DeleteTr(Name);
@@ -118,6 +165,11 @@ namespace BusinessLogic
             return _repo.getAllTrainerdatas();
         }
 
+       public IEnumerable<Sdetail> GetAllSkills()
+        {
+            return Mapper.SkillMap(_skil.GetAllSkills());
+        }
+
         public bool Login(string EmailID, string Password)
         {
             //throw new NotImplementedException();
@@ -125,6 +177,6 @@ namespace BusinessLogic
             return _repo.Login(EmailID, Password);
         }
 
-       
+      
     }
 }

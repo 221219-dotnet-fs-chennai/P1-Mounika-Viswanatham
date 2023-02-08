@@ -41,5 +41,85 @@ namespace Service.Controllers
 
 
         }
+
+        [HttpGet("AllSkillsData")]
+        public ActionResult Get()
+        {
+            try
+            {
+                var t = _logic.GetAllSkills();
+                if (t.Count() > 0)
+                {
+
+                    return Ok(t);
+
+                }
+                else
+                {
+                    return BadRequest("No data");
+                }
+            }
+            catch (SqlException e)
+            {
+                return BadRequest("Could not found");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPut("UpdateTrainer")]
+        public ActionResult UpdateSkill(string user_id, Sdetail d)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(user_id))
+                {
+                    _logic.UpdateSkill(user_id, d);
+                    return Ok(d);
+                }
+                else
+                {
+                    return BadRequest($"Please check your input");
+                }
+            }
+            catch (SqlException er)
+            {
+                return BadRequest(er.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
+        [HttpGet("FindTrainerBySkill")]
+        public ActionResult FindTrainerBySkill(string SkillName)
+        {
+
+
+            try
+            {
+                var s = _logic.FindTrainerBySkill(SkillName);
+                if (s != null)
+                {
+                    return Ok(s);
+                }
+                else
+                {
+                    return NotFound("Trainer not found");
+                }
+
+            }
+            catch (SqlException er)
+            {
+                return BadRequest(er.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

@@ -15,25 +15,15 @@ namespace FluentAPI
 
         public TrainerDetail AddTrainer(TrainerDetail trainer)
         {
-            //throw new NotImplementedException();
             _context.Add(trainer);
             _context.SaveChanges();
 
             return trainer;
         }
 
-      //public EducationDetail AddTrainerEducation(EducationDetail education)
-      //  {
-      //      _context.Add(education);
-      //      _context.SaveChanges();
-      //          return education;
-      //  }
-            
-
         public List<Entities.TrainerDetail> AllTrainerData()
         {
-            //throw new NotImplementedException();
-           // var sera=_context.TrainerDetails.Where(T=>)
+          
             return _context.TrainerDetails.ToList();
         }
         public IEnumerable<Entities.TrainerDetail>FindTrainerByEmailID()
@@ -48,7 +38,7 @@ namespace FluentAPI
 
         public TrainerDetail UpdateTrainer(TrainerDetail trainerdata)
         {
-            //throw new NotImplementedException();
+           
             _context.TrainerDetails.Update(trainerdata);
             _context.SaveChanges();
             return trainerdata;

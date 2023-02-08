@@ -4,10 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Models
 {
     public interface ISkill<T>
     {
-       T AddTrainerSkill(T trainerSkill);
+        T AddTrainerSkill(T trainerSkill);
+
+        T UpdateSkill(T skill);
+
+        List<T> GetAllSkills();
+
+
     }
 }

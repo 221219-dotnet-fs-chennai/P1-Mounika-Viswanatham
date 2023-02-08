@@ -12,7 +12,7 @@ namespace BusinessLogic
     {
         IEnumerable<Trainerdata> AllTrainerData();
 
-       Trainerdata AddTrainer(Trainerdata trainerdata);
+        Trainerdata AddTrainer(Trainerdata trainerdata);
 
         Edetail AddTrainerEducation(Edetail e);
 
@@ -20,14 +20,19 @@ namespace BusinessLogic
 
         Sdetail AddTrainerSkill(Sdetail s);
 
-
-      
+        
         IEnumerable<Trainerdata> FindTrainerByEmailID(string EmailID);
 
         IEnumerable<Trainerdata> FindTrainerByLocation(string Location);
 
+        IEnumerable<Sdetail> FindTrainerBySkill(string SkillName);
         Trainerdata UpdateTrainer(string Name,Trainerdata trainerdata);
 
+        /*Edetail UpdateEducation(string user_id, Edetail e);
+
+        Sdetail UpdateSkill(string user_id, Sdetail s);
+
+*/
        
 
         Trainerdata DeleteTrainer(string Name);
@@ -36,6 +41,10 @@ namespace BusinessLogic
 
 
         IEnumerable<GetAllData> getAllTrainerdatas();
+
+       IEnumerable<Sdetail> GetAllSkills();
+
+        Sdetail UpdateSkill(string user_id,Sdetail s);
 
     }
 }
