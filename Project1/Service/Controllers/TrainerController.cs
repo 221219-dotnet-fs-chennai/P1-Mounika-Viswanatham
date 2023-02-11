@@ -121,7 +121,7 @@ namespace Service.Controllers
             }
         }
 
-        [HttpPost("AddTrainer")]
+        [HttpPost("AddNewTrainer")]
         public IActionResult Add(Trainerdata e)
         {
             try

@@ -19,30 +19,6 @@ namespace Service.Controllers
 
 
             }
-
-            [HttpPost("AddTrainerCompany")]
-            public ActionResult Add(cdetail e)
-            {
-                try
-                {
-                    Log.Logger.Information("Added Trainer");
-                    var tara = _logic.AddTrainerCompany(e);
-                    return Created("AddTrainerCompany", tara);
-                }
-                catch (SqlException er)
-                {
-                    Log.Logger.Information("Could not exception");
-                    return BadRequest(er.Message);
-                }
-                catch (Exception ex)
-                {
-                    Log.Logger.Information("Catch in Add Trainer");
-                    return BadRequest(ex.Message);
-                }
-
-
-            }
-
         [HttpGet("AllCompanyData")]
         public ActionResult Get()
         {
@@ -96,6 +72,31 @@ namespace Service.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpPost("AddNewCompany")]
+            public ActionResult Add(cdetail e)
+            {
+                try
+                {
+                    Log.Logger.Information("Added Trainer");
+                    var tara = _logic.AddTrainerCompany(e);
+                    return Created("AddTrainerCompany", tara);
+                }
+                catch (SqlException er)
+                {
+                    Log.Logger.Information("Could not exception");
+                    return BadRequest(er.Message);
+                }
+                catch (Exception ex)
+                {
+                    Log.Logger.Information("Catch in Add Trainer");
+                    return BadRequest(ex.Message);
+                }
+
+
+            }
+
+        
+       
         [HttpPut("UpdateCompanyDetails")]
         public ActionResult UpdateCompany(string user_id, cdetail d)
         {

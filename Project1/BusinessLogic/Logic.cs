@@ -91,13 +91,13 @@ namespace BusinessLogic
                         select r).FirstOrDefault();
             if (tara != null)
             {
-                tara.Name = trainerdata.Name;
-                tara.Age = Convert.ToInt32(trainerdata.Age);
-                tara.PhoneNumber = trainerdata.PhoneNumber;
-                tara.Gender = trainerdata.Gender;
-                tara.EmailId = trainerdata.EmailID;
-                tara.Password = trainerdata.Password;
-                tara.Location = trainerdata.Location;
+                tara.Name           = trainerdata.Name;
+                tara.Age            = Convert.ToInt32(trainerdata.Age);
+                tara.PhoneNumber    = trainerdata.PhoneNumber;
+                tara.Gender         = trainerdata.Gender;
+                tara.EmailId        = trainerdata.EmailID;
+                tara.Password       = trainerdata.Password;
+                tara.Location       = trainerdata.Location;
 
                 tara = _repo.UpdateTrainer(tara);
 
@@ -114,10 +114,10 @@ namespace BusinessLogic
                         select r).FirstOrDefault();
             if (tara != null)
             {
-                tara.PassingYear = education.PassingYear;
-                tara.InstitutionName = education.institutionName;
-                tara.Specialization = education.Specialization;
-                tara.Degree = education.Degree;
+                tara.PassingYear        = education.PassingYear;
+                tara.InstitutionName    = education.institutionName;
+                tara.Specialization     = education.Specialization;
+                tara.Degree             = education.Degree;
 
                 tara = _eduRepo.UpdateEducation(tara);
 
@@ -134,8 +134,8 @@ namespace BusinessLogic
                         select r).FirstOrDefault();
             if (tara != null)
             {
-                tara.CompanyName= s.CompanyName;
-                tara.Experience=s.Experience;
+                tara.CompanyName    = s.CompanyName;
+                tara.Experience     =s.Experience;
 
                 tara = _com.UpdateCompany(tara);
 
@@ -175,10 +175,10 @@ namespace BusinessLogic
                         select t).FirstOrDefault();
             if(tara!=null)
             {
-                tara.InstitutionName = e.institutionName;
-                tara.Degree = e.Degree;
-                tara.Specialization = e.Specialization;
-                tara.PassingYear = e.PassingYear;
+                tara.InstitutionName    = e.institutionName;
+                tara.Degree             = e.Degree;
+                tara.Specialization     = e.Specialization;
+                tara.PassingYear        = e.PassingYear;
 
                 tara = _eduRepo.UpdateEducation(tara);
             }

@@ -19,29 +19,6 @@ namespace Service.Controllers
 
         }
 
-        [HttpPost("AddTrainerSkill")]
-        public ActionResult Add(Sdetail e)
-        {
-            try
-            {
-                Log.Logger.Information("Added Trainer");
-                var tara = _logic.AddTrainerSkill(e);
-                return Created("AddTrainerSkill", tara);
-            }
-            catch (SqlException er)
-            {
-                Log.Logger.Information("Could not exception");
-                return BadRequest(er.Message);
-            }
-            catch (Exception ex)
-            {
-                Log.Logger.Information("Catch in Add Trainer");
-                return BadRequest(ex.Message);
-            }
-
-
-        }
-
         [HttpGet("AllSkillsData")]
         public ActionResult Get()
         {
@@ -68,6 +45,30 @@ namespace Service.Controllers
                 return BadRequest(e.Message);
             }
         }
+        [HttpPost("AddNewSkill")]
+        public ActionResult Add(Sdetail e)
+        {
+            try
+            {
+                Log.Logger.Information("Added Trainer");
+                var tara = _logic.AddTrainerSkill(e);
+                return Created("Skill are added", tara);
+            }
+            catch (SqlException er)
+            {
+                Log.Logger.Information("Could not exception");
+                return BadRequest(er.Message);
+            }
+            catch (Exception ex)
+            {
+                Log.Logger.Information("Catch in Add Trainer");
+                return BadRequest(ex.Message);
+            }
+
+
+        }
+
+        
 
         [HttpPut("UpdateTrainer")]
         public ActionResult UpdateSkill(string user_id, Sdetail d)

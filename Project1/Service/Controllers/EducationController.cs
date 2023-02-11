@@ -20,8 +20,34 @@ namespace Service.Controllers
            
 
         }
+        [HttpGet("AllEducationData")]
+        public ActionResult Get()
+        {
+            try
+            {
+                var t = _logic.GetAllEducation();
+                if (t.Count() > 0)
+                {
 
-        [HttpPost("AddTrainerEducation")]
+                    return Ok(t);
+
+                }
+                else
+                {
+                    return BadRequest("No data");
+                }
+            }
+            catch (SqlException e)
+            {
+                return BadRequest("Could not found");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPost("AddNewEducation")]
         public ActionResult Add(Edetail e)
         {
             try
@@ -69,31 +95,6 @@ namespace Service.Controllers
             }
 
         }
-        [HttpGet("AllEducationData")]
-        public ActionResult Get()
-        {
-            try
-            {
-                var t = _logic.GetAllEducation();
-                if (t.Count() > 0)
-                {
-
-                    return Ok(t);
-
-                }
-                else
-                {
-                    return BadRequest("No data");
-                }
-            }
-            catch (SqlException e)
-            {
-                return BadRequest("Could not found");
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
-        }
+       
     }
 }

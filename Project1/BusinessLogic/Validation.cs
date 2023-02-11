@@ -80,7 +80,7 @@ namespace BusinessLogic
             string pat = "^\\d{4}$";
             if (!Regex.IsMatch(year,pat))
             {
-                throw new Exception("year should contain only digits");
+                throw new Exception("year should contain only 4 digits ");
             }
             else
             {
@@ -88,9 +88,9 @@ namespace BusinessLogic
             }
         }
 
-        /*public static string ValidExperience(String exp)
+        public static string ValidExperience(String exp)
         {
-            string patr = @"^[1-3][0-9]";
+            string patr = "^\\d{1,2}$";
             if (!Regex.IsMatch(exp, patr))
             {
                 throw new Exception("Enter experience below 51");
@@ -99,6 +99,6 @@ namespace BusinessLogic
             {
                 return exp;
             }
-        }*/
+        }
     }
 }
