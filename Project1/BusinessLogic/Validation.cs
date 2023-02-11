@@ -27,7 +27,7 @@ namespace BusinessLogic
             string pattern5 = "^[A-Za-z\\s]+$";
             if (!Regex.IsMatch(name, pattern5))
             {
-                throw new Exception("enter correct name");
+                throw new Exception("enter correct name and name should not contain digits");
             }
             else
             {
@@ -50,10 +50,10 @@ namespace BusinessLogic
         }
         public static string ValidAge(string age) {
 
-            string pattern4 = "^(\\d{2})$";
+            string pattern4 = "^([3-6][0-9])$";
             if(!Regex.IsMatch(age,pattern4))
             {
-                throw new Exception("Age should be in digits");
+                throw new Exception("Age should be in 2 digits and >=30 and <=69 ");
             }
             else
             {
@@ -93,7 +93,7 @@ namespace BusinessLogic
             string patr = "^\\d{1,2}$";
             if (!Regex.IsMatch(exp, patr))
             {
-                throw new Exception("Enter experience below 51");
+                throw new Exception("Experience should be in 2 digits");
             }
             else
             {
