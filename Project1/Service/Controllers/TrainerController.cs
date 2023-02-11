@@ -204,18 +204,18 @@ namespace Service.Controllers
         }
 
         [HttpPut("UpdateTrainer")]
-        public ActionResult UpdateTrainer(string Name,Trainerdata d)
+        public ActionResult UpdateTrainer(string Email,Trainerdata d)
         {
             try
             {
-                if(!string.IsNullOrEmpty(Name))
+                if(!string.IsNullOrEmpty(Email))
                 {
-                    _logic.UpdateTrainer(Name, d);
+                    _logic.UpdateTrainer(Email, d);
                     return Ok(d);
                 }
                 else
                 {
-                    return BadRequest($"Please check your input");
+                    return BadRequest($"Please check your EmailID");
                 }
             }
             catch (SqlException er)

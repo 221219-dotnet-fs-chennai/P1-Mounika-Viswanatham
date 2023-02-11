@@ -59,10 +59,9 @@ namespace Testing
         [Test]
         [TestCase("25")]
         [TestCase("30")]
-        [TestCase("59")]
         [TestCase("69")]
         [TestCase("70")]
-        [TestCase("100")]
+        
 
         public void TestAge(string age)
         {

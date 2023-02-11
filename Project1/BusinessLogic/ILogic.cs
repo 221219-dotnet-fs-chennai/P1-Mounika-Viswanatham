@@ -20,6 +20,7 @@ namespace BusinessLogic
 
         Sdetail AddTrainerSkill(Sdetail s);
 
+
         
         IEnumerable<Trainerdata> FindTrainerByEmailID(string EmailID);
 
@@ -29,9 +30,9 @@ namespace BusinessLogic
 
         IEnumerable<cdetail> FindTrainerByExperience(string experience);
         
-        Trainerdata UpdateTrainer(string Name,Trainerdata trainerdata);
+        Trainerdata UpdateTrainer(string Email,Trainerdata trainerdata);
 
-        //Edetail UpdateEducation(string user_id, Edetail e);
+        
 
         cdetail UpdateCompany(string user_id, cdetail c);
 

@@ -9,6 +9,8 @@ namespace BusinessLogic
 {
     public  class Validation
     { 
+        public Validation() { 
+        }
         public static string ValidEmailID(string  email)
         {
             string pattern = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
@@ -28,10 +30,12 @@ namespace BusinessLogic
             if (!Regex.IsMatch(name, pattern5))
             {
                 throw new Exception("enter correct name and name should not contain digits");
+                //return name;
             }
             else
             {
-                return name;
+                 return name;
+               
             }
         }
 

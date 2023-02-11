@@ -9,6 +9,7 @@ using FluentAPI;
 using FluentAPI.Entities;
 using Models;
 using System.Net;
+using System.Security.Cryptography;
 
 namespace BusinessLogic
 {
@@ -83,19 +84,19 @@ namespace BusinessLogic
             var tara = _skil.GetAllSkills().Where(i => i.Skill1 == SkillName || i.Skill2 == SkillName || i.Skill3 == SkillName);
                 return Mapper.SkillMap(tara);
         }
-        public Trainerdata UpdateTrainer(string Name, Trainerdata trainerdata)
+        public Trainerdata UpdateTrainer(string Email, Trainerdata trainerdata)
         {
             var tara = (from r in _repo.AllTrainerData()
-                        where r.Name == Name &&
-                        r.UserId == trainerdata.user_id
+                        where r.EmailId == Email &&
+                        r.EmailId == trainerdata.EmailID
                         select r).FirstOrDefault();
-            if (tara != null)
+            if ( tara!= null)
             {
                 tara.Name           = trainerdata.Name;
                 tara.Age            = Convert.ToInt32(trainerdata.Age);
                 tara.PhoneNumber    = trainerdata.PhoneNumber;
                 tara.Gender         = trainerdata.Gender;
-                tara.EmailId        = trainerdata.EmailID;
+                tara.EmailId       = trainerdata.EmailID;
                 tara.Password       = trainerdata.Password;
                 tara.Location       = trainerdata.Location;
 
