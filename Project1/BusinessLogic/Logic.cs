@@ -61,6 +61,7 @@ namespace BusinessLogic
         public IEnumerable<Trainerdata> FindTrainerByEmailID(string EmailID)
         {
             // throw new NotImplementedException();
+
             Log.Logger.Information("TrainerByEmailID");
             var tara = _repo.AllTrainerData().Where(i => i.EmailId == EmailID);
             return Mapper.TrainerMap(tara);
@@ -70,22 +71,25 @@ namespace BusinessLogic
         public IEnumerable<Trainerdata> FindTrainerByLocation(string Location)
         {
             // throw new NotImplementedException();
+            Log.Logger.Information("Find trainer by location  called");
             var tara = _repo.AllTrainerData().Where(i => i.Location == Location);
             return Mapper.TrainerMap(tara);
         }
 
         public IEnumerable<cdetail> FindTrainerByExperience(string Eexperience) {
-
+            Log.Logger.Information("Find trainer by experience called");
             var  tara=_com.GetAllCompany().Where(i=>i.Experience == Eexperience);
             return Mapper.CompanyMap(tara);
         }
         public IEnumerable<Sdetail> FindTrainerBySkill(string SkillName)
         {
+            Log.Logger.Information("Find trainer by Skills called");
             var tara = _skil.GetAllSkills().Where(i => i.Skill1 == SkillName || i.Skill2 == SkillName || i.Skill3 == SkillName);
                 return Mapper.SkillMap(tara);
         }
         public Trainerdata UpdateTrainer(string Email, Trainerdata trainerdata)
         {
+            Log.Logger.Information("update trainer called");
             var tara = (from r in _repo.AllTrainerData()
                         where r.EmailId == Email &&
                         r.EmailId == trainerdata.EmailID
@@ -109,6 +113,7 @@ namespace BusinessLogic
 
         public Edetail UpdateEducation(string EmailID, Edetail education)
         {
+            Log.Logger.Information("update education called");
             var tara = (from r in _repo.AllTrainerData()
                         where r.EmailId == EmailID
                         
@@ -134,6 +139,7 @@ namespace BusinessLogic
 
         public cdetail UpdateCompany(string EmailID,  cdetail s)
         {
+            Log.Logger.Information("update company called");
             var tara = (from r in _repo.AllTrainerData()
                         where r.EmailId == EmailID
 
@@ -157,6 +163,7 @@ namespace BusinessLogic
         public Sdetail UpdateSkill(string email, Sdetail s)
         {
             //throw new NotImplementedException();
+            Log.Logger.Information("Update Skills called");
             var tara = (from r in _repo.AllTrainerData()
                         where r.EmailId == email
 
@@ -182,6 +189,7 @@ namespace BusinessLogic
 
         public Edetail updateEducation(string EmailID,Edetail e)
         {
+            Log.Logger.Information("Update Education called");
             var ok =  (from r in _repo.AllTrainerData()
                                  where r.EmailId == EmailID
 
@@ -206,6 +214,7 @@ namespace BusinessLogic
         }
         public Trainerdata DeleteTrainer(string EmailID)
         {
+            Log.Logger.Information("Delete trainer called");
             var tara = _repo.DeleteTr(EmailID);
             if (tara != null)
             {
@@ -222,26 +231,31 @@ namespace BusinessLogic
 
         public IEnumerable<GetAllData> getAllTrainerdatas()
         {
+            Log.Logger.Information("Get All Trainer Data called");
             //throw new NotImplementedException();
             return _repo.getAllTrainerdatas();
         }
 
        public IEnumerable<Sdetail> GetAllSkills()
         {
+            Log.Logger.Information("Get All Skills called");
             return Mapper.SkillMap(_skil.GetAllSkills());
         }
         public IEnumerable<cdetail> GetAllCompany()
         {
+            Log.Logger.Information("Get All Company called");
             return Mapper.CompanyMap(_com.GetAllCompany());
         }
 
         public IEnumerable<Edetail> GetAllEducation()
         {
+            Log.Logger.Information("Get All Education called");
             return Mapper.EducationMap(_eduRepo.GetAllEducation());
         }
         public bool Login(string EmailID, string Password)
         {
             //throw new NotImplementedException();
+            Log.Logger.Information("Login called");
 
             return _repo.Login(EmailID, Password);
         }
