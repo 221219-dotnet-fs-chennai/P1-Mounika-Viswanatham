@@ -65,7 +65,7 @@ namespace Service.Controllers
             }
             catch (SqlException er)
             {
-                return BadRequest(er.Message);
+                return BadRequest("No data found ");
             }
             catch (Exception ex)
             {
@@ -84,7 +84,7 @@ namespace Service.Controllers
                 catch (SqlException er)
                 {
                     Log.Logger.Information("Could not exception");
-                    return BadRequest(er.Message);
+                    return BadRequest("Enter proper details");
                 }
                 catch (Exception ex)
                 {
@@ -98,13 +98,13 @@ namespace Service.Controllers
         
        
         [HttpPut("UpdateCompanyDetails")]
-        public ActionResult UpdateCompany(string user_id, cdetail d)
+        public ActionResult UpdateCompany(string EmailID, cdetail d)
         {
             try
             {
-                if (!string.IsNullOrEmpty(user_id))
+                if (!string.IsNullOrEmpty(EmailID))
                 {
-                    _logic.UpdateCompany(user_id, d);
+                    _logic.UpdateCompany(EmailID, d);
                     return Ok(d);
                 }
                 else
@@ -114,7 +114,7 @@ namespace Service.Controllers
             }
             catch (SqlException er)
             {
-                return BadRequest(er.Message);
+                return BadRequest("check your input");
             }
             catch (Exception ex)
             {

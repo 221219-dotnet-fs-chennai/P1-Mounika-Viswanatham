@@ -45,9 +45,9 @@ namespace FluentAPI
         }
 
        
-        public Entities.TrainerDetail DeleteTr(string Name)
+        public Entities.TrainerDetail DeleteTr(string EmailID)
         {
-            var sera = _context.TrainerDetails.Where(T => T.Name == Name).FirstOrDefault();
+            var sera = _context.TrainerDetails.Where(T => T.EmailId == EmailID).FirstOrDefault();
             if(sera!=null)
             {
                 _context.TrainerDetails.Remove(sera);

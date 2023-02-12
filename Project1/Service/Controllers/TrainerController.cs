@@ -133,7 +133,7 @@ namespace Service.Controllers
             catch (SqlException er)
             {
                 Log.Logger.Information("Could not exception");
-                return BadRequest(er.Message);
+                return BadRequest("add correct details");
             }
             catch (Exception ex)
             {
@@ -166,7 +166,7 @@ namespace Service.Controllers
             }
             catch (SqlException er)
             {
-                return BadRequest(er.Message);
+                return BadRequest("No data found");
             }
             catch (Exception ex)
             {
@@ -195,7 +195,7 @@ namespace Service.Controllers
             }
             catch (SqlException er)
             {
-                return BadRequest(er.Message);
+                return BadRequest("No data found");
             }
             catch (Exception ex)
             {
@@ -220,7 +220,7 @@ namespace Service.Controllers
             }
             catch (SqlException er)
             {
-                return BadRequest(er.Message);
+                return BadRequest("No data found");
             }
             catch (Exception ex)
             {
@@ -230,13 +230,13 @@ namespace Service.Controllers
         }
 
         [HttpDelete("DeleteTrainer")]
-        public ActionResult Delete(string Name)
+        public ActionResult Delete(string EmailID)
         {
             try
             {
-                if(!string.IsNullOrEmpty(Name))
+                if(!string.IsNullOrEmpty(EmailID))
                 {
-                    var r=_logic.DeleteTrainer(Name);
+                    var r=_logic.DeleteTrainer(EmailID);
                     if (r != null)
                         return Ok(r);
                     else
@@ -249,7 +249,7 @@ namespace Service.Controllers
             }
             catch (SqlException er)
             {
-                return BadRequest(er.Message);
+                return BadRequest("no data found");
             }
             catch (Exception ex)
             {

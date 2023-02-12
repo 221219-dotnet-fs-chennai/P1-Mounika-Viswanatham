@@ -59,25 +59,25 @@ namespace Service.Controllers
             catch (SqlException er)
             {
                 Log.Logger.Information("Could not exception");
-                return BadRequest(er.Message);
+                return BadRequest("Add proper details");
             }
             catch (Exception ex)
             {
                 Log.Logger.Information("Catch in Add Trainer");
-                return BadRequest(ex.Message);
+                return BadRequest("Add Proper details");
             }
 
 
         }
 
         [HttpPut("UpdateEducation")]
-        public ActionResult UpdateEducation(string user_id, Edetail d)
+        public ActionResult UpdateEducation(string EmailID, Edetail d)
         {
             try
             {
-                if (!string.IsNullOrEmpty(user_id))
+                if (!string.IsNullOrEmpty(EmailID))
                 {
-                    _logic.UpdateEducation(user_id, d);
+                    _logic.UpdateEducation(EmailID, d);
                     return Ok(d);
                 }
                 else
@@ -87,11 +87,11 @@ namespace Service.Controllers
             }
             catch (SqlException er)
             {
-                return BadRequest(er.Message);
+                return BadRequest("No Data found with this Email");
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest("No data with this email");
             }
 
         }

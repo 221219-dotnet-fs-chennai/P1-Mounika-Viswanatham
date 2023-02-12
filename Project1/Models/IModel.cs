@@ -18,7 +18,7 @@ namespace Models
 
         T UpdateTrainer(T Trainerdata);
 
-        T DeleteTr(string Name);
+        T DeleteTr(string EmailID);
 
         //List<T> GetAllTrainerData();
         IEnumerable<GetAllData> getAllTrainerdatas();

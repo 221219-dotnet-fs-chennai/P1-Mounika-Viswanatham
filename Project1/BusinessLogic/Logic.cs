@@ -107,74 +107,91 @@ namespace BusinessLogic
             return Mapper.TrainerMap(tara);
         }
 
-        public Edetail UpdateEducation(string user_id, Edetail education)
+        public Edetail UpdateEducation(string EmailID, Edetail education)
         {
-            var tara = (from r in _eduRepo.GetAllEducation()
-                        where r.UserId == user_id &&
-                        r.UserId == education.user_id
+            var tara = (from r in _repo.AllTrainerData()
+                        where r.EmailId == EmailID
+                        
                         select r).FirstOrDefault();
-            if (tara != null)
-            {
-                tara.PassingYear        = education.PassingYear;
-                tara.InstitutionName    = education.institutionName;
-                tara.Specialization     = education.Specialization;
-                tara.Degree             = education.Degree;
 
-                tara = _eduRepo.UpdateEducation(tara);
+            string id = tara.UserId;
+
+            var ok = (from r in _eduRepo.GetAllEducation() where r.UserId == id select r).FirstOrDefault();
+
+            if (ok != null)
+            {
+                ok.PassingYear        = education.PassingYear;
+                ok.InstitutionName    = education.institutionName;
+                ok.Specialization     = education.Specialization;
+                ok.Degree             = education.Degree;
+
+                ok = _eduRepo.UpdateEducation(ok);
 
             }
 
-            return Mapper.EducationMap(tara);
+            return Mapper.EducationMap(ok);
         }
 
-        public cdetail UpdateCompany(string user_id,  cdetail s)
+        public cdetail UpdateCompany(string EmailID,  cdetail s)
         {
-            var tara = (from r in _com.GetAllCompany()
-                        where r.UserId == user_id &&
-                        r.UserId == s.user_id
-                        select r).FirstOrDefault();
-            if (tara != null)
-            {
-                tara.CompanyName    = s.CompanyName;
-                tara.Experience     =s.Experience;
+            var tara = (from r in _repo.AllTrainerData()
+                        where r.EmailId == EmailID
 
-                tara = _com.UpdateCompany(tara);
+                        select r).FirstOrDefault();
+
+            string id = tara.UserId;
+
+            var ok = (from r in _com.GetAllCompany() where r.UserId == id select r).FirstOrDefault(); 
+            if (ok != null)
+            {
+                ok.CompanyName    = s.CompanyName;
+                ok.Experience     =s.Experience;
+
+                ok = _com.UpdateCompany(ok);
 
             }
 
-            return Mapper.CompanyMap(tara);
+            return Mapper.CompanyMap(ok);
         }
 
-        public Sdetail UpdateSkill(string user_id, Sdetail s)
+        public Sdetail UpdateSkill(string email, Sdetail s)
         {
             //throw new NotImplementedException();
+            var tara = (from r in _repo.AllTrainerData()
+                        where r.EmailId == email
 
-            var tara = (from t in _skil.GetAllSkills()
-                        where t.UserId == user_id 
-                        //t.UserId == s.user_id
-                        select t
-                        ).FirstOrDefault();
-            if (tara != null)
+                        select r).FirstOrDefault();
+
+            string id= tara.UserId;
+
+            var ok = (from r in _skil.GetAllSkills() where r.UserId == id select r).FirstOrDefault();
+            if (ok != null)
             {
-                tara.Skill1 = s.Skill1;
-                tara.Skill2 = s.Skill2;
-                tara.Skill3 = s.Skill3;
+                ok.Skill1 = s.Skill1;
+                ok.Skill2 = s.Skill2;
+                ok.Skill3 = s.Skill3;
 
-                tara = _skil.UpdateSkill(tara);
+                ok = _skil.UpdateSkill(ok);
 
 
             }
-            return Mapper.SkillMap(tara);
+            return Mapper.SkillMap(ok);
 
 
         }
 
-        public Edetail updateEducation(string user_id,Edetail e)
+        public Edetail updateEducation(string EmailID,Edetail e)
         {
-            var tara = (from t in _eduRepo.GetAllEducation()
-                        where t.UserId == user_id
-                        select t).FirstOrDefault();
-            if(tara!=null)
+            var ok =  (from r in _repo.AllTrainerData()
+                                 where r.EmailId == EmailID
+
+                                 select r).FirstOrDefault();
+
+            string id = ok.UserId;
+            var tara = (from r in _eduRepo.GetAllEducation() where r.UserId == id select r).FirstOrDefault();
+
+
+            if (tara!=null)
             {
                 tara.InstitutionName    = e.institutionName;
                 tara.Degree             = e.Degree;
@@ -187,9 +204,9 @@ namespace BusinessLogic
             return Mapper.EducationMap(tara);
                 
         }
-        public Trainerdata DeleteTrainer(string Name)
+        public Trainerdata DeleteTrainer(string EmailID)
         {
-            var tara = _repo.DeleteTr(Name);
+            var tara = _repo.DeleteTr(EmailID);
             if (tara != null)
             {
                 return Mapper.TrainerMap(tara);

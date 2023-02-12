@@ -46,6 +46,10 @@ insert into TrainerDetails VALUES('kishore','Kishore',32,'Male','kishore@gmail.c
 insert into TrainerDetails VALUES('mahi','Mahesh',22,'Male','mahesh@gmail.com','9100112056','Chennai','Mahi@123')
 
 
+update TrainerDetails set Age=31 where Name='Rajasekhar'
+update TrainerDetails set Age=30  where Name='Mounika'
+update TrainerDetails set Age=31 where Name='Mahesh'
+
 insert into Skills_Details VALUES('mounika','Java','Dotnet','Angular')
 insert into Skills_Details VALUES('chintu','Python','Java','Dotnet')
 INSERT INTO Skills_Details VALUES('uma','C#','java','Python')

@@ -57,7 +57,7 @@ namespace Service.Controllers
             catch (SqlException er)
             {
                 Log.Logger.Information("Could not exception");
-                return BadRequest(er.Message);
+                return BadRequest("add proper details");
             }
             catch (Exception ex)
             {
@@ -71,13 +71,13 @@ namespace Service.Controllers
         
 
         [HttpPut("UpdateTrainer")]
-        public ActionResult UpdateSkill(string user_id, Sdetail d)
+        public ActionResult UpdateSkill(string EmailID, Sdetail d)
         {
             try
             {
-                if (!string.IsNullOrEmpty(user_id))
+                if (!string.IsNullOrEmpty(EmailID))
                 {
-                    _logic.UpdateSkill(user_id, d);
+                    _logic.UpdateSkill(EmailID, d);
                     return Ok(d);
                 }
                 else
@@ -87,7 +87,7 @@ namespace Service.Controllers
             }
             catch (SqlException er)
             {
-                return BadRequest(er.Message);
+                return BadRequest("check your input");
             }
             catch (Exception ex)
             {
@@ -115,7 +115,7 @@ namespace Service.Controllers
             }
             catch (SqlException er)
             {
-                return BadRequest(er.Message);
+                return BadRequest("no data found");
             }
             catch (Exception ex)
             {

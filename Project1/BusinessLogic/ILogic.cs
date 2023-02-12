@@ -34,14 +34,14 @@ namespace BusinessLogic
 
         
 
-        cdetail UpdateCompany(string user_id, cdetail c);
+        cdetail UpdateCompany(string EmailID, cdetail c);
 
-        Edetail UpdateEducation(string user_id,Edetail e);
+        Edetail UpdateEducation(string EmailID,Edetail e);
 
-        Sdetail UpdateSkill(string user_id, Sdetail s);
+        Sdetail UpdateSkill(string EmailID, Sdetail s);
 
 
-        Trainerdata DeleteTrainer(string Name);
+        Trainerdata DeleteTrainer(string EmailID);
 
         bool Login(string EmailID, string Password);
 
