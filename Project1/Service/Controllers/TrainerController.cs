@@ -95,20 +95,20 @@ namespace Service.Controllers
                 var t = _logic.getAllTrainerdatas();
                 if(t.Count()>0)
                 {
-                    Log.Logger.Information("GetALlcalled");
+                    
 
 
                     return Ok(t);
                 }
                 else
                 {
-                    Log.Logger.Information("GetAllCalled");
+                   
                     return BadRequest("No data found in database");
                 }
             }
             catch (SqlException e)
             {
-                Log.Logger.Information("Could not  found");
+                
                     
                 return BadRequest("Could not found");
             }
@@ -116,28 +116,28 @@ namespace Service.Controllers
             {
 
 
-                Log.Logger.Information("Error");
+               
                 return BadRequest(e.Message);
             }
         }
-
+       
         [HttpPost("AddNewTrainer")]
-        public IActionResult Add(Trainerdata e)
+        public ActionResult AddNewTrainer([FromBody]Trainerdata e)
         {
             try
             {
-                Log.Logger.Information("Added Trainer");
+               
                 var tara = _logic.AddTrainer(e);
                 return Created("AddTrainer", tara);
             }
             catch (SqlException er)
             {
-                Log.Logger.Information("Could not exception");
+              
                 return BadRequest("add correct details");
             }
             catch (Exception ex)
             {
-                Log.Logger.Information("Catch in Add Trainer");
+               
                 return BadRequest(ex.Message);
             }
 
@@ -146,8 +146,8 @@ namespace Service.Controllers
        
        
 
-        [HttpGet("FindTrainerByEmailID")]
-        public ActionResult FindTrainerByEmailID(string EmailID)
+        [HttpGet("FindTrainerByEmailID/{EmailID}")]
+        public IActionResult FindTrainerByEmailID([FromRoute]string EmailID)
         {
 
 
@@ -175,8 +175,8 @@ namespace Service.Controllers
         }
 
 
-        [HttpGet("FindTrainerByLocation")]
-        public ActionResult FindTrainerByLocation(string Location)
+        [HttpGet("FindTrainerByLocation/{Location}")]
+        public ActionResult FindTrainerByLocation([FromRoute]string Location)
         {
 
 
@@ -230,7 +230,7 @@ namespace Service.Controllers
         }
 
         [HttpDelete("DeleteTrainer")]
-        public ActionResult Delete(string EmailID)
+        public ActionResult Delete([FromRoute]string EmailID)
         {
             try
             {

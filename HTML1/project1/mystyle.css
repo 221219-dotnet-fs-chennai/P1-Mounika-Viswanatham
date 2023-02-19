@@ -1,0 +1,18 @@
+body{
+    font-family: serif;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-top: 30px;
+    
+}
+h1{
+    font-family: serif;
+    color:black;
+
+}
+
+.form-div{
+    width:540px;
+    margin:auto;
+
+}

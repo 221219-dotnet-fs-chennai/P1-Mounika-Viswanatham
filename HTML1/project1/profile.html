@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        div{
+            text-align: center;
+        }
+        body{
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa1uialBGzG5Yk1SeVGy6tLjY2jqBsSeqi1w&usqp=CAU');
+            background-repeat: no-repeat ;
+            background-size:cover;
+            background-attachment: fixed;
+            
+        }
+        h1{
+            background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_bK7XvxmuU3LjHFOPVqhphYfVy14H8afzpA&usqp=CAU')
+        }
+    </style>
+</head>
+<body>
+    <span style="padding-left:90%"><a href="login.html"><button type="menu">Logout</button></a><a href="starting.html"><button type="menu">Main Page</button></a>
+    </span>
+    <div class="text-center">
+        <h1 style="color:darkgreen;font-size:50px"><center>Welcome Trainer</center></h1><br>
+    <a href="update.html"><button type="menu" id="menu">1.Update details</button></a><br><br>
+    <a href="Delete.html"><button type="menu" id="del">2.Delete details</button></a><br><br>
+    <a href="FindByEmailID.html" style="padding-left:3%"><button type="menu" onclick="FindByEmailID()" id="findemail">3.FindTrainerByEmailID</button></a><br><br>
+    <a href="FindTrainerByLocation.html" style="padding-left:3%"><button type="menu" id="findemail">3.FindTrainerByLocation</button></a><br><br>
+    <a href="FindByExperience.html" style="padding-left:4%"><button type="menu" id="findemail">3.FindTrainerByExperience</button></a><br><br>
+    </div>
+</body>
+<script src="getall.js"></script>
+</html>

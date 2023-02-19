@@ -95,8 +95,8 @@ namespace Service.Controllers
             }
 
         }
-        [HttpGet("FindTrainerBySkill")]
-        public ActionResult FindTrainerBySkill(string SkillName)
+        [HttpGet("FindTrainerBySkill/{SkillName}")]
+        public ActionResult FindTrainerBySkill([FromRoute] string SkillName)
         {
 
 

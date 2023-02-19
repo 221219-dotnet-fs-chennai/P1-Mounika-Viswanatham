@@ -14,11 +14,12 @@ namespace Testing
         {
         }
         [Test]
-        public void TrainerMap()
+        [TestCase("mounikav.199@gmail.com")]
+        public void TrainerMap(string email)
         {
             Trainerdata td= new Trainerdata();
             var m=Mapper.TrainerMap(td);
-            Assert.AreEqual(m.GetType(),typeof(TrainerDetail));
+            Assert.AreEqual(m.GetType(),typeof(Trainerdata));
         }
 
         [Test]
