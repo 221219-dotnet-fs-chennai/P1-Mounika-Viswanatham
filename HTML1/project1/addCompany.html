@@ -31,6 +31,12 @@
 
     <div class="form-div">
       <form class="row g-3">
+
+        <div class="col-8">
+          <label for="inputAddress" class="form-label">Userid</label>
+          <input type="text" class="form-control" id="usid" placeholder="CName">
+          
+        </div>
         <div class="col-8">
             <label for="inputAddress" class="form-label">CompanyName</label>
             <input type="text" class="form-control" id="CName" placeholder="CName">
@@ -46,12 +52,40 @@
         </div>    
     <br>
     <div class="text-center">
-    <a href="signuppage.html" ><button type="submit" class="btn btn-primary" id="submit">Submit</button></a>
+    <button type="submit" class="btn btn-primary" onclick="Addcom()" id="submit">Submit</button>
     </div>
 
 
 
-
+<script>
+  function Addcom() {
+    
+    let uid = document.getElementById("usid").value
+     let com = document.getElementById("CName").value
+     let exp = document.getElementById("Exp").value
+  
+     fetch(`https://localhost:7128/api/Company/AddNewCompany`,{
+ 
+      
+       method: "POST",
+        body: JSON.stringify({
+         user_id: uid,
+         companyName: com,
+         experience: exp,
+       }),   
+       headers: {
+         "Content-type": "application/json; charset=UTF-8",
+       },
+     })
+     .then((Response) => {
+         if(Response.status===201){
+             alert("Successfully created");
+             window.location.href='profile.html';
+         }
+     })
+ }
+ 
+</script>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

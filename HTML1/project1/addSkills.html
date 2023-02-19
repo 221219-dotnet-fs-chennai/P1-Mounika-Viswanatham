@@ -32,30 +32,76 @@
     <div class="form-div">
       <form class="row g-3">
         <div class="col-8">
+          <label for="inputAddress" class="form-label">user</label>
+          <input type="text" class="form-control" id="usid" placeholder="Dotnet">
+          
+        </div>
+        <div class="col-8">
             <label for="inputAddress" class="form-label">Skill1</label>
-            <input type="text" class="form-control" id="CName" placeholder="Dotnet">
+            <input type="text" class="form-control" id="sk11" placeholder="Dotnet">
             
           </div>
           
         
         <div class="col-md-8">
           <label for="inputEmail4" class="form-label">Skill2</label>
-          <input type="text" class="form-control" id="Exp" placeholder="Python">
+          <input type="text" class="form-control" id="sk12" placeholder="Python">
         </div>
 
         <div class="col-md-8">
             <label for="inputEmail4" class="form-label">Skill3</label>
-            <input type="text" class="form-control" id="Exp" placeholder="Java">
+            <input type="text" class="form-control" id="sk13" placeholder="Java">
           </div>
         </form>
         </div>    
     <br>
     <div class="text-center">
-    <a href="signuppage.html" ><button type="submit" class="btn btn-primary" id="submit">Submit</button></a>
+    <button type="submit" class="btn btn-primary" onclick="Addski()" id="submit">Submit</button>
     </div>
 
 
+<script>
+  
+function Addski() {
+    
+  let uid = document.getElementById("usid").value
+  let sk1 = document.getElementById("sk11").value
+  let sk2 = document.getElementById("sk12").value
+  let sk3 = document.getElementById("sk13").value
+  
+  
+  
+  fetch(`https://localhost:7128/api/Skill/AddNewSkill`,{
 
+  
+    
+    method: "POST",
+
+    
+    body: JSON.stringify({
+      user_id: uid,
+      skill1: sk1,
+      skill2: sk2,
+      skill3: sk3,
+      
+      
+    }),
+
+   
+    headers: {
+      'Accept':'application/json',
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  })
+  .then((Response) => {
+      if(Response.status===201){
+          alert("Successfully created");
+          window.location.href='profile.html';
+      }
+  })
+}
+
+</script>
 
 
 </body>

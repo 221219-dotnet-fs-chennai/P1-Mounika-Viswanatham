@@ -7,6 +7,8 @@ function handleUpdate() {
     let speci = document.getElementById("specialization").value
     let ye = document.getElementById("year").value
     const vre=localStorage.getItem('EmailID');
+    let val = vre.split('@');
+    User = val[0];
     
     fetch(`https://localhost:7128/api/Education/UpdateEducation?EmailID=${vre}`,{
 
@@ -16,7 +18,7 @@ function handleUpdate() {
   
       
       body: JSON.stringify({
-        user_id: uid,
+        user_id: User,
         institutionName: inname,
         degree: deg,
         specialization: speci,
@@ -47,6 +49,8 @@ function handleUpdateski() {
     let sk3 = document.getElementById("sk13").value
     
     const vre=localStorage.getItem('EmailID');
+    let val = vre.split('@');
+    User = val[0];
     
     fetch(`https://localhost:7128/api/Skill/UpdateTrainer?EmailID=${vre}`,{
 
@@ -56,7 +60,7 @@ function handleUpdateski() {
   
       
       body: JSON.stringify({
-        user_id: uid,
+        user_id: User,
         skill1: sk1,
         skill2: sk2,
         skill3: sk3,
@@ -87,16 +91,15 @@ function handleUpdatecom() {
     let com = document.getElementById("CName").value
     let exp = document.getElementById("Exp").value
  const vre=localStorage.getItem('EmailID');
+ let val = vre.split('@');
+ User = val[0];
     
     fetch(`https://localhost:7128/api/Company/UpdateCompanyDetails?EmailID=${vre}`,{
 
-    
-      
+     
       method: "PUT",
-  
-      
-      body: JSON.stringify({
-        user_id: uid,
+       body: JSON.stringify({
+        user_id: User,
         companyName: com,
         experience: exp,
       }),   
@@ -128,13 +131,13 @@ function handleUpdatePer() {
      let phone = document.getElementById("PhoneNumber").value
      
      const vre=localStorage.getItem('EmailID');
+     let val = vre.split('@');
+     User = val[0];
      
-     fetch(`https://localhost:7128/api/Trainer/UpdateTrainer?Email=${vre}`,{
-        
+     fetch(`https://localhost:7128/api/Trainer/UpdateTrainer?Email=${vre}`,{      
        method: "PUT",
-      
-       body: JSON.stringify({
-         user_id: uid,
+        body: JSON.stringify({
+         user_id: User,
          name: na,
          gender: gen,
          phoneNumber:phone,
