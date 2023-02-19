@@ -5,7 +5,7 @@
     fetch(`https://localhost:7128/api/Trainer/FindTrainerByLocation/Guntur`)
     .then(data=>data.json())
     .then(response=>response.forEach(element => {
-        const markup=`<li><h5>Trainer By EmailID</h5>
+        const markup=`<li><h5>Trainer By Location</h5>
                     Name        : ${element.name}<br>
                     EmailID     : ${element.emailID}<br>
                     Age         : ${element.age}<br>

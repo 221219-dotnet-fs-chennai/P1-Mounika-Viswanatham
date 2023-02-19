@@ -9,15 +9,18 @@ function login() {
           method:'GET',
           headers:{'Content-Type': 'application/json',    
       'EmailID': email,
-      'Password': password}
-  }).then(response=> {
+      'Password': password
+    }
+       }).then(response=> {
       if(response.status===200){
-          alert("Successfully Logged In");
+        localStorage.setItem('EmailID',email);
+        alert("Successfully Logged In");
+
           window.location.href='profile.html';
-      }
-      else{
+        }
+       else{
           alert("Login Failed, Please try again");
-      }
+        }
   })
   });
   }
