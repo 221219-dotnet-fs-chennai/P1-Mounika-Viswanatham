@@ -15,10 +15,9 @@
     label{
         font-family: serif;
     }
-    span{
-        
-        padding-left:1200px;
-    }
+   span{
+    padding-left:90%;
+   }
     body{
         background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa1uialBGzG5Yk1SeVGy6tLjY2jqBsSeqi1w&usqp=CAU');
         background-repeat: no-repeat ;
@@ -39,6 +38,8 @@
        <span><a href="login.html"><button type="menu">Logout</button></a>
         <a href="profile.html"><button type="menu">Back</button></a>
     <a href="starting.html"><button type="menu">Main Page</button></a></span>
+    <br>
+    <br>
         <h2 style="color:darkgreen;font-family:serif"><center>Welcome Back</center></h2>
         <form>
             <br>
@@ -49,44 +50,17 @@
             <label for="inputEmail4">Delete your account:</label>
             </br>
             </br>
-            <input type="email" class="form-control" id="Email" placeholder="EmailID">
+            <input type="email" class="form-control" id="emi" placeholder="EmailID">
             </div>
             <br>
             <br>
             </center>
             
-            <button type="submit" class="btn btn-primary" onclick="deleteProfile()">submit</button>
+            <button type="submit" class="btn btn-primary" id="del" onclick="deleteProfile()">submit</button>
             
         </form>
     </div>
-    <script>
-        function deleteProfile(email) {
     
-           
-               
-                 fetch(`https://localhost:7128/api/Trainer/DeleteTrainer/${email}`, {
-                 method:'DELETE',
-                 headers: {
-                     'Content-Type': 'application/json',
-                     'EmailID':email,
-                 }
-             }).then(response=> {
-                 if(response.status===200) {
-                     alert("Account Deleted Successfully");
-                     window.location.replace('LoginPage.html');
-                 }
-                 else{
-                     alert("Not deleted");
-                 }
-             })
-             .catch(error=>{
-                 alert("Some Error Occured,Please try after some time...")
-             });
-        
-    }
-    
-    deleteProfile();
-    </script>
 </body>
 <script src="delete.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

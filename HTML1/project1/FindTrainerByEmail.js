@@ -2,7 +2,7 @@
     var Email=document.getElementById("email").value;
     console.log(Email);
             
-    fetch(`https://localhost:7128/api/Trainer/FindTrainerByEmailID/${Email}`)
+    fetch(`https://localhost:7128/api/Trainer/FindTrainerByEmailID?EmailID=${Email}`)
     .then(data=>data.json())
     .then(response=>response.forEach(element => {
         const markup=`<li><h5>Trainer By EmailID</h5>

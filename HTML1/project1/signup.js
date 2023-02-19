@@ -1,82 +1,51 @@
-const signupbutton = document.querySelector('#submit')
-const emailbutton = document.querySelector('#inputEmail4')
-const passbutton = document.querySelector('#inputPassword4')
-const agebutton = document.querySelector('#age')
-const gbutton = document.querySelector('#Gender')
-const mobilebutton = document.querySelector('#PhoneNumber')
-const namebutton = document.querySelector('#Name')
-
-function addTrainer(name,emailID,password,age,gender,phoneNumber){
-    const body = {
-        Name: name,
-        Password: password,
-        EmailID: emailID,
-        Age: age,
-        Gender: gender,
-        PhoneNumber: phoneNumber,
-        
-    };
-    fetch('https://localhost:7128/api/Trainer/AddNewTrainer',{
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: {
-            "content-type": "application/json"
-        },
-        body:JSON.stringify(item)
-    })
-    .then(data => data.json())
-    .then(response => console.log(response));
-}
-
-signupbutton.addEventListener('click',
+function signup() 
+{
+    const user=document.getElementById('userid');
+    const nam=document.getElementById('Name');
+    const email=document.getElementById('inputEmail4');
+    const pad=document.getElementById('inputPassword4');
+    const gen=document.getElementById('Gender');
+    const age=document.getElementById('age');
+    const pho=document.getElementById('phoneNumber');
+    const loc=document.getElementById('Location');
     
-    addTrainer(namebutton,emailbutton,passbutton,agebutton,
-        gbutton,webbutton,mobilebutton)
-);
+    form.addEventListener('click', event=> {
+        event.preventDefault();});
 
+        const formData = new FormData(form);
 
-/*
-const uri='https://localhost:7128/api/Trainer/AddNewTrainer';
-function addItem(){
-    const addNameTextbox=document.getElementById('Name');
+        const data=Object.fromEntries(formData);
+        console.log(data);
+        const d={
+            'user_id':'user',
+            'name':'nam',
+            'gender':'gen',
+            'emailID':'email',
+            'age':'age',
+            'password':'pas',
+            'location':'loc',
+        }
 
-    const item={
-        isComplete:false,
-        Name:addNameTextbox.value.trim()
-    };
-    fetch(uri,{
+        fetch('https://localhost:7128/api/Trainer/AddNewTrainer', {
         method:'POST',
-        headers:{
-            'Accept':'application/json',
-            'Content-Type':'application/json'
-        },
-        body:JSON.stringify(item)
+        body:JSON.stringify(d),
+        headers: {
+            'Content-Type': 'application/json',
+          },
+       
+        }).then(response=> {
+        if(response.status===200) {
+            
+            alert("Successfully Registered");
+            window.location.href
+            0('login.html');
+        }
+        else{
+           alert("not entered");
+        }
     })
-    .then(response=>response.json())
-    .then(()=>{
-        addNameTextbox.value='';
-    })
-    .catch(error=>console.error('Unable to additem.',error));
+    .catch(error=>{
+        alert("Some Error Occured,Please try after some time...")
+    });
+    
 }
-
-*/
-
-// const saveButton=document.querySelector('#submit');
-// const n=document.querySelector('#Name');
-// function FindByEmailID(EmailID)
-// {
-//     fetch('https://localhost:7128/api/Trainer/FindTrainerByEmailID?EmailID={EmailID}')
-//     .then(Data=>Data.json())
-//     .then(response=>displayNotesInForm(response));
-// }
-
-// function popularForm(EmailID)
-// {
-//     FindByEmailID(EmailID);
-// }
-
-// function displayNotesInForm(note)
-// {
-// n.value=note.Name;
-// console.log(note.value);
-// }
