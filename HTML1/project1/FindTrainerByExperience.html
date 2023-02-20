@@ -48,10 +48,10 @@
             
             
             <center><div class="col-2">
-            <label for="Location">FindByExperience:</label>
+            <label for="experience">FindByExperience:</label>
             </br>
             </br>
-            <input type="Text" class="form-control" id="loc" placeholder="Location">
+            <input type="Text" class="form-control" id="expe" placeholder="Experience">
             </div>
             <br>
             <br>
@@ -63,12 +63,33 @@
 
             
         </form>
+        <ul>
 
+        </ul>
        
     </div>
-    <ul>
+    <script>
+        var l=document.getElementById("expe").value;
+    console.log(l);
+            
+    fetch(`https://localhost:7128/api/Company/FindTrainerByExperience?Experience=${l}`)
+    .then(data=>data.json())
+    .then(response=>response.forEach(element => {
+        const markup=`<li><h5>Trainer By Location</h5>
+                    Name        : ${element.name}<br>
+                    EmailID     : ${element.emailID}<br>
+                    Age         : ${element.age}<br>
+                    Gender      : ${element.gender}<br>
+                    PhoneNumber : ${element.phoneNumber}</li>`
+                    
 
-    </ul>
+                    document.querySelector('ul').insertAdjacentHTML('beforeend',markup);
+        
+    }))
+    .catch(error=>console.log(error));
+
+               
+    </script>
    
     </body>
     

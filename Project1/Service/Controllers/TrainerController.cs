@@ -61,32 +61,32 @@ namespace Service.Controllers
             }
 
         }
-        /*      [HttpGet("AllTrainerData")]
-              public ActionResult Get()
-              {
-                  try
-                  {
-                      var t = _logic.AllTrainerData();
-                      if (t.Count() > 0)
-                      {
+        [HttpGet("AllTrainerData")]
+        public ActionResult Get()
+        {
+            try
+            {
+                var t = _logic.AllTrainerData();
+                if (t.Count() > 0)
+                {
 
-                          return Ok(t);
+                    return Ok(t);
 
-                      }
-                      else
-                      {
-                          return BadRequest("No data");
-                      }
-                  }
-                  catch (SqlException e)
-                  {
-                      return BadRequest("Could not found");
-                  }
-                  catch (Exception e)
-                  {
-                      return BadRequest(e.Message);
-                  }
-              }*/
+                }
+                else
+                {
+                    return BadRequest("No data");
+                }
+            }
+            catch (SqlException e)
+            {
+                return BadRequest("Could not found");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
         [HttpGet("GetAllTrainerData")]
         public ActionResult Getall() {
 
@@ -230,7 +230,7 @@ namespace Service.Controllers
         }
 
         [HttpDelete("DeleteTrainer")]
-        public ActionResult Delete([FromRoute]string EmailID)
+        public ActionResult Delete(string EmailID)
         {
             try
             {

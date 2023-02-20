@@ -1,14 +1,18 @@
 //update education details
 function handleUpdate() {
+  const btn = document.getElementById("upe")
+  btn.addEventListener("submit", (e) =>{
+    e.preventDefault()
     
-    let uid = document.getElementById("usid").value
+  })
+    //let uid = document.getElementById("usid").value
     let inname = document.getElementById("IName").value
     let deg = document.getElementById("degree").value
     let speci = document.getElementById("specialization").value
     let ye = document.getElementById("year").value
     const vre=localStorage.getItem('EmailID');
     let val = vre.split('@');
-    User = val[0];
+   
     
     fetch(`https://localhost:7128/api/Education/UpdateEducation?EmailID=${vre}`,{
 
@@ -18,7 +22,7 @@ function handleUpdate() {
   
       
       body: JSON.stringify({
-        user_id: User,
+        user_id: val[0],
         institutionName: inname,
         degree: deg,
         specialization: speci,
@@ -42,25 +46,25 @@ function handleUpdate() {
 //update skill details
 
 function handleUpdateski() {
+  const btn = document.getElementById("ups")
+  btn.addEventListener("submit", (e) =>{
+    e.preventDefault()
     
-    let uid = document.getElementById("usid").value
+  })
+    
+    //let uid = document.getElementById("usid").value
     let sk1 = document.getElementById("sk11").value
     let sk2 = document.getElementById("sk12").value
     let sk3 = document.getElementById("sk13").value
     
     const vre=localStorage.getItem('EmailID');
     let val = vre.split('@');
-    User = val[0];
     
-    fetch(`https://localhost:7128/api/Skill/UpdateTrainer?EmailID=${vre}`,{
-
     
-      
-      method: "PUT",
-  
-      
+    fetch(`https://localhost:7128/api/Skill/UpdateTrainer?EmailID=${vre}`,{     
+      method: "PUT",     
       body: JSON.stringify({
-        user_id: User,
+        user_id: val[0],
         skill1: sk1,
         skill2: sk2,
         skill3: sk3,
@@ -86,20 +90,24 @@ function handleUpdateski() {
 //update company details
 
 function handleUpdatecom() {
+  const btn = document.getElementById("upc")
+  btn.addEventListener("submit", (e) =>{
+    e.preventDefault()
     
-   let uid = document.getElementById("usid").value
+  })
+    
+   //let uid = document.getElementById("usid").value
     let com = document.getElementById("CName").value
     let exp = document.getElementById("Exp").value
  const vre=localStorage.getItem('EmailID');
  let val = vre.split('@');
- User = val[0];
-    
+ 
     fetch(`https://localhost:7128/api/Company/UpdateCompanyDetails?EmailID=${vre}`,{
 
      
       method: "PUT",
        body: JSON.stringify({
-        user_id: User,
+        user_id: val[0],
         companyName: com,
         experience: exp,
       }),   
@@ -120,8 +128,13 @@ function handleUpdatecom() {
 //update personal details
 
 function handleUpdatePer() {
+  const btn = document.getElementById("upadd")
+        btn.addEventListener("submit", (e) =>{
+          e.preventDefault()
+          
+        })
     
-    let uid = document.getElementById("userid").value
+   // let uid = document.getElementById("userid").value
      let na = document.getElementById("Name").value
      let email = document.getElementById("inputEmail4").value
      let pas = document.getElementById("inputPassword4").value
@@ -132,12 +145,12 @@ function handleUpdatePer() {
      
      const vre=localStorage.getItem('EmailID');
      let val = vre.split('@');
-     User = val[0];
+     
      
      fetch(`https://localhost:7128/api/Trainer/UpdateTrainer?Email=${vre}`,{      
        method: "PUT",
         body: JSON.stringify({
-         user_id: User,
+         user_id: val[0],
          name: na,
          gender: gen,
          phoneNumber:phone,

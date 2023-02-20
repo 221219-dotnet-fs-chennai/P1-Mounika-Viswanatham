@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Page</title>
+    <style>
+        p{
+            background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_bK7XvxmuU3LjHFOPVqhphYfVy14H8afzpA&usqp=CAU')
+        }
+    </style>
+</head>
+<body>
+    <span style="padding-left:90%"><a href="login.html" id="j"><button type="menu">Logout</button></a>
+        <a href="profile.html" id="j"><button type="menu">Back</button></a>
+        
+    <center><p style="font-family:serif ;font-size:50px;color:darkgreen">Hello Trainer</p>
+        <span><h3>To view your profile Click on View Profile</h3>
+    <button type="submit"  id="vie" onclick="viewde()">View Profile</button></center></span>
+    <ul>
+
+    </ul>
+     
+    <script>
+           function viewde(){
+            const vre= localStorage.getItem('EmailID');
+            fetch(`https://localhost:7128/api/Trainer/FindTrainerByEmailID/${vre}`)
+            //fetch(`https://localhost:7128/api/Trainer/GetAllTrainerData/${vre}`)
+                .then(data=>{return data.json();})
+                .then(response=>{
+                    response.forEach(user =>{
+                        const markup=`<li><h3>Personal details</h3>
+                            Name        :${user.name} <br>
+                            EmailId     :${user.emailID} <br>
+                            Age         :${user.age}<br>
+                            Gender      :${user.gender}<br>
+                            Location    :${user.location}<br>
+                            PhoneNumber :${user.phoneNumber}<br>
+                            </li>`;
+                        
+                        document.querySelector('ul').insertAdjacentHTML('beforeend',markup);
+                    })
+                })
+
+                }
+            
+
+        
+    </script>
+</body>
+
+</html>

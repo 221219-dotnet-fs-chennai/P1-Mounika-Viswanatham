@@ -37,8 +37,7 @@ function signup()
         if(response.status===200) {
             
             alert("Successfully Registered");
-            window.location.href
-            0('login.html');
+            window.location.href('login.html');
         }
         else{
            alert("not entered");

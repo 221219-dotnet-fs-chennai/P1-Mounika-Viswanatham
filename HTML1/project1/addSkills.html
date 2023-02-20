@@ -30,12 +30,12 @@
     <h2 style="color:darkgreen"><center>Add Skills Details</center></h2><br>
 
     <div class="form-div">
-      <form class="row g-3">
-        <div class="col-8">
+      <form class="row g-3" id="addskill">
+        <!-- <div class="col-8">
           <label for="inputAddress" class="form-label">user</label>
           <input type="text" class="form-control" id="usid" placeholder="Dotnet">
           
-        </div>
+        </div> -->
         <div class="col-8">
             <label for="inputAddress" class="form-label">Skill1</label>
             <input type="text" class="form-control" id="sk11" placeholder="Dotnet">
@@ -63,8 +63,15 @@
 <script>
   
 function Addski() {
+  const btn = document.getElementById("addskill")
+  btn.addEventListener("submit", (e) =>{
+    e.preventDefault()
     
-  let uid = document.getElementById("usid").value
+  })
+  const vr=localStorage.getItem('EmailID');
+  let ve=vr.split('@');
+ 
+  //let uid = document.getElementById("usid").value
   let sk1 = document.getElementById("sk11").value
   let sk2 = document.getElementById("sk12").value
   let sk3 = document.getElementById("sk13").value
@@ -79,7 +86,7 @@ function Addski() {
 
     
     body: JSON.stringify({
-      user_id: uid,
+      user_id: ve[0],
       skill1: sk1,
       skill2: sk2,
       skill3: sk3,

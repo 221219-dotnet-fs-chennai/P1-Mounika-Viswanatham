@@ -2,7 +2,7 @@
     var l=document.getElementById("loc").value;
     console.log(l);
             
-    fetch(`https://localhost:7128/api/Trainer/FindTrainerByLocation/Guntur`)
+    fetch(`https://localhost:7128/api/Trainer/FindTrainerByLocation/`)
     .then(data=>data.json())
     .then(response=>response.forEach(element => {
         const markup=`<li><h5>Trainer By Location</h5>

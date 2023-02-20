@@ -30,13 +30,13 @@
     <h2 style="color:darkgreen"><center>Add Company Details</center></h2><br>
 
     <div class="form-div">
-      <form class="row g-3">
+      <form class="row g-3" id="addc">
 
-        <div class="col-8">
+        <!-- <div class="col-8">
           <label for="inputAddress" class="form-label">Userid</label>
           <input type="text" class="form-control" id="usid" placeholder="CName">
           
-        </div>
+        </div> -->
         <div class="col-8">
             <label for="inputAddress" class="form-label">CompanyName</label>
             <input type="text" class="form-control" id="CName" placeholder="CName">
@@ -59,17 +59,23 @@
 
 <script>
   function Addcom() {
+    const btn = document.getElementById("addc")
+        btn.addEventListener("submit", (e) =>{
+          e.preventDefault()
+          
+        })
     
-    let uid = document.getElementById("usid").value
+    //let uid = document.getElementById("usid").value
      let com = document.getElementById("CName").value
      let exp = document.getElementById("Exp").value
-  
+     const vr=localStorage.getItem('EmailID');
+     let ve=vr.split('@');
      fetch(`https://localhost:7128/api/Company/AddNewCompany`,{
  
       
        method: "POST",
         body: JSON.stringify({
-         user_id: uid,
+         user_id: ve[0],
          companyName: com,
          experience: exp,
        }),   

@@ -30,13 +30,13 @@
     <h1 style="color:darkgreen"><center>Add Education Details</center></h1><br>
 
     <div class="form-div">
-      <form class="row g-3">
+      <form class="row g-3" id="added">
 
-        <div class="col-8">
+        <!-- <div class="col-8">
           <label for="inputAddress" class="form-label">UserID</label>
           <input type="text" class="form-control" id="usid" placeholder="Name">
           
-        </div>
+        </div> -->
         <div class="col-8">
             <label for="inputAddress" class="form-label">InstitutionName</label>
             <input type="text" class="form-control" id="IName" placeholder="Name">
@@ -61,20 +61,26 @@
         </div>    
     <br>
     <div class="text-center">
-    <a href="signuppage.html" ><button type="submit" class="btn btn-primary" onclick="Addedu()" id="submit">Submit</button></a>
+    <button type="submit" class="btn btn-primary" onclick="Addedu()" id="submit">Submit</button>
     </div>
 
 
 <script>
   //update education details
 function Addedu() {
+  const btn = document.getElementById("added")
+        btn.addEventListener("submit", (e) =>{
+          e.preventDefault()
+          
+        })
     
-  let uid = document.getElementById("usid").value
+  //let uid = document.getElementById("usid").value
   let inname = document.getElementById("IName").value
   let deg = document.getElementById("degree").value
   let speci = document.getElementById("specialization").value
   let ye = document.getElementById("year").value
-  
+  const vr=localStorage.getItem('EmailID');
+  let ve=vr.split('@');
   fetch(`https://localhost:7128/api/Education/AddNewEducation`,{
 
   
@@ -83,7 +89,7 @@ function Addedu() {
 
     
     body: JSON.stringify({
-      user_id: uid,
+      user_id: ve[0],
       institutionName: inname,
       degree: deg,
       specialization: speci,

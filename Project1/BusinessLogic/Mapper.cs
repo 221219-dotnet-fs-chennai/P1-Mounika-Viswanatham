@@ -74,6 +74,7 @@ namespace BusinessLogic
                 EmailId             = Validation.ValidEmailID(e.EmailID),
                 PhoneNumber         = Validation.ValidPhoneNumber(e.PhoneNumber),
                 Gender              = e.Gender,
+                Password = Validation.ValidPassword(e.Password),
                 Age                 = Convert.ToInt32(Validation.ValidAge(Convert.ToString(e.Age))),
                 Location            =e.Location,
             };

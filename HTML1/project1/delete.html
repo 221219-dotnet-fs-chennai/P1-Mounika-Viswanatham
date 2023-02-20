@@ -61,7 +61,6 @@
     <script>
         function deleteProfile() 
         {
-            const vr=localStorage.getItem('EmailID');
              let url=`https://localhost:7128/api/Trainer/DeleteTrainer?EmailID=${vr}`;
             let options={
                  method:'DELETE'

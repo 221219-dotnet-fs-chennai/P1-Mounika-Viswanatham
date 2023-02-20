@@ -47,14 +47,14 @@ insert into TrainerDetails VALUES('mahi','Mahesh',22,'Male','mahesh@gmail.com','
 
 
 Update TrainerDetails set Age=31 where Name='Rajasekhar'
-Update TrainerDetails set Age=30  where Name='Mounika'
+Update TrainerDetails set Age=32  where Name='Mahesh'
 Update TrainerDetails set Age=31 where Name='MounikaViswanatham'
 
 insert into Skills_Details VALUES('mounika','Java','Dotnet','Angular')
 insert into Skills_Details VALUES('chintu','Python','Java','Dotnet')
 INSERT INTO Skills_Details VALUES('uma','C#','java','Python')
 insert into Skills_Details VALUES('kishore','Angular','React','Java')
-insert into Skills_Details VALUES('mahi','C++','Python','Java')
+insert into Skills_Details VALUES('kaveri','C++','Python','Java')
 
 
 insert into Education_Details VALUES('mounika','VVIT','BTECH','IT','2022')
@@ -74,5 +74,6 @@ select *  from TrainerDetails
 select * from Skills_Details 
 select * from Company_Detail
 select * from Education_Details 
+
 
 
