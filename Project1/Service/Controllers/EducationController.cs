@@ -20,6 +20,26 @@ namespace Service.Controllers
            
 
         }
+        [HttpGet("GetEducationById/{EmailID}")]
+        public IActionResult GetEducationById([FromRoute]string EmailID)
+        {
+            string[] arr= EmailID.Split('@');
+            string id= arr[0];
+            try
+            {
+                var v = _logic.GetEducationById(id);
+                return Ok(v);
+            }
+            catch (SqlException e)
+            {
+                return BadRequest("Could not found");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+
+        }
         [HttpGet("AllEducationData")]
         public ActionResult Get()
         {

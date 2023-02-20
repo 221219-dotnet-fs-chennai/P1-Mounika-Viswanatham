@@ -17,16 +17,35 @@
         
     <center><p style="font-family:serif ;font-size:50px;color:darkgreen">Hello Trainer</p>
         <span><h3>To view your profile Click on View Profile</h3>
-    <button type="submit"  id="vie" onclick="viewde()">View Profile</button></center></span>
+    <button type="submit"  id="vie" onclick="viewde()">View Profile</button>
+    <button type="submit" id="vid" onclick="viewded()">View Education Details</button>
+    <button type="submit" id="vskill" onclick="viewskill()">View Skills</button>
+    <button type="submit" id="vcom" onclick="viewcomp()">View Company Details</button></center></span>
     <ul>
 
     </ul>
-     
+    <script>
+        function viewcomp(){
+         const vre= localStorage.getItem('EmailID');
+         fetch(`https://localhost:7128/api/Company/GetCompanyById/${vre}`)
+        
+             .then(data=>{return data.json();})
+             .then(user =>{
+                     const markup=`<li><h3>Company details</h3>
+                         CompanyName        :${user.companyName} <br>
+                         Experience    :${user.experience} <br>
+                         
+                         </li>`;
+                     
+                     document.querySelector('ul').insertAdjacentHTML('beforeend',markup);
+                 })
+                }
+ </script>
     <script>
            function viewde(){
             const vre= localStorage.getItem('EmailID');
             fetch(`https://localhost:7128/api/Trainer/FindTrainerByEmailID/${vre}`)
-            //fetch(`https://localhost:7128/api/Trainer/GetAllTrainerData/${vre}`)
+           
                 .then(data=>{return data.json();})
                 .then(response=>{
                     response.forEach(user =>{
@@ -37,17 +56,64 @@
                             Gender      :${user.gender}<br>
                             Location    :${user.location}<br>
                             PhoneNumber :${user.phoneNumber}<br>
+                           
                             </li>`;
                         
                         document.querySelector('ul').insertAdjacentHTML('beforeend',markup);
                     })
                 })
+            }
+    </script>
+    <script>
 
+        function viewskill(){
+            const vre= localStorage.getItem('EmailID');
+            fetch(`https://localhost:7128/api/Skill/GetSkillById/${vre}`)
+           
+                .then(data=>{return data.json();})
+                .then(
+                    user =>{
+                        const markup=`<li><h3>Skills details</h3>
+                            skill1     :${user.skill1} <br>
+                            skill2     :${user.skill2} <br>
+                            skill3     :${user.skill3}<br>
+                            
+                            </li>`;
+                        
+                        document.querySelector('ul').insertAdjacentHTML('beforeend',markup);
+                    })
                 }
-            
-
+        
+         
+    </script>
+    <script>
+        function viewded(){
+            const btn = document.getElementById("vid")
+                btn.addEventListener("submit", (e) =>{
+                  e.preventDefault()
+                  
+                })
+            const vre= localStorage.getItem('EmailID');
+            //fetch(`https://localhost:7128/api/Trainer/GetTrainer/${vre}`)
+            //fetch(`https://localhost:7128/api/Trainer/GetTrainer/${vre}`)
+            fetch(`https://localhost:7128/api/Education/GetEducationById/${vre}`)
+                .then(data=>{return data.json();})
+                .then(user =>{
+                        const markup=`<li><h3>Education details</h3>
+                            InstitutionName    :${user.institutionName} <br>
+                            Degree             :${user.degree} <br>
+                            Specialization     :${user.specialization}<br>
+                            PassingYear     :${user.passingYear}<br>
+                           
+                           
+                            </li>`;
+                        
+                        document.querySelector('ul').insertAdjacentHTML('beforeend',markup);
+                    })
+                }
+        
+         
         
     </script>
 </body>
-
 </html>

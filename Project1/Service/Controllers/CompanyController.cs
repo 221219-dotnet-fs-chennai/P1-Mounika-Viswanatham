@@ -122,5 +122,26 @@ namespace Service.Controllers
             }
 
         }
+
+        [HttpGet("GetCompanyById/{EmailID}")]
+        public IActionResult GetCompanyID([FromRoute] string EmailID)
+        {
+            string[] arr = EmailID.Split('@');
+            string id = arr[0];
+            try
+            {
+                var v = _logic.GetCompanyByID(id);
+                return Ok(v);
+            }
+            catch (SqlException e)
+            {
+                return BadRequest("Could not found");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+
+        }
     }
 }

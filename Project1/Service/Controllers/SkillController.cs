@@ -122,5 +122,26 @@ namespace Service.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpGet("GetSkillById/{EmailID}")]
+        public IActionResult GetSkillByIdById([FromRoute] string EmailID)
+        {
+            string[] arr = EmailID.Split('@');
+            string id = arr[0];
+            try
+            {
+                var v = _logic.GetSkillById(id);
+                return Ok(v);
+            }
+            catch (SqlException e)
+            {
+                return BadRequest("Could not found");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+
+        }
     }
 }

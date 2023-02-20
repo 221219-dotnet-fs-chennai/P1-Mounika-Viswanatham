@@ -87,6 +87,42 @@ namespace Service.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        [HttpGet("GetTrainer/{EmailID}")]
+        public ActionResult GetTrainer([FromRoute] string EmailID)
+        {
+
+            try
+            {
+                var t = _logic.GetTrainer(EmailID);
+                if (t!= null)
+                {
+
+
+
+                    return Ok(t);
+                }
+                else
+                {
+
+                    return BadRequest("No data found in database");
+                }
+            }
+            catch (SqlException e)
+            {
+
+
+                return BadRequest("Could not found");
+            }
+            catch (Exception e)
+            {
+
+
+
+                return BadRequest(e.Message);
+            }
+        }
+
         [HttpGet("GetAllTrainerData")]
         public ActionResult Getall() {
 

@@ -37,5 +37,6 @@ namespace FluentAPI
         {
             return _context.EducationDetails.ToList();
         }
+
     }
 }

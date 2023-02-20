@@ -100,7 +100,8 @@ namespace BusinessLogic
                 tara.Age            = Convert.ToInt32(trainerdata.Age);
                 tara.PhoneNumber    = trainerdata.PhoneNumber;
                 tara.Gender         = trainerdata.Gender;
-                tara.EmailId       = trainerdata.EmailID;
+                tara.EmailId       
+                    = trainerdata.EmailID;
                 tara.Password       = trainerdata.Password;
                 tara.Location       = trainerdata.Location;
 
@@ -260,6 +261,32 @@ namespace BusinessLogic
             return _repo.Login(EmailID, Password);
         }
 
-      
+        public Edetail GetEducationById(string id)
+        {
+            //throw new NotImplementedException();
+            var r=_eduRepo.GetAllEducation().Where(i=>i.UserId== id).FirstOrDefault();
+            return Mapper.EducationMap(r);
+        }
+
+        public Sdetail GetSkillById(string id)
+        {
+            //throw new NotImplementedException();
+            var r=_skil.GetAllSkills().Where(i=>i.UserId== id).FirstOrDefault();
+            return Mapper.SkillMap(r);
+        }
+
+        public GetAllData GetTrainer(string EmailID)
+        {
+            //throw new NotImplementedException();
+            var r=_repo.getAllTrainerdatas().Where(i=>i.EmailID== EmailID).FirstOrDefault();
+            return r;
+        }
+
+        public cdetail GetCompanyByID(string id)
+        {
+            //throw new NotImplementedException();
+            var r=_com.GetAllCompany().Where(i=>i.UserId== id).FirstOrDefault();
+            return Mapper.CompanyMap(r);
+        }
     }
 }

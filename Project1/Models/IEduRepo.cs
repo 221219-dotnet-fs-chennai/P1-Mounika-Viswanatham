@@ -14,5 +14,7 @@ namespace Models
 
         List<T> GetAllEducation();
 
+       
+
     }
 }
