@@ -47,7 +47,7 @@ insert into TrainerDetails VALUES('mahi','Mahesh',22,'Male','mahesh@gmail.com','
 
 
 Update TrainerDetails set Age=31 where Name='Rajasekhar'
-Update TrainerDetails set Age=32  where Name='Mahesh'
+Update TrainerDetails set Age=32 where Name='Mahesh'
 Update TrainerDetails set Age=31 where Name='MounikaViswanatham'
 
 insert into Skills_Details VALUES('mounika','Java','Dotnet','Angular')
@@ -70,10 +70,12 @@ insert into Company_Detail VALUES('mounika','Wipro',1)
 insert into Company_Detail VALUES('chintu','CTS',1)
 insert into Company_Detail VALUES('mahi','NA',0)
 
-select *  from TrainerDetails 
+
+select * from TrainerDetails
 select * from Skills_Details 
 select * from Company_Detail
 select * from Education_Details 
 
 
 
+delete TrainerDetails where Name='shannu'

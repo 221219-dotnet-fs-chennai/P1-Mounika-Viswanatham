@@ -9,6 +9,12 @@
         p{
             background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_bK7XvxmuU3LjHFOPVqhphYfVy14H8afzpA&usqp=CAU')
         }
+        ul{
+            background-color: aliceblue;
+        }
+        center{
+            margin-top: -25px;
+        }
     </style>
 </head>
 <body>
@@ -16,7 +22,7 @@
         <a href="profile.html" id="j"><button type="menu">Back</button></a>
         
     <center><p style="font-family:serif ;font-size:50px;color:darkgreen">Hello Trainer</p>
-        <span><h3>To view your profile Click on View Profile</h3>
+        <span><h3>To view your profile Click</h3>
     <button type="submit"  id="vie" onclick="viewde()">View Profile</button>
     <button type="submit" id="vid" onclick="viewded()">View Education Details</button>
     <button type="submit" id="vskill" onclick="viewskill()">View Skills</button>
@@ -24,23 +30,7 @@
     <ul>
 
     </ul>
-    <script>
-        function viewcomp(){
-         const vre= localStorage.getItem('EmailID');
-         fetch(`https://localhost:7128/api/Company/GetCompanyById/${vre}`)
-        
-             .then(data=>{return data.json();})
-             .then(user =>{
-                     const markup=`<li><h3>Company details</h3>
-                         CompanyName        :${user.companyName} <br>
-                         Experience    :${user.experience} <br>
-                         
-                         </li>`;
-                     
-                     document.querySelector('ul').insertAdjacentHTML('beforeend',markup);
-                 })
-                }
- </script>
+    
     <script>
            function viewde(){
             const vre= localStorage.getItem('EmailID');
@@ -86,6 +76,23 @@
         
          
     </script>
+    <script>
+        function viewcomp(){
+         const vre= localStorage.getItem('EmailID');
+         fetch(`https://localhost:7128/api/Company/GetCompanyById/${vre}`)
+        
+             .then(data=>{return data.json();})
+             .then(user =>{
+                     const markup=`<li><h3>Company details</h3>
+                         CompanyName        :${user.companyName} <br>
+                         Experience    :${user.experience} <br>
+                         
+                         </li>`;
+                     
+                     document.querySelector('ul').insertAdjacentHTML('beforeend',markup);
+                 })
+            }
+ </script>
     <script>
         function viewded(){
             const btn = document.getElementById("vid")

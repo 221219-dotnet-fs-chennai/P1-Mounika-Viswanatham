@@ -61,6 +61,7 @@ namespace Service.Controllers
             }
 
         }
+       /*
         [HttpGet("AllTrainerData")]
         public ActionResult Get()
         {
@@ -87,6 +88,7 @@ namespace Service.Controllers
                 return BadRequest(e.Message);
             }
         }
+       */
 
         [HttpGet("GetTrainer/{EmailID}")]
         public ActionResult GetTrainer([FromRoute] string EmailID)
