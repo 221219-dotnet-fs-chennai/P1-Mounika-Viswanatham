@@ -1,0 +1,40 @@
+A Defect, in simple terms, is a flaw or an error in an application that is restricting the normal flow of an application by mismatching the expected behavior of an application with the actual one.
+
+A defect report is a document that describes a problem or issue found during software testing or development. 
+It is also known as a bug report or an issue report.
+
+Developers can check this defect report, understand the problem & its solution and make improvements accordingly.
+QA testers create a defect report to test & analyze each functionality and note it in the report.
+
+
+defect report includes the following information:
+
+defect  id:
+
+A unique identification number is used to identify the number of defects in the report.
+
+defect description(description of the problem):
+
+This should be a clear and concise description of the problem that was encountered, including any error messages or other relevant information.
+
+version:
+
+Show the current version of the application where the defect was found. 
+
+environment:
+
+This section should include details about the environment in which the issue occurred, such as the operating system, browser, hardware, or any other relevant information.
+
+status:
+
+This is the current status of the defect report, such as "new," "in progress," or "resolved."
+
+action steps:
+
+It shows the step-by-step action taken by an end user or QA testers that shows results as the defect.
+
+excepted result:
+
+actual result:
+
+severity:

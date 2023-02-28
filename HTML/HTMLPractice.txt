@@ -1,0 +1,29 @@
+HTML 5:
+-------------
+1.Hyper Text MarkUp Language
+2.latest and enhanced version of HTML
+3.HTML is not a programming Language,but rather than a markup language
+4.describes the structure of a web page
+
+
+attribute values for target:
+------------------------------
+1._blank	:opens the linked document in an new window
+2._Self	:opens linked document in the same frame
+3._parent	:in parent frame
+4._top	:in full body of the window
+
+Inline elements:
+---------------------
+1.does not start with on a new line
+2.takes up as much width as necessary
+
+Example: span
+
+Block elements:
+------------------
+1.start with on a new line
+2.add some spaces before and after elements
+3.takes up the full width available
+
+Example: <p> <div>  <article> <address> <table> <ul>
