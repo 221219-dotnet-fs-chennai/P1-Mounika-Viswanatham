@@ -1,9 +1,0 @@
-2023-02-22 09:09:02.200 +05:30 [INF] Program starts
-2023-02-22 09:09:43.067 +05:30 [INF] Get All Trainer Data called
-2023-02-22 09:12:04.835 +05:30 [INF] Login called
-2023-02-22 09:12:05.571 +05:30 [INF] Login called
-2023-02-22 09:12:06.206 +05:30 [INF] Login called
-2023-02-22 09:12:08.413 +05:30 [INF] Get All Trainer Data called
-2023-02-22 09:13:03.367 +05:30 [INF] Added Trainer
-2023-02-22 09:13:05.358 +05:30 [INF] Get All Trainer Data called
-2023-02-22 09:13:15.325 +05:30 [INF] TrainerByEmailID
