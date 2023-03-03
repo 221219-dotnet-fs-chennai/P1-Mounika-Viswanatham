@@ -1,0 +1,392 @@
+Assignement - Program
+----------------------
+
+1.(Merge array)
+----------------------
+
+using System;
+public class Program{
+    public static void Main(string[] args){
+        int n=Convert.ToInt32(Console.ReadLine());
+         int m=Convert.ToInt32(Console.ReadLine());
+
+        int[] a=new int[n];
+        int [] b=new int[m];
+        for(int i=0;i<n;i++){
+            a[i]=Convert.ToInt32(Console.ReadLine());
+        }
+        for(int i=0;i<m;i++){
+            b[i]=Convert.ToInt32(Console.ReadLine());
+        }
+        int [] c=new int[a.Length+b.Length];
+        int k=0;
+        for(int i=0;i<a.Length;i++){
+            c[k++]=a[i];
+        }
+        for(int i=0;i<b.Length;i++){
+            c[k++]=b[i];
+        }
+        Console.WriteLine("Merge array");
+        Array.ForEach(c,v=>Console.Write(v+" "));
+    }
+}
+
+
+2.(Remove Duplicates)
+--------------------------
+
+public class Program{
+    public static void Main(string[] args){
+        int n=Convert.ToInt32(Console.ReadLine());
+        int [] arr=new int[n];
+       int [] a=new int[n];
+       for(int i=0;i<n;i++){
+       arr[i]=Convert.ToInt32(Console.ReadLine());
+       }
+       Console.WriteLine("Distinct elements");
+       a=arr.Distinct().ToArray();
+      // Array.ForEach(a,v=>Console.Write(v+" "));
+      for(int i=0;i<a.Length;i++){
+        Console.Write(a[i]+" ");
+      }
+    }
+}
+3.(frequency of element)
+------------------------
+
+using System;
+public class Program{
+    public static void Main(string[] args){
+        Console.WriteLine("Enter array length");
+        int n=Convert.ToInt32(Console.ReadLine());
+        int [] a=new int[n];
+        Console.WriteLine("Enter array elements");
+        for(int i=0;i<n;i++){
+            a[i]=Convert.ToInt32(Console.ReadLine());
+        }
+        Console.WriteLine("Enter element to get  frequency");
+        int w=Convert.ToInt32(Console.ReadLine());
+        int t=0;
+        for(int i=0;i<a.Length;i++){
+            if(a[i]==w){
+                t++;
+            }
+            else{
+               continue;
+            }
+
+        }
+        Console.WriteLine("frequency of element is ");
+        Console.WriteLine(t);
+    }
+}
+4.(indices)
+----------------
+
+using System;
+public class Program{
+    public static void Main(string[] args){
+        int[] a={1,4,10,-3};
+        int target=14;      
+        for(int i=0;i<a.Length-1;i++){
+            for(int j=i+1;j<a.Length;j++){
+                if(a[i]+a[j]==target){
+                    Console.WriteLine(i+" "+j);
+                    Console.WriteLine(j+" "+i);
+                }
+            }
+        }
+    }
+}
+
+5.(Maximum and minimum)
+----------------------
+
+public class Program{
+    public static void Main(string[] args){
+        int n=Convert.ToInt32(Console.ReadLine());
+        int [] arr=new int[n];
+        int max=arr[0];
+        int min=arr[0];
+        for(int i=0;i<n;i++){
+            arr[i]=Convert.ToInt32(Console.ReadLine());
+        }
+        Array.Sort(arr);
+        max=arr[arr.Length-1];
+        min=arr[0];
+        Console.Write("Maximum: "+max+"  Minimum: "+min);
+        
+
+    }
+}
+
+6.(index)
+---------------
+using System;
+public class Program{
+    public static void Main(string[] args){
+        int[] arr={1, 3, 5, 6};
+        int k=2;
+        for(int i=0;i<arr.Length;i++){
+        if(arr[i]==k){
+            Console.WriteLine(i);
+            break;
+        }
+        else if(k<arr[i]){
+            Console.WriteLine(i);
+            break;
+        }
+    
+      }
+
+
+    }
+}
+
+
+7.(third  largest number)
+-----------------------------
+
+using System;
+public class Program{
+    public static void Main(string[] args){
+        int n=Convert.ToInt32(Console.ReadLine());
+        int[] a=new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=Convert.ToInt32(Console.ReadLine());
+        }
+        Array.Sort(a);
+        Console.WriteLine("Third Largest Number");
+        Console.Write(a[a.Length-3]);
+    }
+}
+
+8.(Rotate the elements)
+---------------------------
+
+using System;
+public class Program{
+    public static void Main(string[] args){
+        int[] arr={1, 2, 3, 4, 5, 6, 7};
+        int d=2;
+        for(int i=d;i<arr.Length;i++)
+        {
+            Console.Write(arr[i]+" ");
+        }
+        for(int i=0;i<d;i++){
+            Console.Write(arr[i]+" ");
+        }
+    }
+}
+
+
+9.(Triplets max prod)
+-----------------------
+
+using System;
+public class Program{
+    public static void Main(string[] args)
+    {
+        int [] arr={1,2,3,4,5,6};
+        int n=arr.Length;
+        int m=1;
+
+        int x=0,y=0,z=0;
+        for(int i=0;i<n-2;i++){
+            for(int j=i+1;j<n-1;j++){
+                for(int k=j+1;k<n;k++){
+                    if(arr[i]*arr[j]*arr[k]>m)
+                    {
+                    m=arr[i]*arr[j]*arr[k];
+
+                    x=arr[i];
+                    y=arr[j];
+                    z=arr[k];
+
+                    }
+                }
+            }
+           
+        }   
+
+         Console.WriteLine(x+" "+y+" "+z);
+        
+    }
+}
+String:
+----------
+
+
+1.
+-----
+using System;
+public class Program{
+    public static void Main(string[] args){
+        string s="aeiouAEIOU";
+        string t=Console.ReadLine();
+        string l=" ";
+        foreach(var i in t){
+            if(s.Contains(i))
+            {
+                l=l+"";
+            }
+            else{
+                l=l+i;
+            }
+        }
+        Console.WriteLine(l);
+    }
+}
+
+
+
+
+2.
+----
+using System;
+ public class Program{
+    public static void Main(string[] arags){
+        string s=Console.ReadLine();
+        string l=" ";
+        // l=s.Replace(".","[.]");
+        // Console.WriteLine(l);
+
+        foreach(var i in s){
+            if(i.Equals('.'))
+            {
+                l=l+"["+i+"]";
+            }
+            else{
+                l=l+i;
+            }
+        }
+        Console.WriteLine(l);
+    }
+ }
+
+
+
+
+3.
+-----
+using System;
+using System.Linq;
+public class Program{
+    public static void Main(string[] args){
+        string s="Console.ReadLine()";
+        string l=" ";
+        int count=0;
+        foreach(var i in s)
+        {
+            if(l.Contains(i))
+            {
+                count++;
+
+            }
+            else{
+                l=l+i;
+                count++;
+            }
+        }
+        if((count/2)%2==1){
+            Console.WriteLine((count/2)-1);
+        }
+        else{
+            Console.WriteLine("0");
+        }
+    }
+}
+
+
+
+
+4.
+---
+using System;
+public class Program{
+    public static void Main(string[] args){
+        string s=Console.ReadLine();
+        string l=" ";
+        l=s.ToLower();
+         Console.WriteLine(l);
+       
+    }
+}
+
+
+
+5.
+----
+using System;
+public class  Program{
+    public static void Main(string[] args){
+        string s=Console.ReadLine();
+        string l=" ";
+        string k=" ";
+        int count=0;
+        foreach(var i  in s)
+        {
+            if(l.Contains(i))
+            {
+                k=k+i;
+                count++;
+            }
+            else{
+                l=l+i;
+            }
+        }
+        // Console.WriteLine(count);
+        // Console.WriteLine(l);
+        // Console.WriteLine(k);
+        foreach(var p in l){
+            if(k.Contains(p)){
+                continue;
+            }
+            else{
+                Console.WriteLine(s.IndexOf(p));
+                break;
+            }
+        }
+    }
+}
+
+
+
+6.
+----
+using System;
+public class Program{
+    public static void  Main(string[] args)
+    {
+        string s=Console.ReadLine();
+        string t=Console.ReadLine();
+        string status="true";
+        if(s.Length==t.Length){
+        foreach(var i in t){
+            if(s.Contains(i))
+            {
+                status="true";
+                continue;
+                
+            }
+            else{
+                status="false";
+               
+            }
+
+        }
+        if(status=="true"){
+            Console.WriteLine("True");
+        }
+        else{
+            Console.WriteLine("False");
+        }
+
+        }
+    }
+}
+
+
+
+
+
