@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  physicianavailabilityservice:
+    image: ${DOCKER_REGISTRY-}physicianavailabilityservice
+    build:
+      context: .
+      dockerfile: PhysicianAvailabilityService/Dockerfile
